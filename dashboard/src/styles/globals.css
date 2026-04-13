@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Core palette */
+  --bg-void: #080c10;
+  --bg-base: #0d1117;
+  --bg-panel: #111820;
+  --bg-card: #151e28;
+  --bg-card-hover: #1a2535;
+  --bg-input: #0d1520;
+
+  /* Accent colors */
+  --accent-primary: #00d4ff;
+  --accent-primary-dim: rgba(0, 212, 255, 0.12);
+  --accent-primary-glow: rgba(0, 212, 255, 0.25);
+  --accent-green: #00ff88;
+  --accent-green-dim: rgba(0, 255, 136, 0.10);
+  --accent-red: #ff3b5c;
+  --accent-red-dim: rgba(255, 59, 92, 0.12);
+  --accent-amber: #ffaa00;
+  --accent-amber-dim: rgba(255, 170, 0, 0.12);
+  --accent-purple: #9b59f5;
+  --accent-purple-dim: rgba(155, 89, 245, 0.12);
+
+  /* Text */
+  --text-primary: #e2eaf4;
+  --text-secondary: #7a9bb5;
+  --text-muted: #3d5570;
+  --text-accent: #00d4ff;
+
+  /* Borders */
+  --border-base: rgba(0, 212, 255, 0.08);
+  --border-active: rgba(0, 212, 255, 0.3);
+  --border-card: rgba(255, 255, 255, 0.05);
+
+  /* Fonts */
+  --font-display: 'Rajdhani', sans-serif;
+  --font-body: 'Exo 2', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+
+  /* Status */
+  --status-online: #00ff88;
+  --status-warning: #ffaa00;
+  --status-danger: #ff3b5c;
+  --status-offline: #3d5570;
+  --status-scanning: #00d4ff;
+
+  /* Transitions */
+  --t-fast: 120ms ease;
+  --t-base: 220ms ease;
+  --t-slow: 400ms ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border-active); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
+
+/* Selection */
+::selection { background: var(--accent-primary-glow); color: var(--accent-primary); }
+
+/* Utility classes */
+.font-mono { font-family: var(--font-mono); }
+.font-display { font-family: var(--font-display); }
+.text-accent { color: var(--text-accent); }
+.text-muted { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
+.text-green { color: var(--accent-green); }
+.text-red { color: var(--accent-red); }
+.text-amber { color: var(--accent-amber); }
+.text-purple { color: var(--accent-purple); }
+
+/* Animated scan line overlay */
+#root::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Keyframe animations */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-up {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counter-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
