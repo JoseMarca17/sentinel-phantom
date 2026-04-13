@@ -1,87 +1,49 @@
-# pi/api/routes/devices.py
-import sys, os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+"""
+SENTINEL PHANTOM - API Routes: Devices
+GET  /api/devices               → listar dispositivos detectados
+GET  /api/devices/<id>          → dispositivo por ID
+GET  /api/devices/stats         → conteo por tipo y threat_level
+"""
 
-import sqlite3
-from flask import Blueprint, request, jsonify
-from core.config import config
+from flask import Blueprint, jsonify, request
+from database.local_db import db
 
 devices_bp = Blueprint("devices", __name__)
 
-@devices_bp.route("/devices", methods=["GET"])
-def get_devices():
-    """GET /api/devices — todos los dispositivos detectados"""
-    module = request.args.get("module", None)
 
-    query  = "SELECT * FROM devices"
-    params = []
+@devices_bp.get("/devices")
+def list_devices():
+    session_id  = request.args.get("session_id")
+    device_type = request.args.get("type")
+    limit       = min(int(request.args.get("limit", 200)), 1000)
+    offset      = int(request.args.get("offset", 0))
 
-    if module:
-        query += " WHERE module = ?"
-        params.append(module)
+    rows = db.get_devices(
+        session_id=session_id,
+        device_type=device_type,
+        limit=limit,
+        offset=offset,
+    )
+    return jsonify({"count": len(rows), "offset": offset, "data": rows})
 
-    query += " ORDER BY last_seen DESC"
 
-    with sqlite3.connect(config.DB_LOCAL_PATH) as conn:
-        conn.row_factory = sqlite3.Row
-        rows = conn.execute(query, params).fetchall()
-
+@devices_bp.get("/devices/stats")
+def devices_stats():
+    rows_type = db._execute(
+        "SELECT device_type, COUNT(*) as total FROM devices GROUP BY device_type"
+    ).fetchall()
+    rows_threat = db._execute(
+        "SELECT threat_level, COUNT(*) as total FROM devices GROUP BY threat_level"
+    ).fetchall()
     return jsonify({
-        "status":  "ok",
-        "count":   len(rows),
-        "devices": [dict(r) for r in rows]
+        "by_type":         [dict(r) for r in rows_type],
+        "by_threat_level": [dict(r) for r in rows_threat],
     })
 
-@devices_bp.route("/devices/<mac>/whitelist", methods=["POST"])
-def whitelist_device(mac):
-    """POST /api/devices/:mac/whitelist — agregar dispositivo a whitelist"""
-    mac = mac.replace("-", ":").lower()
 
-    with sqlite3.connect(config.DB_LOCAL_PATH) as conn:
-        conn.execute(
-            "UPDATE devices SET is_whitelisted = 1 WHERE mac_address = ?",
-            (mac,)
-        )
-
-    return jsonify({
-        "status":  "ok",
-        "message": f"Dispositivo {mac} agregado a whitelist"
-    })
-
-@devices_bp.route("/devices/<mac>/whitelist", methods=["DELETE"])
-def remove_whitelist(mac):
-    """DELETE /api/devices/:mac/whitelist — quitar de whitelist"""
-    mac = mac.replace("-", ":").lower()
-
-    with sqlite3.connect(config.DB_LOCAL_PATH) as conn:
-        conn.execute(
-            "UPDATE devices SET is_whitelisted = 0 WHERE mac_address = ?",
-            (mac,)
-        )
-
-    return jsonify({
-        "status":  "ok",
-        "message": f"Dispositivo {mac} removido de whitelist"
-    })
-
-@devices_bp.route("/devices/stats", methods=["GET"])
-def get_stats():
-    """GET /api/devices/stats — estadísticas para el dashboard"""
-    with sqlite3.connect(config.DB_LOCAL_PATH) as conn:
-        total     = conn.execute("SELECT COUNT(*) FROM devices").fetchone()[0]
-        by_module = conn.execute("""
-            SELECT module, COUNT(*) as count
-            FROM devices GROUP BY module
-        """).fetchall()
-        unknown   = conn.execute("""
-            SELECT COUNT(*) FROM devices WHERE is_whitelisted = 0
-        """).fetchone()[0]
-
-    return jsonify({
-        "status": "ok",
-        "stats": {
-            "total":     total,
-            "unknown":   unknown,
-            "by_module": [{"module": r[0], "count": r[1]} for r in by_module]
-        }
-    })
+@devices_bp.get("/devices/<device_id>")
+def get_device(device_id: str):
+    row = db._execute("SELECT * FROM devices WHERE id=?", (device_id,)).fetchone()
+    if not row:
+        return jsonify({"error": "Not found"}), 404
+    return jsonify(dict(row))

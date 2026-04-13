@@ -1,0 +1,34 @@
+# SENTINEL PHANTOM — Pi dependencies
+# pip install -r requirements.txt
+
+# Core
+python-dotenv>=1.0.0
+
+# API
+flask>=3.0.0
+flask-socketio>=5.3.6
+flask-cors>=4.0.0
+python-socketio>=5.10.0
+eventlet>=0.35.1          # async mode para SocketIO (alternativa a threading)
+
+# Networking / WiFi
+scapy>=2.5.0
+
+# Bluetooth
+bleak>=0.21.0
+
+# RFID / NFC
+adafruit-circuitpython-pn532>=2.1.0
+spidev>=3.6                # RC522
+
+# Sync con servidor
+requests>=2.31.0
+
+# DB
+# sqlite3 ya viene con Python estándar
+
+# Utilities
+pyserial>=3.5             # UART con ESP32 y Pico
+Pillow>=10.0.0            # OLED display (imágenes)
+luma.oled>=3.13.0         # SSD1306
+RPi.GPIO>=0.7.1           # GPIO buttons (solo en Pi)
