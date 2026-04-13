@@ -1,30 +1,45 @@
 from core.base_module import BaseModule
-from .reader import RFIDModule as ReaderEngine
-from .cloner import RFIDCloner
+from modules.rfid.reader import RFIDReader
+from modules.rfid.cloner import RFIDCloner
+import threading
 
-class RFIDTopModule(BaseModule):
-    """
-    Orquestador de Nivel Superior para RFID/NFC.
-    Coordina la detección (Reader) y la respuesta táctica (Cloner).
-    """
+class RFIDModule(BaseModule):
     def __init__(self):
-        super().__init__("RFID-System")
-        self.reader = ReaderEngine()
-        self.cloner = RFIDCloner() # Se suscribe al EventBus internamente
+        super().__init__('rfid')
+        self.reader  = RFIDReader()
+        self.cloner  = None
+        self._thread = None
+        self._scanning = False
 
-    def run(self):
-        self.is_running = True
-        self.log_event("Sistema RFID Integral Iniciado", level="INFO")
-        
-        # Iniciamos el hilo del lector
-        self.reader.start()
+    def _setup(self) -> None:
+        if not self.reader.is_available():
+            raise RuntimeError("PN532 no detectado")
+        self.cloner = RFIDCloner(self.reader)
+        self.logger.info("RFID module listo")
 
-        while self.is_running:
-            # Aquí podrías añadir lógica de supervisión o 
-            # cambiar modos entre 'Solo Detección' y 'Auto-Clonado'
-            import time
-            time.sleep(1)
+    def _teardown(self) -> None:
+        self._scanning = False
 
-    def stop(self):
-        self.reader.stop()
-        super().stop()
+    def start_scan_loop(self) -> None:
+        """Escaneo continuo en background."""
+        if self._scanning:
+            return
+        self._scanning = True
+        self._thread   = threading.Thread(target=self._scan_loop, daemon=True)
+        self._thread.start()
+
+    def stop_scan_loop(self) -> None:
+        self._scanning = False
+
+    def _scan_loop(self) -> None:
+        self.logger.info("Scan loop RFID iniciado")
+        while self._scanning:
+            self.reader.read_uid(timeout=0.5)
+
+    def get_status(self) -> dict:
+        return {
+            'module':    self.name,
+            'status':    self.status.value,
+            'pn532':     self.reader.is_available(),
+            'scanning':  self._scanning
+        }
