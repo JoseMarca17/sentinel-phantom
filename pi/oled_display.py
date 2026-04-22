@@ -1,12 +1,6 @@
 """
 pi/hardware/oled_display.py
 Interfaz física OLED SSD1306 con navegación por joystick y botón.
-
-Flujo de arranque:
-  1. show_boot()    → logo + barra de progreso estilo Kali
-  2. show_menu()    → menú principal (DEFENSA / ATAQUE / ESTADO)
-  3. Navegación via joystick SW → seleccionar / confirmar
-  4. Selección → ejecuta acción en el módulo correspondiente
 """
 
 import time
@@ -15,15 +9,9 @@ from PIL import Image, ImageDraw, ImageFont
 from luma.core.interface.serial import i2c
 from luma.oled.device import ssd1306
 from luma.core.render import canvas
-import RPi.GPIO as GPIO
 
-# ── Dimensiones del SSD1306 ──────────────────────────────────────
 W, H = 128, 64
 
-# ── Pin joystick SW ──────────────────────────────────────────────
-JOYSTICK_SW_PIN = 25  # GPIO 25 — Pin 22
-
-# ── Estructura de menú ────────────────────────────────────────────
 MENU = {
     "root": [
         {"label": "DEFENSA",       "submenu": "defense"},
@@ -49,7 +37,6 @@ MENU = {
 
 class OledDisplay:
     def __init__(self, event_bus=None):
-        # Inicializar hardware OLED
         serial = i2c(port=1, address=0x3C)
         self.device = ssd1306(serial, width=W, height=H)
 
@@ -61,36 +48,6 @@ class OledDisplay:
         self.active_mod   = None
         self._lock        = threading.Lock()
 
-        # Inicializar joystick SW
-        self._setup_joystick()
-
-    # ══════════════════════════════════════════════════════════════
-    # JOYSTICK SW
-    # ══════════════════════════════════════════════════════════════
-    def _setup_joystick(self):
-        """Configura el pin SW del joystick como entrada con pull-up."""
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(JOYSTICK_SW_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-        def _on_press(channel):
-            time.sleep(0.05)  # debounce
-            if GPIO.input(JOYSTICK_SW_PIN) == GPIO.LOW:
-                # Si hay módulo activo, detenerlo; si no, navegar
-                if self.active_mod:
-                    self.stop_running()
-                else:
-                    self.nav_select()
-
-        GPIO.add_event_detect(
-            JOYSTICK_SW_PIN,
-            GPIO.FALLING,
-            callback=_on_press,
-            bouncetime=300,
-        )
-
-    # ══════════════════════════════════════════════════════════════
-    # BOOT — logo + animación estilo Kali
-    # ══════════════════════════════════════════════════════════════
     def show_boot(self, logo_path="assets/logo.png"):
         try:
             logo = Image.open(logo_path).convert("1").resize((128, 40))
@@ -116,18 +73,18 @@ class OledDisplay:
             (100, "Sistema listo."),
         ]
         for pct, texto in pasos:
-            with canvas(self.device) as draw:
-                if logo:
-                    logo_small = logo.resize((80, 20))
-                    img = Image.new("1", (W, H), 0)
-                    img.paste(logo_small, (24, 0))
-                    d = ImageDraw.Draw(img)
-                    d.rectangle([(0, 25), (126, 34)], outline=1)
-                    d.rectangle([(1, 26), (int(124 * pct / 100), 33)], fill=1)
-                    d.text((0, 37), texto,       fill=1)
-                    d.text((100, 37), f"{pct}%", fill=1)
-                    self.device.display(img)
-                else:
+            if logo:
+                logo_small = logo.resize((80, 20))
+                img = Image.new("1", (W, H), 0)
+                img.paste(logo_small, (24, 0))
+                d = ImageDraw.Draw(img)
+                d.rectangle([(0, 25), (126, 34)], outline=1)
+                d.rectangle([(1, 26), (int(124 * pct / 100), 33)], fill=1)
+                d.text((0, 37), texto,       fill=1)
+                d.text((100, 37), f"{pct}%", fill=1)
+                self.device.display(img)
+            else:
+                with canvas(self.device) as draw:
                     draw.text((0, 0),  "SENTINEL PHANTOM", fill="white")
                     draw.rectangle([(0, 15), (126, 24)], outline="white")
                     draw.rectangle([(1, 16), (int(124 * pct / 100), 23)], fill="white")
@@ -146,14 +103,9 @@ class OledDisplay:
         self.cursor       = 0
         self.draw_menu()
 
-    # ══════════════════════════════════════════════════════════════
-    # MENÚ — navegación jerárquica
-    # ══════════════════════════════════════════════════════════════
     def draw_menu(self):
-        """Renderiza el menú actual con cursor y scroll."""
         with self._lock:
             items = MENU[self.current_menu]
-
             if self.cursor < self.scroll_off:
                 self.scroll_off = self.cursor
             if self.cursor >= self.scroll_off + self.MAX_VISIBLE:
@@ -170,7 +122,6 @@ class OledDisplay:
                         break
                     y    = 12 + i * 12
                     item = items[idx]
-
                     if "submenu" in item:
                         prefix = "[+] "
                     elif item.get("back"):
@@ -194,9 +145,6 @@ class OledDisplay:
 
                 draw.text((0, H - 8), f"{self.cursor + 1}/{len(items)}", fill="white")
 
-    # ══════════════════════════════════════════════════════════════
-    # NAVEGACIÓN — joystick up/down y botón select
-    # ══════════════════════════════════════════════════════════════
     def nav_up(self):
         items = MENU[self.current_menu]
         self.cursor = (self.cursor - 1) % len(items)
@@ -227,18 +175,13 @@ class OledDisplay:
             self._run_action(item["action"], item["label"])
 
     def nav_back(self):
-        """Botón izquierda del joystick = volver."""
         if self.current_menu != "root":
             self.current_menu = "root"
             self.cursor       = 0
             self.scroll_off   = 0
             self.draw_menu()
 
-    # ══════════════════════════════════════════════════════════════
-    # ACCIONES — confirmación y ejecución
-    # ══════════════════════════════════════════════════════════════
     def _run_action(self, action: str, label: str):
-        """Muestra pantalla de confirmación antes de ejecutar."""
         self._show_confirm(label)
 
         def _exec():
@@ -250,7 +193,6 @@ class OledDisplay:
         threading.Thread(target=_exec, daemon=True).start()
 
     def _show_confirm(self, label: str):
-        """Pantalla de confirmación tipo terminal."""
         with canvas(self.device) as draw:
             draw.rectangle([(2, 2), (W - 3, H - 3)], outline="white")
             draw.text((10, 6),  "EJECUTAR:",  fill="white")
@@ -262,7 +204,6 @@ class OledDisplay:
             draw.text((70, 38), "[ CANCEL ]", fill="white")
 
     def show_running(self, label: str):
-        """Pantalla de módulo activo con indicador pulsante."""
         def _pulse():
             dots = ["   ", ".  ", ".. ", "..."]
             i = 0
@@ -282,18 +223,13 @@ class OledDisplay:
         threading.Thread(target=_pulse, daemon=True).start()
 
     def stop_running(self):
-        """Detener módulo activo y volver al menú."""
         self.active_mod = None
         time.sleep(0.1)
         self.draw_menu()
         if self.bus:
             self.bus.publish("oled:stop", {})
 
-    # ══════════════════════════════════════════════════════════════
-    # PANTALLAS DE ESTADO Y ALERTA
-    # ══════════════════════════════════════════════════════════════
     def show_alert(self, message: str, module: str, level: str = "critical"):
-        """Alerta crítica con borde doble — interrumpe cualquier pantalla."""
         with canvas(self.device) as draw:
             draw.rectangle([(0, 0), (W - 1, H - 1)], outline="white")
             draw.rectangle([(2, 2), (W - 3, H - 3)], outline="white")
@@ -304,20 +240,18 @@ class OledDisplay:
             draw.text((2, 28),  message[21:42],    fill="white")
             draw.line([(2, 40), (W - 3, 40)],     fill="white")
             draw.text((2, 43),  f"MOD: {module}",  fill="white")
-            draw.text((2, 53),  "Click = ACK",    fill="white")
+            draw.text((2, 53),  "Click = ACK",     fill="white")
 
     def show_status(self, cpu=0, ram=0, temp=0, ip=""):
-        """Pantalla de estado del sistema."""
         with canvas(self.device) as draw:
-            draw.text((22, 0),  "[ ESTADO ]",          fill="white")
-            draw.line([(0, 9), (W - 1, 9)],            fill="white")
+            draw.text((22, 0),  "[ ESTADO ]",              fill="white")
+            draw.line([(0, 9), (W - 1, 9)],                fill="white")
             draw.text((0, 12), f"CPU: {cpu}%  {temp:.1f}C", fill="white")
-            draw.text((0, 22), f"RAM: {ram}%",         fill="white")
-            draw.text((0, 32), f"IP: {ip}",            fill="white")
-            draw.line([(0, 43), (W - 1, 43)],          fill="white")
-            draw.text((0, 46), "WiFi BLE RFID nRF",    fill="white")
-            draw.text((0, 56), "Click = Volver",        fill="white")
+            draw.text((0, 22), f"RAM: {ram}%",              fill="white")
+            draw.text((0, 32), f"IP: {ip}",                 fill="white")
+            draw.line([(0, 43), (W - 1, 43)],              fill="white")
+            draw.text((0, 46), "WiFi BLE RFID nRF",         fill="white")
+            draw.text((0, 56), "Click = Volver",            fill="white")
 
     def cleanup(self):
-        GPIO.cleanup()
         self.device.cleanup()

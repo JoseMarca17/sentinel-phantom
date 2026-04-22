@@ -1,74 +1,132 @@
-import board
-import busio
-from adafruit_pn532.i2c import PN532_I2C
-from core.logger import get_logger
-from core.event_bus import event_bus
+"""
+SENTINEL PHANTOM - RFID Reader
+Lee PN532 (I2C, 13.56 MHz) y RC522 (SPI, 125 kHz) via ESP32 por USB serial.
+También puede leer directo si los módulos están en la Pi.
+"""
 
-logger = get_logger('rfid.reader')
+import json
+import time
+import serial
+from typing import Optional
+
+from config import ESP32_PORT, ESP32_BAUD
+from core.logger import get_logger
+
+log = get_logger("module.rfid.reader")
+
 
 class RFIDReader:
+    """
+    Lee tarjetas RFID/NFC desde el ESP32 via USB serial.
+    El ESP32 maneja PN532 y RC522 y devuelve JSON.
+    """
+
     def __init__(self):
-        self.pn532  = None
-        self._setup()
+        self._ser: Optional[serial.Serial] = None
+        self._last_uid = ""
+        self._cooldown  = 2.0   # segundos entre lecturas del mismo UID
+        self._last_time = 0.0
+        self._connect()
 
-    def _setup(self) -> None:
+    def _connect(self):
         try:
-            i2c        = busio.I2C(board.SCL, board.SDA)
-            self.pn532 = PN532_I2C(i2c, debug=False)
-            self.pn532.SAM_configuration()
-            fw = self.pn532.firmware_version
-            logger.info(f"PN532 listo — FW: {fw[1]}.{fw[2]}")
-        except Exception as e:
-            logger.error(f"PN532 no disponible: {e}")
+            self._ser = serial.Serial(
+                port      = ESP32_PORT,
+                baudrate  = ESP32_BAUD,
+                timeout   = 1.0,
+            )
+            time.sleep(2)  # esperar boot del ESP32
+            # Limpiar buffer de arranque
+            self._ser.reset_input_buffer()
+            # Verificar conexión
+            self._ser.write(b"PING\n")
+            resp = self._ser.readline().decode("utf-8", errors="ignore").strip()
+            if "PONG" in resp:
+                log.info(f"ESP32 conectado en {ESP32_PORT}")
+            else:
+                log.warning(f"ESP32 no respondió PING (resp: {resp!r})")
+        except serial.SerialException as exc:
+            log.error(f"No se pudo abrir {ESP32_PORT}: {exc}")
+            self._ser = None
 
-    def read_uid(self, timeout: float = 1.0) -> bytes | None:
-        if not self.pn532:
-            return None
-        try:
-            uid = self.pn532.read_passive_target(timeout=timeout)
-            if uid:
-                hex_uid = uid.hex().upper()
-                logger.info(f"UID leído: {hex_uid}")
-                event_bus.publish('rfid.uid_read', {
-                    'uid':  hex_uid,
-                    'raw':  list(uid),
-                    'type': 'MIFARE_CLASSIC'
-                })
-            return uid
-        except Exception as e:
-            logger.error(f"Error leyendo UID: {e}")
+    @property
+    def connected(self) -> bool:
+        return self._ser is not None and self._ser.is_open
+
+    def read_once(self) -> Optional[dict]:
+        """
+        Intenta leer una tarjeta. Retorna dict con uid/source/type o None.
+        Bloqueante hasta timeout (1s por defecto del serial).
+        """
+        if not self.connected:
+            self._connect()
             return None
 
-    def read_block(self, block_number: int, key: bytes = b'\xFF\xFF\xFF\xFF\xFF\xFF') -> bytes | None:
-        if not self.pn532:
-            return None
         try:
-            uid = self.read_uid(timeout=0.5)
+            line = self._ser.readline().decode("utf-8", errors="ignore").strip()
+            if not line:
+                return None
+
+            data = json.loads(line)
+
+            # Solo procesar eventos de SCAN
+            if data.get("event") != "SCAN":
+                return None
+
+            uid = data.get("uid", "")
             if not uid:
                 return None
-            authenticated = self.pn532.mifare_classic_authenticate_block(
-                uid, block_number, 0x60, key
-            )
-            if not authenticated:
-                logger.warning(f"Auth fallida bloque {block_number}")
+
+            # Anti-rebote: mismo UID en menos de cooldown
+            now = time.time()
+            if uid == self._last_uid and (now - self._last_time) < self._cooldown:
                 return None
-            data = self.pn532.mifare_classic_read_block(block_number)
-            logger.debug(f"Bloque {block_number}: {data.hex()}")
-            return data
-        except Exception as e:
-            logger.error(f"Error leyendo bloque {block_number}: {e}")
+
+            self._last_uid  = uid
+            self._last_time = now
+
+            return {
+                "uid":    uid,
+                "source": data.get("source", "UNKNOWN"),
+                "type":   self._detect_type(data.get("source", "")),
+                "authorized": data.get("authorized", False),
+                "raw":    data,
+            }
+
+        except json.JSONDecodeError:
+            pass  # línea de debug del ESP32, ignorar
+        except serial.SerialException as exc:
+            log.error(f"Error serial: {exc}")
+            self._ser = None
+        return None
+
+    def _detect_type(self, source: str) -> str:
+        if source == "PN532":
+            return "MIFARE/NFC (13.56 MHz)"
+        if source == "RC522":
+            return "RFID (125 kHz)"
+        return "UNKNOWN"
+
+    def send_command(self, cmd: str) -> Optional[dict]:
+        """Envía un comando al ESP32 y espera respuesta JSON."""
+        if not self.connected:
+            return None
+        try:
+            self._ser.reset_input_buffer()
+            self._ser.write(f"{cmd}\n".encode())
+            resp = self._ser.readline().decode("utf-8", errors="ignore").strip()
+            return json.loads(resp) if resp else None
+        except Exception as exc:
+            log.error(f"Error enviando comando {cmd!r}: {exc}")
             return None
 
-    def dump_card(self, key: bytes = b'\xFF\xFF\xFF\xFF\xFF\xFF') -> dict:
-        """Lee todos los bloques accesibles de una tarjeta MIFARE Classic 1K."""
-        blocks = {}
-        for block in range(64):
-            data = self.read_block(block, key)
-            if data:
-                blocks[block] = data.hex()
-        logger.info(f"Dump completo: {len(blocks)} bloques leídos")
-        event_bus.publish('rfid.dump_complete', {'blocks': blocks})
-        return blocks
+    def ping(self) -> bool:
+        r = self.send_command("PING")
+        return r is not None and r.get("event") == "PONG"
 
-    def is_available(self) -> bool:
-        return self.pn532 is not None
+    def get_status(self) -> Optional[dict]:
+        return self.send_command("STATUS")
+
+    def close(self):
+        if self._ser and self._ser.is_open:
+            self._ser.close()

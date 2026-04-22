@@ -65,3 +65,21 @@ SEVERITY_ORDER = {
     Severity.HIGH:     3,
     Severity.CRITICAL: 4,
 }
+# ─── OLED Display ─────────────────────────────────────────────────────────────
+OLED_ADDRESS = int(os.getenv("OLED_ADDRESS", "0x3C"), 16)
+
+# ─── Objeto config (alias del modulo) ─────────────────────────────────────────
+class config:
+    DEVICE_ID          = DEVICE_ID
+    DEVICE_NAME        = DEVICE_NAME
+    API_HOST           = API_HOST
+    API_PORT           = API_PORT
+    DB_PATH            = DB_PATH
+    SERVER_URL         = SERVER_URL
+    ESP32_PORT         = ESP32_PORT
+    ESP32_BAUD         = ESP32_BAUD
+    WIFI_IFACE_MONITOR = WIFI_IFACE_MONITOR
+    WIFI_IFACE_AP      = WIFI_IFACE_AP
+    LOG_LEVEL          = LOG_LEVEL
+    MODULES_ENABLED    = MODULES_ENABLED
+    OLED_ADDRESS       = OLED_ADDRESS

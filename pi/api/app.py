@@ -8,7 +8,8 @@ import json
 from flask import Flask, jsonify
 from flask_socketio import SocketIO
 from flask_cors import CORS
-
+from api.routes.rfid import rfid_bp
+app.register_blueprint(rfid_bp, url_prefix="/api")
 from config import API_HOST, API_PORT, API_DEBUG, SECRET_KEY
 from core.logger import get_logger
 from core.event_bus import bus

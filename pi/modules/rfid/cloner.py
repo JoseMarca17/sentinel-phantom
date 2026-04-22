@@ -1,64 +1,51 @@
 import time
 from core.logger import get_logger
-from core.event_bus import event_bus
 
-logger = get_logger('rfid.cloner')
+log = get_logger("module.rfid.cloner")
 
 class RFIDCloner:
     def __init__(self, reader):
         self.reader = reader
+        self.captured_data = None
 
-    def clone(self, source_blocks: dict, key: bytes = b'\xFF\xFF\xFF\xFF\xFF\xFF') -> bool:
-        """
-        Escribe los bloques leídos en una tarjeta destino.
-        Bloques de sector trailer (3, 7, 11...) se saltan para no brickear.
-        """
-        if not self.reader.pn532:
-            logger.error("PN532 no disponible para clonado")
-            return False
+    def capture_source(self, timeout=10.0):
+        log.info(f"Esperando tarjeta ORIGEN ({timeout}s)...")
+        start_time = time.time()
+        while (time.time() - start_time) < timeout:
+            res = self.reader.read_once()
+            if res:
+                uid = res['uid']
+                # Leemos el secreto del bloque 4
+                resp = self.reader.send_command("READ 4")
+                if resp and resp.get("event") == "READ_OK":
+                    self.captured_data = resp.get("content", "")
+                    log.info(f"Secreto capturado de {uid}: {self.captured_data}")
+                    return {"status": "SUCCESS", "data": self.captured_data}
+            time.sleep(0.1)
+        return {"status": "TIMEOUT", "msg": "No se detectó origen"}
 
-        start = time.time()
-        written = 0
-        failed  = 0
+    def write_to_destination(self, timeout=10.0):
+        if not self.captured_data:
+            return {"status": "ERROR", "msg": "No hay datos para clonar"}
+        
+        log.info(f"Esperando DESTINO para inyectar secreto: {self.captured_data}...")
+        start_time = time.time()
+        while (time.time() - start_time) < timeout:
+            res = self.reader.read_once()
+            if res:
+                # Escribimos el secreto robado en la nueva tarjeta
+                resp = self.reader.send_command(f"WRITE 4 {self.captured_data}")
+                if resp and resp.get("event") == "WRITE_OK":
+                    log.info("✅ Secreto inyectado con éxito.")
+                    return {"status": "SUCCESS", "msg": "Clonado de datos exitoso"}
+            time.sleep(0.1)
+        return {"status": "TIMEOUT", "msg": "No se detectó destino"}
 
-        uid = self.reader.read_uid(timeout=2.0)
-        if not uid:
-            logger.error("No se detectó tarjeta destino")
-            return False
-
-        for block_num, hex_data in source_blocks.items():
-            block_num = int(block_num)
-
-            # Saltar sector trailers
-            if (block_num + 1) % 4 == 0:
-                logger.debug(f"Saltando sector trailer bloque {block_num}")
-                continue
-
-            try:
-                data = bytes.fromhex(hex_data)
-                auth = self.reader.pn532.mifare_classic_authenticate_block(
-                    uid, block_num, 0x60, key
-                )
-                if not auth:
-                    logger.warning(f"Auth fallida en bloque {block_num}, saltando")
-                    failed += 1
-                    continue
-
-                self.reader.pn532.mifare_classic_write_block(block_num, data)
-                written += 1
-                logger.debug(f"Bloque {block_num} escrito OK")
-            except Exception as e:
-                logger.error(f"Error escribiendo bloque {block_num}: {e}")
-                failed += 1
-
-        elapsed = round(time.time() - start, 2)
-        success = failed == 0
-
-        event_bus.publish('rfid.clone_complete', {
-            'written': written,
-            'failed':  failed,
-            'elapsed': elapsed,
-            'success': success
-        })
-        logger.info(f"Clonado: {written} OK, {failed} errores, {elapsed}s")
-        return success
+    def full_clone_flow(self):
+        res_source = self.capture_source()
+        if res_source["status"] != "SUCCESS": return res_source
+        
+        log.info("¡Datos robados! CAMBIA LA TARJETA AHORA (3s)...")
+        time.sleep(3)
+        
+        return self.write_to_destination()

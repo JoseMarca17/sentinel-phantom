@@ -1,0 +1,635 @@
+2026-04-15 22:28:36  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-15 22:28:36  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-15 22:28:36  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-15 22:28:36  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-15 22:28:36  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-15 22:28:42  [WARNING ]  main                          WiFi module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-15 22:28:42  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-15 22:28:42  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-15 22:28:42  [INFO    ]  database.local                Sesión creada: b7496b38-7e4b-4f71-aefc-bc83a0789b8c
+2026-04-15 22:28:42  [INFO    ]  main                          Sesión creada: b7496b38-7e4b-4f71-aefc-bc83a0789b8c
+2026-04-15 22:28:42  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-15 22:28:42  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-15 22:28:42  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-15 22:28:42  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-15 22:28:42  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-15 22:28:42  [INFO    ]  main                            Módulos activos: []
+2026-04-15 22:28:42  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-15 22:28:42  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-15 22:28:43  [INFO    ]  api.app                       Flask app creada — API en http://0.0.0.0:5000/api
+2026-04-15 22:29:29  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-15 22:29:29  [INFO    ]  main                          Apagando módulos...
+2026-04-15 22:29:29  [INFO    ]  database.local                Sesión cerrada: b7496b38-7e4b-4f71-aefc-bc83a0789b8c
+2026-04-15 22:29:29  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-15 22:29:29  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-15 22:29:29  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-15 22:52:27  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-15 22:52:28  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-15 22:52:28  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-15 22:52:28  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-15 22:52:28  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-15 22:52:31  [WARNING ]  main                          WiFi module no disponible: cannot import name 'config' from 'config' (/home/phantomx/centinel-phantom/pi/config.py)
+2026-04-15 22:52:31  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-15 22:52:31  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-15 22:52:31  [INFO    ]  database.local                Sesión creada: 0930cf30-5685-482a-ae0b-74e3c14f9fd1
+2026-04-15 22:52:31  [INFO    ]  main                          Sesión creada: 0930cf30-5685-482a-ae0b-74e3c14f9fd1
+2026-04-15 22:52:31  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-15 22:52:31  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-15 22:52:31  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-15 22:52:31  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-15 22:52:31  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-15 22:52:31  [INFO    ]  main                            Módulos activos: []
+2026-04-15 22:52:31  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-15 22:52:32  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-15 22:52:32  [INFO    ]  api.app                       Flask app creada — API en http://0.0.0.0:5000/api
+2026-04-15 22:53:37  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-15 22:53:37  [INFO    ]  main                          Apagando módulos...
+2026-04-15 22:53:37  [INFO    ]  database.local                Sesión cerrada: 0930cf30-5685-482a-ae0b-74e3c14f9fd1
+2026-04-15 22:53:37  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-15 22:53:37  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-15 22:53:37  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-15 22:54:56  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-15 22:54:56  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-15 22:54:56  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-15 22:54:56  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-15 22:54:56  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-15 22:54:59  [WARNING ]  main                          WiFi module no disponible: cannot import name 'WiFiModule' from 'modules.wifi.wifi_module' (/home/phantomx/centinel-phantom/pi/modules/wifi/wifi_module.py)
+2026-04-15 22:54:59  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-15 22:54:59  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-15 22:55:00  [INFO    ]  database.local                Sesión creada: 4a8e645b-470c-48fe-a73b-2eb7ad7d87f7
+2026-04-15 22:55:00  [INFO    ]  main                          Sesión creada: 4a8e645b-470c-48fe-a73b-2eb7ad7d87f7
+2026-04-15 22:55:00  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-15 22:55:00  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-15 22:55:00  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-15 22:55:00  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-15 22:55:00  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-15 22:55:00  [INFO    ]  main                            Módulos activos: []
+2026-04-15 22:55:00  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-15 22:55:00  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-15 22:55:00  [INFO    ]  api.app                       Flask app creada — API en http://0.0.0.0:5000/api
+2026-04-15 22:55:19  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-15 22:55:19  [INFO    ]  main                          Apagando módulos...
+2026-04-15 22:55:19  [INFO    ]  database.local                Sesión cerrada: 4a8e645b-470c-48fe-a73b-2eb7ad7d87f7
+2026-04-15 22:55:19  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-15 22:55:19  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-15 22:55:19  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-15 22:57:36  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-15 22:57:36  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-15 22:57:37  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-15 22:57:37  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-15 22:57:37  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-15 22:57:40  [WARNING ]  main                          WiFi module no disponible: cannot import name 'WiFiModule' from 'modules.wifi.wifi_module' (/home/phantomx/centinel-phantom/pi/modules/wifi/wifi_module.py)
+2026-04-15 22:57:40  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-15 22:57:40  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-15 22:57:40  [INFO    ]  database.local                Sesión creada: da0b2f29-c29f-4f8b-b1cd-fe5926467706
+2026-04-15 22:57:40  [INFO    ]  main                          Sesión creada: da0b2f29-c29f-4f8b-b1cd-fe5926467706
+2026-04-15 22:57:40  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-15 22:57:40  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-15 22:57:40  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-15 22:57:40  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-15 22:57:40  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-15 22:57:40  [INFO    ]  main                            Módulos activos: []
+2026-04-15 22:57:40  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-15 22:57:41  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-15 22:57:41  [INFO    ]  api.app                       Flask app creada — API en http://0.0.0.0:5000/api
+2026-04-15 22:58:02  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-15 22:58:02  [INFO    ]  main                          Apagando módulos...
+2026-04-15 22:58:02  [INFO    ]  database.local                Sesión cerrada: da0b2f29-c29f-4f8b-b1cd-fe5926467706
+2026-04-15 22:58:02  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-15 22:58:02  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-15 22:58:02  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-15 22:58:05  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-15 22:58:50  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-15 22:58:50  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-15 22:58:50  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-15 22:58:50  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-15 22:58:50  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-15 23:03:01  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-15 23:03:01  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-15 23:03:02  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-15 23:03:02  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-15 23:03:02  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-16 20:02:55  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-16 20:02:55  [INFO    ]  wifi.detector                 Iniciando en wlan1 | Canales [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+2026-04-16 20:22:41  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 Activando modo monitor en wlan1...
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 Modo monitor activo.
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 Iniciando en wlan1 | Canales [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 RED | F.Guti_Cas                98:DA:C4:E4:78:BC  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 RED | Silvita                   90:50:CA:02:E3:F8  CH:1  {'WPA2/PSK'}
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 RED | Band 5                    FC:AE:34:71:82:77  CH:1  {'WPA2/PSK'}
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 RED | Andres                    3A:9D:C3:00:71:B7  CH:1  {'WPA2/PSK'}
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 RED | Oswald_Drumss             CC:75:E2:B5:AA:73  CH:1  {'WPA2/PSK'}
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 RED | Flia Saravia              2C:00:AB:79:CC:84  CH:1  {'WPA2/PSK'}
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 RED | Flia. Berdeja_plus        9C:9D:7E:29:19:E1  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 RED | Chuflaiz Room             B4:0F:3B:D6:1B:30  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:41  [INFO    ]  wifi.detector                 RED | Joan                      2C:00:AB:79:A0:00  CH:1  {'WPA2/PSK'}
+2026-04-16 20:22:42  [INFO    ]  wifi.detector                 RED | Pasillo comunidad         34:60:F9:DC:98:D8  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:42  [INFO    ]  wifi.detector                 RED | ZTE-ebae76                78:31:2B:EB:AE:76  CH:2  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:43  [INFO    ]  wifi.detector                 RED | AXS_2.4G_2upmGt           24:D3:F2:D7:25:A6  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:44  [INFO    ]  wifi.detector                 RED | ZTE-ebe4af                B8:05:AB:EB:E4:AF  CH:2  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:51  [INFO    ]  wifi.detector                 RED | Huawei                    50:46:4A:1C:77:78  CH:5  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:54  [INFO    ]  wifi.detector                 RED | Tenda_A5A318              08:40:F3:A5:A3:18  CH:6  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:54  [INFO    ]  wifi.detector                 RED | ALECITA                   30:C5:0F:14:98:7E  CH:5  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:57  [INFO    ]  wifi.detector                 RED | FLIA.TELLERIA             C0:7C:D1:76:33:C8  CH:6  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:57  [INFO    ]  wifi.detector                 RED | Iturralde                 2C:00:AB:79:98:A5  CH:6  {'WPA2/PSK'}
+2026-04-16 20:22:57  [INFO    ]  wifi.detector                 RED | FERRERO3                  74:85:2A:73:9F:08  CH:6  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:57  [INFO    ]  wifi.detector                 RED | FUENTES                   D4:3F:CB:57:3D:3F  CH:6  {'WPA2/PSK'}
+2026-04-16 20:22:58  [INFO    ]  wifi.detector                 RED | Familia Portillo-10       00:71:C2:C1:38:78  CH:6  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:22:58  [INFO    ]  wifi.detector                 RED | Flia Barrios              BC:4D:FB:9F:7A:F8  CH:7  {'WPA2/PSK'}
+2026-04-16 20:22:59  [INFO    ]  wifi.detector                 RED | HALL9000                  84:D8:1B:C9:F2:1A  CH:6  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:06  [INFO    ]  wifi.detector                 RED | AXS_2.4G_rAYAfK           5C:A4:F4:C9:5B:8C  CH:9  {'WPA2/PSK'}
+2026-04-16 20:23:09  [INFO    ]  wifi.detector                 RED | Fito                      C8:52:61:C3:39:FF  CH:11  {'WPA2/PSK'}
+2026-04-16 20:23:09  [INFO    ]  wifi.detector                 RED | RV                        D0:EF:C1:93:C9:1C  CH:10  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:09  [INFO    ]  wifi.detector                 RED | A y P                     50:75:F1:D8:E5:C9  CH:11  {'WPA2/PSK'}
+2026-04-16 20:23:09  [INFO    ]  wifi.detector                 RED | jazoli                    70:54:25:57:3D:C5  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:12  [INFO    ]  wifi.detector                 RED | F.Portillo                A0:3E:1A:8A:B8:60  CH:11  {'WPA2/PSK'}
+2026-04-16 20:23:12  [INFO    ]  wifi.detector                 RED | FAMILIA POZO              A0:E7:AE:C2:E5:4B  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:12  [INFO    ]  wifi.detector                 RED | FLIA. VELASQUEZ           2C:00:AB:7B:36:05  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:12  [INFO    ]  wifi.detector                 RED | ENTEL-2.4G                28:53:4E:D0:D5:6C  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:12  [INFO    ]  wifi.detector                 RED | Buenaverez_plus           50:D2:F5:4D:7D:4B  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:13  [INFO    ]  wifi.detector                 RED | SebastianJ                F8:1D:0F:EA:D0:08  CH:11  {'WPA2/PSK'}
+2026-04-16 20:23:15  [INFO    ]  wifi.detector                 RED | TAMES                     A4:43:8C:F9:5C:60  CH:11  {'WPA2/PSK'}
+2026-04-16 20:23:16  [INFO    ]  wifi.detector                 RED | APAZA                     2C:B6:C2:BD:7E:A9  CH:11  {'WPA2/PSK'}
+2026-04-16 20:23:23  [INFO    ]  wifi.detector                 RED | CASA M2                   0C:80:63:2A:EE:3C  CH:3  {'WPA2/PSK'}
+2026-04-16 20:23:32  [INFO    ]  wifi.detector                 RED | Familia Portillo-10       4C:C6:4C:A7:D6:A5  CH:6  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:33  [INFO    ]  wifi.detector                 RED | Si                        2A:63:5F:23:2E:FF  CH:6  {'WPA2/PSK'}
+2026-04-16 20:23:33  [INFO    ]  wifi.detector                 RED | Carlitos                  74:85:2A:A5:04:98  CH:6  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:40  [INFO    ]  wifi.detector                 RED | Tibus                     E8:6E:44:3A:E3:0A  CH:8  {'WPA2/PSK'}
+2026-04-16 20:23:40  [INFO    ]  wifi.detector                 RED | AXS_2.4G_u9NCfk           FC:40:09:1B:F3:D8  CH:8  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:41  [INFO    ]  wifi.detector                 RED | Tenda_EE6B20              D8:32:14:EE:6B:21  CH:9  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:50  [INFO    ]  wifi.detector                 RED | M y M                     28:53:4E:F1:D0:64  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:23:51  [INFO    ]  wifi.detector                 RED | FAMILIA ALIAGA            F8:63:D9:9B:7F:91  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:24:06  [INFO    ]  wifi.detector                 RED | Flia. Alvarez             50:75:F1:E9:D2:F7  CH:6  {'WPA2/PSK'}
+2026-04-16 20:24:12  [INFO    ]  wifi.detector                 RED | FAM CALDERON              FC:AE:34:72:95:7E  CH:1  {'WPA2/PSK'}
+2026-04-16 20:24:16  [INFO    ]  wifi.detector                 RED | AXS_2.4G_kUwcCX           5C:A4:F4:C9:3D:C2  CH:9  {'WPA2/PSK'}
+2026-04-16 20:24:24  [INFO    ]  wifi.detector                 RED | Barrios                   F8:D1:11:37:50:8E  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:25:01  [INFO    ]  wifi.detector                 RED | Flia. Caracila            78:31:2B:EC:39:7E  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:25:02  [INFO    ]  wifi.detector                 RED | LUISITA-B                 84:D8:1B:C9:EA:70  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:25:33  [INFO    ]  wifi.detector                 RED | Princesita anghy          C8:3D:D4:D1:2A:00  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 20:25:34  [INFO    ]  wifi.detector                 RED | CRUZ                      74:85:2A:E5:75:08  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 21:12:08  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-16 21:12:08  [INFO    ]  wifi.attacker                 Iniciando WPS scan...
+2026-04-16 21:12:38  [ERROR   ]  wifi.attacker                 WPS scan timeout
+2026-04-16 21:14:18  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-16 21:14:18  [INFO    ]  wifi.detector                 Activando modo monitor en wlan1...
+2026-04-16 21:14:18  [INFO    ]  wifi.detector                 Modo monitor activo.
+2026-04-16 21:14:18  [INFO    ]  wifi.detector                 Iniciando en wlan1 | Canales [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+2026-04-16 21:14:18  [INFO    ]  wifi.detector                 RED | Pasillo comunidad         34:60:F9:DC:98:D8  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 21:14:18  [INFO    ]  wifi.detector                 RED | F.Guti_Cas                98:DA:C4:E4:78:BC  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 21:14:18  [INFO    ]  wifi.detector                 RED | Band 5                    FC:AE:34:71:82:77  CH:1  {'WPA2/PSK'}
+2026-04-16 21:14:18  [INFO    ]  wifi.detector                 RED | Andres                    3A:9D:C3:00:71:B7  CH:1  {'WPA2/PSK'}
+2026-04-16 21:14:18  [INFO    ]  wifi.detector                 RED | Flia. Berdeja_plus        9C:9D:7E:29:19:E1  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 21:14:18  [INFO    ]  wifi.detector                 RED | Joan                      2C:00:AB:79:A0:00  CH:1  {'WPA2/PSK'}
+2026-04-16 21:14:18  [INFO    ]  wifi.detector                 RED | Oswald_Drumss             CC:75:E2:B5:AA:73  CH:1  {'WPA2/PSK'}
+2026-04-16 21:14:18  [INFO    ]  wifi.detector                 RED | FAM CALDERON              FC:AE:34:72:95:7E  CH:1  {'WPA2/PSK'}
+2026-04-16 21:14:19  [INFO    ]  wifi.detector                 RED | Chuflaiz Room             B4:0F:3B:D6:1B:30  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 21:14:19  [INFO    ]  wifi.detector                 RED | Flia. Caracila            78:31:2B:EC:39:7E  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 21:14:19  [INFO    ]  wifi.detector                 RED | Sebas                     08:40:F3:A5:AD:80  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 21:14:20  [INFO    ]  wifi.detector                 RED | Flia Saravia              2C:00:AB:79:CC:84  CH:1  {'WPA2/PSK'}
+2026-04-16 21:14:23  [INFO    ]  wifi.detector                 RED | Yanmitta                  62:E7:DC:E6:97:3C  CH:2  {'WPA2/PSK'}
+2026-04-16 21:14:23  [INFO    ]  wifi.detector                 RED | ZTE-ebae76                78:31:2B:EB:AE:76  CH:2  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 21:14:23  [INFO    ]  wifi.detector                 RED | ZTE-ebe4af                B8:05:AB:EB:E4:AF  CH:2  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 21:14:25  [INFO    ]  wifi.detector                 RED | vw-40068                  50:78:B3:BD:AA:60  CH:3  {'WPA2/PSK'}
+2026-04-16 21:14:25  [INFO    ]  wifi.detector                 RED | CASA M2                   0C:80:63:2A:EE:3C  CH:3  {'WPA2/PSK'}
+2026-04-16 21:14:27  [INFO    ]  wifi.detector                 RED | red rodriguez             50:D2:F5:EC:DE:D9  CH:3  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-16 21:14:33  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-16 21:14:33  [INFO    ]  wifi.attacker                 Iniciando WPS scan...
+2026-04-16 21:15:03  [ERROR   ]  wifi.attacker                 WPS scan timeout
+2026-04-16 21:19:38  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-16 21:19:38  [INFO    ]  wifi.attacker                 Iniciando WPS scan...
+2026-04-16 21:20:08  [ERROR   ]  wifi.attacker                 WPS scan timeout
+2026-04-16 21:30:44  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-16 21:30:44  [INFO    ]  wifi.attacker                 Iniciando WPS scan...
+2026-04-16 21:31:44  [ERROR   ]  wifi.attacker                 WPS scan timeout
+2026-04-16 21:44:19  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-16 21:44:19  [INFO    ]  wifi.attacker                 Iniciando WPS scan...
+2026-04-16 21:45:19  [ERROR   ]  wifi.attacker                 WPS scan timeout
+2026-04-16 21:57:45  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-16 21:57:45  [INFO    ]  wifi.attacker                 Iniciando WPS scan en tiempo real sobre wlan1...
+2026-04-16 21:58:39  [INFO    ]  wifi.attacker                 WPS scan completo: 35 redes encontradas
+2026-04-17 01:30:00  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-17 01:30:05  [INFO    ]  wifi.module                   Iniciando modulo WiFi...
+2026-04-17 01:30:05  [INFO    ]  wifi.detector                 Activando modo monitor en wlan1...
+2026-04-17 01:30:05  [INFO    ]  wifi.module                   Modulo WiFi activo.
+2026-04-17 01:30:05  [INFO    ]  wifi.detector                 Modo monitor activo.
+2026-04-17 01:30:05  [INFO    ]  wifi.detector                 Iniciando en wlan1 | Canales [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+2026-04-17 01:30:05  [INFO    ]  wifi.detector                 RED | Flia Saravia              2C:00:AB:79:CC:84  CH:1  {'WPA2/PSK'}
+2026-04-17 01:30:05  [INFO    ]  wifi.detector                 RED | Silvita                   90:50:CA:02:E3:F8  CH:1  {'WPA2/PSK'}
+2026-04-17 01:30:05  [INFO    ]  wifi.detector                 RED | Chuflaiz Room             B4:0F:3B:D6:1B:30  CH:1  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:05  [INFO    ]  wifi.detector                 RED | Joan                      2C:00:AB:79:A0:00  CH:1  {'WPA2/PSK'}
+2026-04-17 01:30:05  [INFO    ]  wifi.detector                 RED | Band 5                    FC:AE:34:71:82:77  CH:1  {'WPA2/PSK'}
+2026-04-17 01:30:06  [INFO    ]  wifi.detector                 RED | Oswald_Drumss             CC:75:E2:B5:AA:73  CH:1  {'WPA2/PSK'}
+2026-04-17 01:30:06  [INFO    ]  wifi.detector                 RED | Pasillo comunidad         34:60:F9:DC:98:D8  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 01:30:06  [INFO    ]  wifi.detector                 RED | Flia. Caracila            78:31:2B:EC:39:7E  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 01:30:07  [INFO    ]  wifi.detector                 RED | LUISITA-B                 84:D8:1B:C9:EA:70  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 01:30:08  [INFO    ]  wifi.detector                 RED | Flia. Berdeja_plus        9C:9D:7E:29:19:E1  CH:1  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:09  [INFO    ]  wifi.detector                 RED | ZTE-ebae76                78:31:2B:EB:AE:76  CH:2  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 01:30:09  [INFO    ]  wifi.detector                 RED | ZTE-ebe4af                B8:05:AB:EB:E4:AF  CH:2  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 01:30:09  [INFO    ]  wifi.detector                 RED | Limachi Room              24:2F:D0:EF:9B:54  CH:2  {'WPA2/PSK'}
+2026-04-17 01:30:15  [INFO    ]  wifi.detector                 RED | AXS_2.4G_2upmGt           24:D3:F2:D7:25:A6  CH:4  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:15  [INFO    ]  wifi.detector                 RED | ALECITA                   30:C5:0F:14:98:7E  CH:5  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 01:30:17  [INFO    ]  wifi.detector                 RED | Huawei                    50:46:4A:1C:77:78  CH:5  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 01:30:17  [INFO    ]  wifi.detector                 RED | Tenda_A5A318              08:40:F3:A5:A3:18  CH:6  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:18  [INFO    ]  wifi.detector                 RED | FUENTES                   D4:3F:CB:57:3D:3F  CH:6  {'WPA2/PSK'}
+2026-04-17 01:30:19  [INFO    ]  wifi.detector                 RED | FLIA.TELLERIA             C0:7C:D1:76:33:C8  CH:6  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:20  [INFO    ]  wifi.detector                 RED | FERRERO3                  74:85:2A:73:9F:08  CH:6  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:20  [INFO    ]  wifi.detector                 RED | Familia Portillo-10       00:71:C2:C1:38:78  CH:6  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:20  [INFO    ]  wifi.detector                 RED | Iturralde                 2C:00:AB:79:98:A5  CH:6  {'WPA2/PSK'}
+2026-04-17 01:30:21  [INFO    ]  wifi.detector                 RED | Andres                    3A:9D:C3:00:71:B7  CH:6  {'WPA2/PSK'}
+2026-04-17 01:30:21  [INFO    ]  wifi.detector                 RED | HALL9000                  84:D8:1B:C9:F2:1A  CH:6  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 01:30:21  [INFO    ]  wifi.detector                 RED | Carlitos                  74:85:2A:A5:04:98  CH:6  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:21  [INFO    ]  wifi.detector                 RED | Si                        2A:63:5F:23:2E:FF  CH:6  {'WPA2/PSK'}
+2026-04-17 01:30:21  [INFO    ]  wifi.detector                 RED | Huawei Y9                 94:8F:CF:91:A2:80  CH:6  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:22  [INFO    ]  wifi.detector                 RED | Familia Portillo-10       4C:C6:4C:A7:D6:A5  CH:6  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:24  [INFO    ]  wifi.detector                 RED | Flia Barrios              BC:4D:FB:9F:7A:F8  CH:7  {'WPA2/PSK'}
+2026-04-17 01:30:27  [INFO    ]  wifi.detector                 RED | AXS_2.4G_u9NCfk           FC:40:09:1B:F3:D8  CH:8  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:27  [INFO    ]  wifi.detector                 RED | Tibus                     E8:6E:44:3A:E3:0A  CH:8  {'WPA2/PSK'}
+2026-04-17 01:30:30  [INFO    ]  wifi.detector                 RED | AXS_2.4G_rAYAfK           5C:A4:F4:C9:5B:8C  CH:9  {'WPA2/PSK'}
+2026-04-17 01:30:30  [INFO    ]  wifi.detector                 RED | Tenda_EE6B20              D8:32:14:EE:6B:21  CH:9  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:33  [INFO    ]  wifi.detector                 RED | Fito                      C8:52:61:C3:39:FF  CH:11  {'WPA2/PSK'}
+2026-04-17 01:30:33  [INFO    ]  wifi.detector                 RED | jazoli                    70:54:25:57:3D:C5  CH:11  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:33  [INFO    ]  wifi.detector                 RED | RV                        D0:EF:C1:93:C9:1C  CH:10  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:34  [INFO    ]  wifi.detector                 RED | A y P                     50:75:F1:D8:E5:C9  CH:11  {'WPA2/PSK'}
+2026-04-17 01:30:35  [INFO    ]  wifi.detector                 RED | FAMILIA POZO              A0:E7:AE:C2:E5:4B  CH:11  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:36  [INFO    ]  wifi.detector                 RED | TAMES                     A4:43:8C:F9:5C:60  CH:11  {'WPA2/PSK'}
+2026-04-17 01:30:36  [INFO    ]  wifi.detector                 RED | FAMILIA ALIAGA            F8:63:D9:9B:7F:91  CH:11  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:36  [INFO    ]  wifi.detector                 RED | F.Portillo                A0:3E:1A:8A:B8:60  CH:11  {'WPA2/PSK'}
+2026-04-17 01:30:36  [INFO    ]  wifi.detector                 RED | APOLO EL GORDO            2C:00:AB:7A:7F:AD  CH:11  {'WPA2/PSK'}
+2026-04-17 01:30:36  [INFO    ]  wifi.detector                 RED | FLIA. LAURA               70:DF:F7:D1:39:3B  CH:11  {'WPA2/PSK'}
+2026-04-17 01:30:36  [INFO    ]  wifi.detector                 RED | FLIA. VELASQUEZ           2C:00:AB:7B:36:05  CH:11  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:30:37  [INFO    ]  wifi.detector                 RED | Jhon Ramon                70:54:25:68:23:AF  CH:11  {'WPA2/PSK'}
+2026-04-17 01:30:37  [INFO    ]  wifi.detector                 RED | SebastianJ                F8:1D:0F:EA:D0:08  CH:11  {'WPA2/PSK'}
+2026-04-17 01:30:41  [INFO    ]  wifi.detector                 RED | F.Guti_Cas                98:DA:C4:E4:78:BC  CH:1  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 01:30:46  [INFO    ]  wifi.detector                 RED | CASA M2                   0C:80:63:2A:EE:3C  CH:3  {'WPA2/PSK'}
+2026-04-17 01:31:11  [INFO    ]  wifi.detector                 RED | Buenaverez_plus           50:D2:F5:4D:7D:4B  CH:11  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:31:14  [INFO    ]  wifi.detector                 RED | CRUZ                      74:85:2A:E5:75:08  CH:11  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:31:30  [INFO    ]  wifi.detector                 RED | Flia. Alvarez             50:75:F1:E9:D2:F7  CH:6  {'WPA2/PSK'}
+2026-04-17 01:31:46  [INFO    ]  wifi.detector                 RED | ENTEL-2.4G                28:53:4E:D0:D5:6C  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 01:31:47  [INFO    ]  wifi.detector                 RED | Flia Limachi              D8:47:32:05:2A:2F  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 01:31:55  [INFO    ]  wifi.detector                 RED | red rodriguez             50:D2:F5:EC:DE:D9  CH:3  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-17 01:32:11  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-17 01:32:11  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-17 01:32:11  [INFO    ]  wifi.module                   Modulo WiFi detenido.
+2026-04-17 07:48:50  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-17 07:48:54  [INFO    ]  wifi.module                   Iniciando modulo WiFi...
+2026-04-17 07:48:54  [INFO    ]  wifi.detector                 Activando modo monitor en wlan1...
+2026-04-17 07:48:54  [INFO    ]  wifi.module                   Modulo WiFi activo.
+2026-04-17 07:48:54  [INFO    ]  wifi.detector                 Modo monitor activo.
+2026-04-17 07:48:54  [INFO    ]  wifi.detector                 Iniciando en wlan1 | Canales [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+2026-04-17 07:48:54  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4E:14  CH:1  {'WPA2/PSK'}
+2026-04-17 07:48:55  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-17 07:48:55  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-17 07:48:55  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-17 07:48:55  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-17 07:48:55  [INFO    ]  wifi.detector                 RED | LUXOR                     A2:3E:1A:73:95:0E  CH:1  {'WPA2/PSK'}
+2026-04-17 07:48:55  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:E4  CH:1  {'WPA2/PSK'}
+2026-04-17 07:48:56  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:14  CH:1  {'WPA2/PSK'}
+2026-04-17 07:49:01  [INFO    ]  wifi.detector                 RED | EMI4.0                    60:32:B1:9A:75:8B  CH:3  {'WPA2/PSK'}
+2026-04-17 07:49:03  [INFO    ]  wifi.detector                 RED | MEGAS                     2E:A4:3C:33:ED:4B  CH:3  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 07:49:04  [INFO    ]  wifi.detector                 RED | JEF-COMERCIAL             60:A4:B7:EF:81:9A  CH:4  {'WPA2/PSK'}
+2026-04-17 07:49:04  [INFO    ]  wifi.detector                 RED |                           62:A4:B7:EF:81:9A  CH:4  {'WPA2/PSK'}
+2026-04-17 07:49:07  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:07  [INFO    ]  wifi.detector                 RED | VICERECTORADO             B0:A7:B9:3C:C6:5B  CH:5  {'WPA2/PSK'}
+2026-04-17 07:49:07  [INFO    ]  wifi.detector                 RED |                                92:06:C3:79:12:35  CH:5  {'WPA2/PSK'}
+2026-04-17 07:49:07  [INFO    ]  wifi.detector                 RED |                           C0:06:C3:79:12:33  CH:5  {'WPA2/PSK'}
+2026-04-17 07:49:08  [INFO    ]  wifi.detector                 RED |                                62:A7:B9:3C:C6:5D  CH:5  {'WPA2/PSK'}
+2026-04-17 07:49:09  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED | EST-UALP                  0A:7B:C8:EA:B0:E0  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1D:97:50  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1D:97:50  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1D:97:50  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1D:97:50  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:11  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4E:11  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:10  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:11  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:11  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:E0  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:11  [INFO    ]  wifi.detector                 RED |                           32:7B:C8:EA:B0:E0  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:11  [INFO    ]  wifi.detector                 RED | DOC-UALP                  02:7B:C8:EA:B0:E0  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:11  [INFO    ]  wifi.detector                 RED | DNA-LP                    1E:7B:C8:EA:B0:E0  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:11  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:11  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:12  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1D:97:50  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:12  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4E:11  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:12  [INFO    ]  wifi.detector                 RED | Redmi Note 12 Pro         9E:89:99:F7:8B:B2  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:13  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1D:97:50  CH:6  {'WPA2/PSK'}
+2026-04-17 07:49:15  [INFO    ]  wifi.detector                 RED | ASUS_K15                  C8:7F:54:00:22:30  CH:7  {'WPA2/PSK'}
+2026-04-17 07:49:18  [INFO    ]  wifi.detector                 RED | Wifi Casa                 80:AF:CA:58:ED:9C  CH:9  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 07:49:19  [INFO    ]  wifi.detector                 RED | EMI4.0                    60:A4:B7:EF:86:35  CH:9  {'WPA2/PSK'}
+2026-04-17 07:49:19  [INFO    ]  wifi.detector                 RED | VorakNet_2G               80:AF:CA:53:1C:30  CH:9  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 07:49:19  [INFO    ]  wifi.detector                 RED |                           82:AF:CA:63:1C:30  CH:9  {'WPA2/PSK'}
+2026-04-17 07:49:20  [INFO    ]  wifi.detector                 RED |                           62:A4:B7:EF:86:35  CH:9  {'WPA2/PSK'}
+2026-04-17 07:49:21  [INFO    ]  wifi.detector                 RED | TECNOLOGICO1              60:A4:B7:EF:86:3E  CH:9  {'WPA2/PSK'}
+2026-04-17 07:49:22  [INFO    ]  wifi.detector                 RED | HPC6DFE1                  02:22:02:CB:18:C5  CH:10  {'OPN'}
+2026-04-17 07:49:23  [INFO    ]  wifi.detector                 RED | LAB_REDES                 90:F6:52:A4:85:CF  CH:11  {'OPN'}
+2026-04-17 07:49:26  [INFO    ]  wifi.detector                 RED | DNA-LP                    1E:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:26  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:26  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:27  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:27  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:27  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:27  [INFO    ]  wifi.detector                 RED | EST-UALP                  0A:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:27  [INFO    ]  wifi.detector                 RED | UEBU                      AC:84:C6:6D:43:74  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-17 07:49:27  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:28  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:28  [INFO    ]  wifi.detector                 RED |                           32:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:28  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:28  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:29  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:29  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:29  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-17 07:49:31  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1E:4E:14  CH:1  {'WPA2/PSK'}
+2026-04-17 07:49:32  [INFO    ]  wifi.detector                 RED | EST-UALP                  0A:7B:C8:EA:B0:E4  CH:1  {'WPA2/PSK'}
+2026-04-17 07:49:47  [INFO    ]  wifi.detector                 RED | HP-Print-BB-LaserJet 1102 1C:3E:84:F7:91:BB  CH:6  {'OPN'}
+2026-04-17 07:49:55  [INFO    ]  wifi.detector                 RED |                           62:A4:B7:EF:86:3E  CH:9  {'WPA2/PSK'}
+2026-04-17 07:49:56  [INFO    ]  wifi.detector                 RED |                           62:A4:B7:EF:8D:28  CH:10  {'WPA2/PSK'}
+2026-04-17 07:49:58  [INFO    ]  wifi.detector                 RED |                           62:A4:B7:EF:86:D7  CH:10  {'WPA2/PSK'}
+2026-04-17 07:50:01  [INFO    ]  wifi.detector                 RED | DIRECT-UTFERCHOmsXB       3E:F8:62:77:77:66  CH:11  {'WPA2/PSK'}
+2026-04-17 07:50:01  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-17 07:50:04  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:14  CH:1  {'WPA2/PSK'}
+2026-04-17 07:50:05  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1E:4E:14  CH:1  {'WPA2/PSK'}
+2026-04-17 07:50:34  [INFO    ]  wifi.detector                 RED | DIRECT-3C-EPSON-1638E8    A6:D7:3C:16:B8:E8  CH:11  {'WPA2/PSK'}
+2026-04-17 07:50:37  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-17 07:50:44  [INFO    ]  wifi.detector                 RED | SOGEMSA                   D8:32:14:1A:9B:31  CH:3  {'WPA2/PSK'}
+2026-04-17 07:50:54  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-17 07:50:55  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-17 07:50:55  [INFO    ]  wifi.module                   Modulo WiFi detenido.
+2026-04-22 15:52:06  [INFO    ]  oled_display                  OLED inicializado
+2026-04-22 16:21:21  [ERROR   ]  module.rfid.reader            No se pudo abrir /dev/ttyUSB0: [Errno 16] could not open port /dev/ttyUSB0: [Errno 16] Device or resource busy: '/dev/ttyUSB0'
+2026-04-22 16:27:27  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 16:27:52  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 16:27:52  [INFO    ]  module.rfid.defense           Whitelist cargada: 0 UIDs
+2026-04-22 16:27:54  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 16:28:24  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 16:28:24  [INFO    ]  module.rfid.defense           Whitelist cargada: 0 UIDs
+2026-04-22 16:28:33  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 16:28:33  [INFO    ]  module.rfid.defense           Whitelist cargada: 0 UIDs
+2026-04-22 16:29:01  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 16:29:01  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 16:29:01  [INFO    ]  module.rfid                   Iniciando módulo 'rfid'...
+2026-04-22 16:29:03  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 16:29:03  [INFO    ]  module.rfid.defense           Whitelist cargada: 0 UIDs
+2026-04-22 16:29:03  [INFO    ]  module.rfid                   RFID module listo — sesión 734c1595
+2026-04-22 16:29:03  [INFO    ]  module.rfid                   Módulo 'rfid' RUNNING ✓
+2026-04-22 16:29:03  [INFO    ]  module.rfid                   RFID escaneando — acerca una tarjeta...
+2026-04-22 16:29:09  [INFO    ]  module.rfid                   [PN532] UID detectado: C31B6003 (MIFARE/NFC (13.56 MHz))
+2026-04-22 16:29:09  [ERROR   ]  module.rfid                   Error en ciclo RFID: FOREIGN KEY constraint failed
+2026-04-22 16:29:16  [INFO    ]  module.rfid                   [RC522] UID detectado: C0EFFB5F (RFID (125 kHz))
+2026-04-22 16:29:16  [ERROR   ]  module.rfid                   Error en ciclo RFID: FOREIGN KEY constraint failed
+2026-04-22 16:29:21  [INFO    ]  module.rfid                   Deteniendo módulo 'rfid'...
+2026-04-22 16:29:21  [INFO    ]  module.rfid                   RFID detenido — 2 scans, 0 alertas
+2026-04-22 16:29:21  [INFO    ]  module.rfid                   Módulo 'rfid' STOPPED
+2026-04-22 16:47:22  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 16:47:22  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 16:48:28  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 16:50:04  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 16:50:10  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 16:50:24  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 16:50:24  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 16:50:25  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-22 16:50:25  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-22 16:50:25  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-22 16:50:30  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-22 16:50:30  [WARNING ]  main                          WiFi module no disponible: No module named 'modules.wifi'
+2026-04-22 16:50:30  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 16:50:30  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 16:50:30  [INFO    ]  database.local                Sesión creada: 0beafd8e-de30-48b4-b225-2695ed100c31
+2026-04-22 16:50:30  [INFO    ]  main                          Sesión creada: 0beafd8e-de30-48b4-b225-2695ed100c31
+2026-04-22 16:50:30  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-22 16:50:30  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-22 16:50:30  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-22 16:50:30  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 16:50:30  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-22 16:50:30  [INFO    ]  main                            Módulos activos: []
+2026-04-22 16:50:30  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 16:51:12  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-22 16:51:12  [INFO    ]  main                          Apagando módulos...
+2026-04-22 16:51:12  [INFO    ]  database.local                Sesión cerrada: 0beafd8e-de30-48b4-b225-2695ed100c31
+2026-04-22 16:51:12  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-22 16:51:12  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-22 16:51:12  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-22 16:58:49  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 16:58:49  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 16:58:50  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-22 16:58:50  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-22 16:58:50  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-22 16:58:55  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-22 16:58:55  [WARNING ]  main                          WiFi module no disponible: No module named 'modules.wifi'
+2026-04-22 16:58:55  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 16:58:55  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 16:58:55  [INFO    ]  database.local                Sesión creada: 6b28725c-77b0-499f-8db6-9ec326deb6d7
+2026-04-22 16:58:55  [INFO    ]  main                          Sesión creada: 6b28725c-77b0-499f-8db6-9ec326deb6d7
+2026-04-22 16:58:56  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-22 16:58:56  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-22 16:58:56  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-22 16:58:56  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 16:58:56  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-22 16:58:56  [INFO    ]  main                            Módulos activos: []
+2026-04-22 16:58:56  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 17:04:28  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-22 17:04:28  [INFO    ]  main                          Apagando módulos...
+2026-04-22 17:04:28  [INFO    ]  database.local                Sesión cerrada: 6b28725c-77b0-499f-8db6-9ec326deb6d7
+2026-04-22 17:04:28  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-22 17:04:28  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-22 17:04:28  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-22 17:20:19  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:20:29  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:21:10  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:21:24  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:30:35  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 17:30:35  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 17:30:36  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-22 17:30:36  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-22 17:30:36  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-22 17:30:36  [WARNING ]  main                          OLED no disponible: Failed to add edge detection
+2026-04-22 17:30:36  [WARNING ]  main                          WiFi module no disponible: No module named 'modules.wifi'
+2026-04-22 17:30:36  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 17:30:36  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 17:30:36  [INFO    ]  database.local                Sesión creada: 6639a70d-5e78-46be-a32d-95574a4e7ae6
+2026-04-22 17:30:36  [INFO    ]  main                          Sesión creada: 6639a70d-5e78-46be-a32d-95574a4e7ae6
+2026-04-22 17:30:36  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-22 17:30:36  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-22 17:30:36  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-22 17:30:36  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 17:30:36  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-22 17:30:36  [INFO    ]  main                            Módulos activos: []
+2026-04-22 17:30:36  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 17:31:44  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-22 17:31:44  [INFO    ]  main                          Apagando módulos...
+2026-04-22 17:31:44  [INFO    ]  database.local                Sesión cerrada: 6639a70d-5e78-46be-a32d-95574a4e7ae6
+2026-04-22 17:31:44  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-22 17:31:44  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-22 17:31:44  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-22 17:31:53  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 17:31:53  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 17:31:54  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-22 17:31:54  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-22 17:31:54  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-22 17:31:54  [WARNING ]  main                          OLED no disponible: Failed to add edge detection
+2026-04-22 17:31:54  [WARNING ]  main                          WiFi module no disponible: No module named 'modules.wifi'
+2026-04-22 17:31:54  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 17:31:54  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 17:31:54  [INFO    ]  database.local                Sesión creada: 22aa6a33-4f99-4385-ab34-f61cfd1c8bf6
+2026-04-22 17:31:54  [INFO    ]  main                          Sesión creada: 22aa6a33-4f99-4385-ab34-f61cfd1c8bf6
+2026-04-22 17:31:54  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-22 17:31:54  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-22 17:31:54  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-22 17:31:54  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 17:31:54  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-22 17:31:54  [INFO    ]  main                            Módulos activos: []
+2026-04-22 17:31:54  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 17:34:09  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-22 17:34:09  [INFO    ]  main                          Apagando módulos...
+2026-04-22 17:34:09  [INFO    ]  database.local                Sesión cerrada: 22aa6a33-4f99-4385-ab34-f61cfd1c8bf6
+2026-04-22 17:34:09  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-22 17:34:09  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-22 17:34:09  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-22 17:35:02  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 17:35:02  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 17:35:02  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-22 17:35:02  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-22 17:35:02  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-22 17:35:03  [WARNING ]  main                          OLED no disponible: Failed to add edge detection
+2026-04-22 17:35:03  [WARNING ]  main                          WiFi module no disponible: No module named 'modules.wifi'
+2026-04-22 17:35:03  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 17:35:03  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 17:35:03  [INFO    ]  database.local                Sesión creada: dfe1aca5-1dba-4f6d-bd41-f2978d8eecfa
+2026-04-22 17:35:03  [INFO    ]  main                          Sesión creada: dfe1aca5-1dba-4f6d-bd41-f2978d8eecfa
+2026-04-22 17:35:03  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-22 17:35:03  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-22 17:35:03  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-22 17:35:03  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 17:35:03  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-22 17:35:03  [INFO    ]  main                            Módulos activos: []
+2026-04-22 17:35:03  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 17:36:20  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-22 17:36:20  [INFO    ]  main                          Apagando módulos...
+2026-04-22 17:36:20  [INFO    ]  database.local                Sesión cerrada: dfe1aca5-1dba-4f6d-bd41-f2978d8eecfa
+2026-04-22 17:36:20  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-22 17:36:20  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-22 17:36:20  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-22 17:37:09  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 17:37:09  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 17:37:11  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:37:11  [INFO    ]  module.rfid                   RFID module listo — sesión 6d778370
+2026-04-22 17:37:11  [INFO    ]  module.rfid                   RFID escaneando — acerca una tarjeta...
+2026-04-22 17:37:15  [INFO    ]  module.rfid                   [PN532] UID detectado: C0EFFB5F (MIFARE/NFC (13.56 MHz))
+2026-04-22 17:37:15  [INFO    ]  module.rfid                   Verificando firma digital para C0EFFB5F...
+2026-04-22 17:37:15  [ERROR   ]  module.rfid                   Error en ciclo RFID: FOREIGN KEY constraint failed
+2026-04-22 17:37:18  [INFO    ]  module.rfid                   [PN532] UID detectado: C31B6003 (MIFARE/NFC (13.56 MHz))
+2026-04-22 17:37:18  [INFO    ]  module.rfid                   Verificando firma digital para C31B6003...
+2026-04-22 17:37:18  [ERROR   ]  module.rfid                   Error en ciclo RFID: FOREIGN KEY constraint failed
+2026-04-22 17:37:29  [INFO    ]  module.rfid                   [PN532] UID detectado: C0EFFB5F (MIFARE/NFC (13.56 MHz))
+2026-04-22 17:37:29  [INFO    ]  module.rfid                   Verificando firma digital para C0EFFB5F...
+2026-04-22 17:37:29  [ERROR   ]  module.rfid                   Error en ciclo RFID: FOREIGN KEY constraint failed
+2026-04-22 17:37:31  [INFO    ]  module.rfid                   [PN532] UID detectado: C31B6003 (MIFARE/NFC (13.56 MHz))
+2026-04-22 17:37:31  [INFO    ]  module.rfid                   Verificando firma digital para C31B6003...
+2026-04-22 17:37:31  [ERROR   ]  module.rfid                   Error en ciclo RFID: FOREIGN KEY constraint failed
+2026-04-22 17:47:26  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:48:55  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:48:55  [INFO    ]  module.rfid.cloner            Esperando tarjeta origen (5.0s)...
+2026-04-22 17:49:01  [INFO    ]  module.rfid.cloner            UID Origen capturado: C31B6003
+2026-04-22 17:49:16  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:49:16  [INFO    ]  module.rfid.cloner            Esperando tarjeta origen (5.0s)...
+2026-04-22 17:49:18  [INFO    ]  module.rfid.cloner            UID Origen capturado: C31B6003
+2026-04-22 17:53:32  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:53:32  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (10.0s)...
+2026-04-22 17:53:34  [INFO    ]  module.rfid.cloner            UID Origen capturado: C31B6003
+2026-04-22 17:53:34  [INFO    ]  module.rfid.cloner            ¡Origen leído! Tienes 3 segundos para CAMBIAR la tarjeta...
+2026-04-22 17:53:37  [INFO    ]  module.rfid.cloner            Esperando tarjeta DESTINO para grabar C31B6003...
+2026-04-22 17:55:05  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:55:05  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (10.0s)...
+2026-04-22 17:55:08  [INFO    ]  module.rfid.cloner            UID Origen capturado: C0EFFB5F
+2026-04-22 17:55:08  [INFO    ]  module.rfid.cloner            ¡Origen leído! CAMBIA LA TARJETA AHORA...
+2026-04-22 17:55:11  [INFO    ]  module.rfid.cloner            Esperando tarjeta DESTINO para grabar C0EFFB5F...
+2026-04-22 17:55:11  [ERROR   ]  module.rfid.cloner            ❌ Fallo de autenticación o tarjeta no grabable
+2026-04-22 17:55:44  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:55:50  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:56:13  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:56:23  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:56:23  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (10.0s)...
+2026-04-22 17:56:24  [INFO    ]  module.rfid.cloner            UID Origen capturado: C0EFFB5F
+2026-04-22 17:56:24  [INFO    ]  module.rfid.cloner            ¡Origen leído! CAMBIA LA TARJETA AHORA...
+2026-04-22 17:56:27  [INFO    ]  module.rfid.cloner            Esperando tarjeta DESTINO para grabar C0EFFB5F...
+2026-04-22 17:56:28  [ERROR   ]  module.rfid.cloner            ❌ Fallo de autenticación o tarjeta no grabable
+2026-04-22 17:59:10  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:59:10  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (10.0s)...
+2026-04-22 17:59:11  [INFO    ]  module.rfid.cloner            Secreto capturado de C0EFFB5F: PHANTOM_SIG_2026
+2026-04-22 17:59:11  [INFO    ]  module.rfid.cloner            ¡Datos robados! CAMBIA LA TARJETA AHORA (3s)...
+2026-04-22 17:59:14  [INFO    ]  module.rfid.cloner            Esperando DESTINO para inyectar secreto: PHANTOM_SIG_2026...
+2026-04-22 17:59:15  [INFO    ]  module.rfid.cloner            ✅ Secreto inyectado con éxito.
+2026-04-22 17:59:31  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 17:59:31  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 17:59:31  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 17:59:32  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-22 17:59:32  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-22 17:59:32  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-22 17:59:32  [WARNING ]  main                          OLED no disponible: Failed to add edge detection
+2026-04-22 17:59:32  [WARNING ]  main                          WiFi module no disponible: No module named 'modules.wifi'
+2026-04-22 17:59:32  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 17:59:32  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 17:59:32  [INFO    ]  database.local                Sesión creada: ec350ee7-5fc2-44b8-af91-26a9fe7554c3
+2026-04-22 17:59:32  [INFO    ]  main                          Sesión creada: ec350ee7-5fc2-44b8-af91-26a9fe7554c3
+2026-04-22 17:59:32  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-22 17:59:32  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-22 17:59:32  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-22 17:59:32  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 17:59:32  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-22 17:59:32  [INFO    ]  main                            Módulos activos: []
+2026-04-22 17:59:32  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 18:00:04  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 18:00:22  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 18:00:22  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (10.0s)...
+2026-04-22 18:00:38  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 18:00:38  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (10.0s)...
+2026-04-22 18:00:40  [INFO    ]  module.rfid.cloner            Secreto capturado de C0EFFB5F: PHANTOM_SIG_2026
+2026-04-22 18:00:40  [INFO    ]  module.rfid.cloner            ¡Datos robados! CAMBIA LA TARJETA AHORA (3s)...
+2026-04-22 18:00:43  [INFO    ]  module.rfid.cloner            Esperando DESTINO para inyectar secreto: PHANTOM_SIG_2026...
+2026-04-22 18:00:43  [INFO    ]  module.rfid.cloner            ✅ Secreto inyectado con éxito.
+2026-04-22 18:01:15  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 18:01:15  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (10.0s)...
+2026-04-22 18:01:41  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 18:01:49  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 18:02:09  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 18:02:14  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-22 18:02:14  [INFO    ]  main                          Apagando módulos...
+2026-04-22 18:02:14  [INFO    ]  database.local                Sesión cerrada: ec350ee7-5fc2-44b8-af91-26a9fe7554c3
+2026-04-22 18:02:14  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-22 18:02:14  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-22 18:02:14  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-22 18:02:22  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 18:02:36  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 18:02:36  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (10.0s)...
+2026-04-22 18:02:38  [INFO    ]  module.rfid.cloner            Secreto capturado de C0EFFB5F: PHANTOM_SIG_2026
+2026-04-22 18:02:38  [INFO    ]  module.rfid.cloner            ¡Datos robados! CAMBIA LA TARJETA AHORA (3s)...
+2026-04-22 18:02:41  [INFO    ]  module.rfid.cloner            Esperando DESTINO para inyectar secreto: PHANTOM_SIG_2026...
+2026-04-22 18:02:41  [INFO    ]  module.rfid.cloner            ✅ Secreto inyectado con éxito.
+2026-04-22 18:02:48  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-22 18:16:19  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 18:16:19  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 18:16:21  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-22 18:16:21  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-22 18:16:21  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-22 18:16:21  [WARNING ]  main                          OLED no disponible: Failed to add edge detection
+2026-04-22 18:16:21  [WARNING ]  main                          WiFi module no disponible: No module named 'modules.wifi'
+2026-04-22 18:16:21  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 18:16:21  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 18:16:21  [INFO    ]  database.local                Sesión creada: b20974e7-9672-4edb-ae72-555db04a6d60
+2026-04-22 18:16:21  [INFO    ]  main                          Sesión creada: b20974e7-9672-4edb-ae72-555db04a6d60
+2026-04-22 18:16:21  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-22 18:16:21  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-22 18:16:21  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-22 18:16:21  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 18:16:21  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-22 18:16:21  [INFO    ]  main                            Módulos activos: []
+2026-04-22 18:16:21  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 18:16:39  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-22 18:16:39  [INFO    ]  main                          Apagando módulos...
+2026-04-22 18:16:39  [INFO    ]  database.local                Sesión cerrada: b20974e7-9672-4edb-ae72-555db04a6d60
+2026-04-22 18:16:39  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-22 18:16:39  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-22 18:16:39  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
