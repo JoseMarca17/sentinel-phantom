@@ -1,35 +1,31 @@
-export function formatDistanceToNow(isoString) {
-  const now = new Date();
-  const date = new Date(isoString);
-  const diffMs = now - date;
-  const diffSec = Math.floor(diffMs / 1000);
-
-  if (diffSec < 60) return `hace ${diffSec}s`;
-  const diffMin = Math.floor(diffSec / 60);
-  if (diffMin < 60) return `hace ${diffMin}m`;
-  const diffH = Math.floor(diffMin / 60);
-  return `hace ${diffH}h`;
+// utils/time.js
+export function fmtTime(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  return d.toLocaleTimeString('es-BO', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 }
-
-export function formatDateTime(isoString) {
-  const date = new Date(isoString);
-  return date.toLocaleString('es-BO', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
-  });
+export function fmtDate(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  return d.toLocaleDateString('es-BO', { day: '2-digit', month: '2-digit', year: '2-digit' });
 }
-
-export function formatTime(isoString) {
-  const date = new Date(isoString);
-  return date.toLocaleTimeString('es-BO', {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
-  });
+export function fmtRelative(iso) {
+  if (!iso) return '—';
+  const diff = Date.now() - new Date(iso).getTime();
+  const s = Math.floor(diff / 1000);
+  if (s < 60)   return `${s}s ago`;
+  if (s < 3600) return `${Math.floor(s/60)}m ago`;
+  return `${Math.floor(s/3600)}h ago`;
+}
+export function fmtUptime(seconds) {
+  if (!seconds) return '—';
+  const h = Math.floor(seconds/3600);
+  const m = Math.floor((seconds%3600)/60);
+  const s = Math.floor(seconds%60);
+  if (h > 0) return `${h}h ${m}m`;
+  if (m > 0) return `${m}m ${s}s`;
+  return `${s}s`;
+}
+export function nowStr() {
+  return new Date().toLocaleTimeString('es-BO', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 }

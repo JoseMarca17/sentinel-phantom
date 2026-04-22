@@ -1,45 +1,51 @@
+// components/layout/Topbar.jsx
 import { useState, useEffect } from 'react';
-import '../../styles/layout.css';
+import { useSocket } from '../../hooks/useSocket';
+import { nowStr } from '../../utils/time';
+import { mockSession } from '../../services/mockData';
 
-export default function Topbar({ title, subtitle, sessionId, children }) {
-  const [time, setTime] = useState('');
+const PAGE_LABELS = {
+  overview: 'Overview', alerts: 'Alertas de Seguridad',
+  devices: 'Dispositivos Detectados', events: 'Log de Eventos',
+  modules: 'Control de Módulos', reports: 'Reportes Forenses',
+};
+
+export default function Topbar({ page, onMenuClick }) {
+  const { connected, lastEvent } = useSocket();
+  const [clock, setClock] = useState(nowStr());
 
   useEffect(() => {
-    const tick = () => {
-      const now = new Date();
-      setTime(
-        now.toLocaleTimeString('es-BO', {
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-        })
-      );
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
+    const t = setInterval(() => setClock(nowStr()), 1000);
+    return () => clearInterval(t);
   }, []);
+
+  const sid = mockSession.id.slice(0,8).toUpperCase();
 
   return (
     <header className="topbar">
-      <div className="topbar-title">
-        {subtitle && (
-          <span style={{ color: 'var(--text-muted)', fontSize: 12, fontFamily: 'var(--font-mono)', letterSpacing: 2 }}>
-            {subtitle} /{' '}
-          </span>
-        )}
-        <span>{title}</span>
+      <button className="hamburger" onClick={onMenuClick}>☰</button>
+
+      <div>
+        <div className="topbar-title">{PAGE_LABELS[page] || page}</div>
+        <div className="topbar-path" style={{ fontSize:'0.62rem' }}>
+          SENTINEL PHANTOM / {page.toUpperCase()}
+        </div>
       </div>
 
-      <div className="topbar-actions">
-        {children}
-        {sessionId && (
-          <div className="topbar-session">
-            SES: {sessionId}
+      <div className="topbar-right">
+        {lastEvent && (
+          <div style={{ fontSize:'0.65rem', color:'var(--blue-bright)', maxWidth:200, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
+            ● {lastEvent.topic}
           </div>
         )}
-        <div className="topbar-time">{time}</div>
+        <div className="topbar-clock">{clock}</div>
+        <div className="topbar-session">SID:{sid}</div>
+        <div style={{ display:'flex', alignItems:'center', gap:5, fontSize:'0.68rem' }}>
+          <div style={{ width:6, height:6, borderRadius:'50%', background: connected ? 'var(--teal)' : 'var(--red)' }} />
+          <span style={{ color: connected ? 'var(--teal)' : 'var(--red)' }}>
+            {connected ? 'LIVE' : 'OFFLINE'}
+          </span>
+        </div>
       </div>
     </header>
   );

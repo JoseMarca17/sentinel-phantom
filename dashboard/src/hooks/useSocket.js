@@ -1,31 +1,22 @@
-import { useEffect, useRef, useCallback } from 'react';
+// hooks/useSocket.js
+import { useEffect, useRef, useState } from 'react';
 import { getSocket } from '../services/socket';
 
-export function useSocket(eventHandlers = {}) {
-  const socket = getSocket();
-  const handlersRef = useRef(eventHandlers);
-  handlersRef.current = eventHandlers;
+export function useSocket() {
+  const [connected, setConnected] = useState(false);
+  const [lastEvent, setLastEvent] = useState(null);
+  const socketRef = useRef(null);
 
   useEffect(() => {
-    const entries = Object.entries(handlersRef.current);
-    entries.forEach(([event, handler]) => {
-      socket.on(event, handler);
-    });
-
+    const s = getSocket();
+    socketRef.current = s;
+    s.on('connect',        () => setConnected(true));
+    s.on('disconnect',     () => setConnected(false));
+    s.on('phantom_event',  (e) => setLastEvent(e));
     return () => {
-      entries.forEach(([event, handler]) => {
-        socket.off(event, handler);
-      });
+      s.off('connect'); s.off('disconnect'); s.off('phantom_event');
     };
-  }, [socket]);
+  }, []);
 
-  const emit = useCallback((event, data) => {
-    socket.emit(event, data);
-  }, [socket]);
-
-  const isConnected = socket.connected;
-
-  return { emit, isConnected, socket };
+  return { connected, lastEvent, socket: socketRef.current };
 }
-
-export default useSocket;

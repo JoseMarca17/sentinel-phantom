@@ -1,65 +1,63 @@
-// Mock data para desarrollo sin hardware Pi
-// Reemplazar con llamadas reales a la API cuando la Pi esté disponible
+// services/mockData.js — datos de prueba mientras la Pi no esté conectada
 
-export const mockSystemStatus = {
-  pi_online: true,
-  uptime: '2h 34m',
-  cpu_temp: 58.3,
-  cpu_usage: 34,
-  ram_usage: 62,
-  session_id: 'SES-20260412-001',
-  session_start: '2026-04-12T08:00:00Z',
+export const mockStats = {
+  total_events: 1842,
+  total_alerts: 47,
+  total_devices: 134,
+  critical_alerts: 8,
 };
 
 export const mockModules = [
-  { name: 'wifi', label: 'WiFi Táctico', status: 'active', events_count: 47, icon: '📡' },
-  { name: 'bluetooth', label: 'Bluetooth TSCM', status: 'active', events_count: 12, icon: '🔵' },
-  { name: 'rfid', label: 'RFID/NFC', status: 'idle', events_count: 3, icon: '💳' },
-  { name: 'tscm', label: 'TSCM Espectro', status: 'active', events_count: 8, icon: '📻' },
-  { name: 'ir', label: 'Infrarrojo', status: 'idle', events_count: 1, icon: '🔴' },
-  { name: 'nrf24', label: 'nRF24 / Drones', status: 'scanning', events_count: 0, icon: '🚁' },
+  { name: 'wifi',      status: 'RUNNING', uptime: 3720, error_count: 0, enabled: true },
+  { name: 'bluetooth', status: 'RUNNING', uptime: 3700, error_count: 0, enabled: true },
+  { name: 'rfid',      status: 'STOPPED', uptime: null, error_count: 1, enabled: true },
+  { name: 'tscm',      status: 'RUNNING', uptime: 3680, error_count: 0, enabled: true },
+  { name: 'ir',        status: 'STOPPED', uptime: null, error_count: 0, enabled: true },
+  { name: 'nrf24',     status: 'RUNNING', uptime: 3650, error_count: 2, enabled: true },
 ];
 
 export const mockAlerts = [
-  { id: 1, level: 'critical', module: 'wifi', message: 'Evil Twin AP detectado: "RedMilitar_Guest"', timestamp: '2026-04-12T09:45:22Z', acked: false },
-  { id: 2, level: 'warning', module: 'bluetooth', message: 'Dispositivo BLE desconocido: AA:BB:CC:DD:EE:FF', timestamp: '2026-04-12T09:41:10Z', acked: false },
-  { id: 3, level: 'warning', module: 'tscm', message: 'Cámara IP oculta sospechosa en 2.4GHz (OUI: Hikvision)', timestamp: '2026-04-12T09:38:55Z', acked: false },
-  { id: 4, level: 'info', module: 'rfid', message: 'MIFARE Classic UID leído: 04:A3:B2:1C', timestamp: '2026-04-12T09:30:00Z', acked: true },
-  { id: 5, level: 'critical', module: 'wifi', message: 'Flood de deauth detectado (120 pkts/s) en canal 6', timestamp: '2026-04-12T09:22:11Z', acked: true },
-  { id: 6, level: 'info', module: 'nrf24', message: 'Señal 2.4GHz Nordic detectada — posible drone cercano', timestamp: '2026-04-12T09:15:00Z', acked: true },
-];
-
-export const mockEvents = [
-  { id: 101, type: 'deauth_detected', module: 'wifi', severity: 'high', data: { bssid: 'A0:B1:C2:D3:E4:F5', channel: 6, count: 120 }, timestamp: '2026-04-12T09:45:22Z' },
-  { id: 102, type: 'evil_twin', module: 'wifi', severity: 'critical', data: { ssid: 'RedMilitar_Guest', bssid: '00:11:22:33:44:55', signal: -62 }, timestamp: '2026-04-12T09:44:01Z' },
-  { id: 103, type: 'ble_device', module: 'bluetooth', severity: 'medium', data: { mac: 'AA:BB:CC:DD:EE:FF', rssi: -78, name: null }, timestamp: '2026-04-12T09:41:10Z' },
-  { id: 104, type: 'hidden_camera', module: 'tscm', severity: 'high', data: { oui: 'Hikvision', freq: '2437MHz', signal: -55 }, timestamp: '2026-04-12T09:38:55Z' },
-  { id: 105, type: 'rfid_read', module: 'rfid', severity: 'low', data: { uid: '04:A3:B2:1C', type: 'MIFARE Classic' }, timestamp: '2026-04-12T09:30:00Z' },
-  { id: 106, type: 'beacon_flood', module: 'wifi', severity: 'high', data: { count: 47, channel: 1 }, timestamp: '2026-04-12T09:28:00Z' },
-  { id: 107, type: 'wps_scan', module: 'wifi', severity: 'low', data: { aps_found: 3, wps_enabled: 2 }, timestamp: '2026-04-12T09:20:00Z' },
-  { id: 108, type: 'nrf24_signal', module: 'nrf24', severity: 'medium', data: { freq: '2450MHz', pattern: 'Nordic Enhanced Shockburst' }, timestamp: '2026-04-12T09:15:00Z' },
+  { id: 1, module: 'wifi',      alert_type: 'DEAUTH_DETECTED',    severity: 'CRITICAL', description: 'Ataque deauth detectado desde MAC A4:C3:F0:12:34:56', timestamp: new Date(Date.now()-120000).toISOString(), device_mac: 'A4:C3:F0:12:34:56', acknowledged: 0 },
+  { id: 2, module: 'wifi',      alert_type: 'EVIL_TWIN_DETECTED', severity: 'CRITICAL', description: 'Evil Twin detectado: SSID "EMI-WiFi" en canal 6',       timestamp: new Date(Date.now()-240000).toISOString(), device_mac: 'B8:27:EB:AA:BB:CC', acknowledged: 0 },
+  { id: 3, module: 'bluetooth', alert_type: 'UNKNOWN_DEVICE',     severity: 'HIGH',     description: 'Dispositivo BLE no autorizado: iPhone de [unknown]',    timestamp: new Date(Date.now()-600000).toISOString(), device_mac: 'DC:A6:32:11:22:33', acknowledged: 0 },
+  { id: 4, module: 'nrf24',     alert_type: 'DRONE_DETECTED',     severity: 'HIGH',     description: 'Señal RF de drone detectada en 2.4GHz',                 timestamp: new Date(Date.now()-900000).toISOString(), device_mac: null,               acknowledged: 0 },
+  { id: 5, module: 'tscm',      alert_type: 'HIDDEN_DEVICE',      severity: 'MEDIUM',   description: 'Posible cámara IP oculta: OUI Hikvision',              timestamp: new Date(Date.now()-1800000).toISOString(), device_mac: 'C8:02:8F:AA:BB:CC', acknowledged: 1 },
+  { id: 6, module: 'rfid',      alert_type: 'CLONE_ATTEMPT',      severity: 'MEDIUM',   description: 'Intento de clonado MIFARE Classic detectado',           timestamp: new Date(Date.now()-3600000).toISOString(), device_mac: null,               acknowledged: 1 },
+  { id: 7, module: 'wifi',      alert_type: 'BEACON_FLOOD',       severity: 'LOW',      description: 'Beacon flood: 248 SSIDs en 30s',                        timestamp: new Date(Date.now()-7200000).toISOString(), device_mac: '00:11:22:33:44:55', acknowledged: 1 },
 ];
 
 export const mockDevices = [
-  { id: 1, mac: 'A0:B1:C2:D3:E4:F5', type: 'wifi', vendor: 'Cisco', ssid: 'CorpNet-5G', first_seen: '2026-04-12T08:05:00Z', last_seen: '2026-04-12T09:45:22Z', trusted: false, threat_level: 'high' },
-  { id: 2, mac: 'AA:BB:CC:DD:EE:FF', type: 'bluetooth', vendor: 'Unknown', name: null, first_seen: '2026-04-12T09:40:00Z', last_seen: '2026-04-12T09:41:10Z', trusted: false, threat_level: 'medium' },
-  { id: 3, mac: 'B4:E6:2D:XX:XX:XX', type: 'wifi', vendor: 'Raspberry Pi', ssid: null, first_seen: '2026-04-12T08:00:00Z', last_seen: '2026-04-12T09:45:00Z', trusted: true, threat_level: 'none' },
-  { id: 4, mac: 'FC:EC:DA:XX:XX:XX', type: 'bluetooth', vendor: 'Apple', name: 'iPhone de Oficial', first_seen: '2026-04-12T08:30:00Z', last_seen: '2026-04-12T09:44:00Z', trusted: true, threat_level: 'none' },
-  { id: 5, mac: '00:11:22:33:44:55', type: 'wifi', vendor: 'TP-Link', ssid: 'RedMilitar_Guest', first_seen: '2026-04-12T09:43:00Z', last_seen: '2026-04-12T09:45:00Z', trusted: false, threat_level: 'critical' },
+  { id: 'd1', device_type: 'wifi',      mac: 'A4:C3:F0:12:34:56', vendor: 'Apple Inc.',       ssid: null,       signal_dbm: -62, threat_level: 'CRITICAL', last_seen: new Date(Date.now()-60000).toISOString() },
+  { id: 'd2', device_type: 'wifi',      mac: 'B8:27:EB:AA:BB:CC', vendor: 'Raspberry Pi Fdn', ssid: 'EMI-WiFi', signal_dbm: -45, threat_level: 'CRITICAL', last_seen: new Date(Date.now()-120000).toISOString() },
+  { id: 'd3', device_type: 'bluetooth', mac: 'DC:A6:32:11:22:33', vendor: 'Apple Inc.',       ssid: null,       signal_dbm: -78, threat_level: 'HIGH',     last_seen: new Date(Date.now()-300000).toISOString() },
+  { id: 'd4', device_type: 'wifi',      mac: '74:DA:38:55:66:77', vendor: 'TP-Link',          ssid: 'TP-LINK_5G', signal_dbm: -70, threat_level: 'LOW',   last_seen: new Date(Date.now()-600000).toISOString() },
+  { id: 'd5', device_type: 'bluetooth', mac: 'F8:1A:67:88:99:AA', vendor: 'Samsung',          ssid: null,       signal_dbm: -85, threat_level: 'INFO',    last_seen: new Date(Date.now()-900000).toISOString() },
+  { id: 'd6', device_type: 'wifi',      mac: 'C8:02:8F:AA:BB:CC', vendor: 'Hikvision',        ssid: null,       signal_dbm: -55, threat_level: 'MEDIUM',  last_seen: new Date(Date.now()-1200000).toISOString() },
 ];
 
-export const mockTimelineData = [
-  { time: '08:00', events: 2, alerts: 0 },
-  { time: '08:30', events: 5, alerts: 1 },
-  { time: '09:00', events: 8, alerts: 2 },
-  { time: '09:15', events: 15, alerts: 3 },
-  { time: '09:30', events: 12, alerts: 2 },
-  { time: '09:45', events: 22, alerts: 5 },
+export const mockEvents = [
+  { id: 1, module: 'wifi',      event_type: 'deauth_detected',    timestamp: new Date(Date.now()-120000).toISOString(),  payload: '{"mac":"A4:C3:F0:12:34:56","count":12}' },
+  { id: 2, module: 'wifi',      event_type: 'evil_twin_detected', timestamp: new Date(Date.now()-240000).toISOString(),  payload: '{"ssid":"EMI-WiFi","channel":6}' },
+  { id: 3, module: 'bluetooth', event_type: 'device_found',       timestamp: new Date(Date.now()-360000).toISOString(),  payload: '{"mac":"DC:A6:32:11:22:33","name":"iPhone"}' },
+  { id: 4, module: 'nrf24',     event_type: 'drone_detected',     timestamp: new Date(Date.now()-480000).toISOString(),  payload: '{"freq":2440,"signal":-58}' },
+  { id: 5, module: 'wifi',      event_type: 'scan_complete',      timestamp: new Date(Date.now()-600000).toISOString(),  payload: '{"networks":14}' },
+  { id: 6, module: 'tscm',      event_type: 'spectrum_scan',      timestamp: new Date(Date.now()-720000).toISOString(),  payload: '{"devices":3}' },
+  { id: 7, module: 'rfid',      event_type: 'card_read',          timestamp: new Date(Date.now()-900000).toISOString(),  payload: '{"uid":"DEADBEEF","type":"MIFARE"}' },
+  { id: 8, module: 'module',    event_type: 'wifi.started',       timestamp: new Date(Date.now()-3720000).toISOString(), payload: '{"module":"wifi"}' },
 ];
 
-export const mockWifiNetworks = [
-  { ssid: 'CorpNet-5G', bssid: 'A0:B1:C2:D3:E4:F5', channel: 36, signal: -45, encryption: 'WPA2', wps: false, suspicious: false },
-  { ssid: 'RedMilitar_Guest', bssid: '00:11:22:33:44:55', channel: 6, signal: -62, encryption: 'OPEN', wps: false, suspicious: true },
-  { ssid: 'DIRECT-HP-LaserJet', bssid: 'C0:D3:E4:F5:A1:B2', channel: 1, signal: -78, encryption: 'WPA2', wps: true, suspicious: false },
-  { ssid: 'EMI-Administrativa', bssid: 'D4:E5:F6:A7:B8:C9', channel: 11, signal: -55, encryption: 'WPA3', wps: false, suspicious: false },
-];
+export const mockSession = {
+  id: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+  device_id: 'PHANTOM-PI-01',
+  started_at: new Date(Date.now()-3720000).toISOString(),
+  ended_at: null,
+  notes: 'Sesión Open House 2026 — EMI',
+};
+
+export const mockHealth = {
+  status: 'ok',
+  device_id: 'PHANTOM-PI-01',
+  device: 'Sentinel Phantom Unit 1',
+  modules: { wifi: 'RUNNING', bluetooth: 'RUNNING', rfid: 'STOPPED', tscm: 'RUNNING', ir: 'STOPPED', nrf24: 'RUNNING' },
+  db_stats: mockStats,
+};

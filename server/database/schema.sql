@@ -82,11 +82,11 @@ CREATE TABLE alerts (
 );
 GO
 
--- ── Índices ───────────────────────────────────────────────────────────────────
-CREATE INDEX IF NOT EXISTS idx_events_module    ON events(module);
-CREATE INDEX IF NOT EXISTS idx_events_ts        ON events(timestamp);
-CREATE INDEX IF NOT EXISTS idx_alerts_severity  ON alerts(severity);
-CREATE INDEX IF NOT EXISTS idx_alerts_ts        ON alerts(timestamp);
-CREATE INDEX IF NOT EXISTS idx_devices_mac      ON devices(mac);
-CREATE INDEX IF NOT EXISTS idx_devices_type     ON devices(device_type);
-GO
+-- -- ── Índices ───────────────────────────────────────────────────────────────────
+-- CREATE INDEX IF NOT EXISTS idx_events_module    ON events(module);
+-- CREATE INDEX IF NOT EXISTS idx_events_ts        ON events(timestamp);
+-- CREATE INDEX IF NOT EXISTS idx_alerts_severity  ON alerts(severity);
+-- CREATE INDEX IF NOT EXISTS idx_alerts_ts        ON alerts(timestamp);
+-- CREATE INDEX IF NOT EXISTS idx_devices_mac      ON devices(mac);
+-- CREATE INDEX IF NOT EXISTS idx_devices_type     ON devices(device_type);
+-- GO

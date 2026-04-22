@@ -20,7 +20,7 @@ import uuid
 from datetime import datetime
 
 from config import DEVICE_ID, MODULES_ENABLED
-from core.event_bus import bus
+from core.event_bus import bus as event_bus
 from core.logger import get_logger
 from database.local_db import db
 from database.models import Event, Session

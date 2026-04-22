@@ -1,251 +1,103 @@
+// pages/EventsPage.jsx
 import { useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
-import { mockEvents } from '../services/mockData';
-import { formatDateTime } from '../utils/time';
-
-const MODULE_COLORS = {
-  wifi: 'var(--accent-primary)',
-  bluetooth: 'var(--accent-purple)',
-  rfid: 'var(--accent-green)',
-  tscm: 'var(--accent-amber)',
-  ir: 'var(--accent-red)',
-  nrf24: 'var(--accent-green)',
-};
+import { useEvents } from '../hooks/usePiData';
+import { useSocket } from '../hooks/useSocket';
+import { fmtTime, fmtRelative } from '../utils/time';
 
 export default function EventsPage() {
-  const { setPageTitle } = useOutletContext();
-  const [events] = useState(mockEvents);
-  const [moduleFilter, setModuleFilter] = useState('all');
-  const [severityFilter, setSeverityFilter] = useState('all');
+  const { data, refetch } = useEvents();
+  const { lastEvent, connected } = useSocket();
+  const [liveQueue, setLiveQueue] = useState([]);
+  const [mod, setMod]     = useState('ALL');
   const [search, setSearch] = useState('');
-  const [selected, setSelected] = useState(null);
+  const [autoScroll, setAutoScroll] = useState(true);
+
+  const events = Array.isArray(data) ? data : [];
+  const modules = ['ALL', ...new Set(events.map(e => e.module))];
 
   useEffect(() => {
-    setPageTitle('EVENTOS');
-  }, [setPageTitle]);
+    if (!lastEvent) return;
+    const ev = {
+      id: Date.now(),
+      module: lastEvent.topic.split('.')[0],
+      event_type: lastEvent.topic,
+      timestamp: new Date().toISOString(),
+      payload: JSON.stringify(lastEvent.payload),
+      _live: true,
+    };
+    setLiveQueue(q => [ev, ...q].slice(0, 200));
+  }, [lastEvent]);
 
-  const modules = ['all', ...new Set(events.map((e) => e.module))];
-  const severities = ['all', 'critical', 'high', 'medium', 'low'];
+  const allEvents = connected && liveQueue.length
+    ? [...liveQueue, ...events]
+    : events;
 
-  const filtered = events.filter((ev) => {
-    if (moduleFilter !== 'all' && ev.module !== moduleFilter) return false;
-    if (severityFilter !== 'all' && ev.severity !== severityFilter) return false;
-    if (search && !JSON.stringify(ev).toLowerCase().includes(search.toLowerCase()))
-      return false;
-    return true;
-  });
+  const filtered = allEvents
+    .filter(e => mod === 'ALL' || e.module === mod)
+    .filter(e => !search || e.event_type.toLowerCase().includes(search.toLowerCase()) || (e.payload||'').toLowerCase().includes(search.toLowerCase()))
+    .slice(0, 300);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      {/* Filters */}
-      <div className="card">
-        <div className="card-body" style={{ paddingTop: 12, paddingBottom: 12 }}>
-          <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--text-muted)', letterSpacing: 1 }}>
-              MÓDULO:
-            </span>
-            {modules.map((m) => (
-              <button
-                key={m}
-                className={`btn btn-sm ${moduleFilter === m ? 'btn-primary' : 'btn-ghost'}`}
-                onClick={() => setModuleFilter(m)}
-                style={{ textTransform: 'uppercase' }}
-              >
-                {m}
-              </button>
-            ))}
-            <div style={{ flex: 1, minWidth: 20 }} />
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--text-muted)', letterSpacing: 1 }}>
-              SEVERIDAD:
-            </span>
-            {severities.map((s) => (
-              <button
-                key={s}
-                className={`btn btn-sm ${severityFilter === s ? 'btn-primary' : 'btn-ghost'}`}
-                onClick={() => setSeverityFilter(s)}
-                style={{ textTransform: 'uppercase' }}
-              >
-                {s}
-              </button>
-            ))}
+    <div className="animate-in">
+      <div className="page-header">
+        <div>
+          <div className="page-title">Log de <span>Eventos</span></div>
+          <div className="page-subtitle">{filtered.length} eventos · {connected ? 'stream activo' : 'modo caché'}</div>
+        </div>
+        <div className="page-actions">
+          <button className={`btn btn-sm ${autoScroll ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setAutoScroll(a=>!a)}>
+            {autoScroll ? '⬇ AUTO' : '⬇ PAUSED'}
+          </button>
+          <button className="btn btn-ghost btn-sm" onClick={() => { setLiveQueue([]); refetch(); }}>↻ Limpiar</button>
+        </div>
+      </div>
+
+      <div style={{ display:'flex', gap:10, marginBottom:12, flexWrap:'wrap', alignItems:'center' }}>
+        <input className="search-input" placeholder="Buscar evento, payload..." value={search} onChange={e=>setSearch(e.target.value)} style={{ width:220 }} />
+        <div className="filter-bar" style={{ margin:0 }}>
+          {modules.map(m => <button key={m} className={`filter-tab ${mod===m?'active':''}`} onClick={()=>setMod(m)}>{m.toUpperCase()}</button>)}
+        </div>
+      </div>
+
+      {/* Terminal-style feed */}
+      <div className="card" style={{ padding:0 }}>
+        <div style={{ background:'var(--bg-base)', padding:'8px 14px', borderBottom:'1px solid var(--border)', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+          <span style={{ fontFamily:'var(--font-mono)', fontSize:'0.68rem', color:'var(--text-muted)' }}>
+            phantom@pi:~$ tail -f events.log
+          </span>
+          <div style={{ display:'flex', alignItems:'center', gap:6 }}>
+            {connected && <div style={{ width:5, height:5, borderRadius:'50%', background:'var(--teal)', animation:'pulse-dot 2s infinite' }} />}
+            <span style={{ fontSize:'0.62rem', color:'var(--text-muted)' }}>{connected ? 'LIVE' : 'OFFLINE'}</span>
           </div>
-          <div style={{ marginTop: 10 }}>
-            <input
-              type="text"
-              placeholder="Buscar en eventos..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
+        </div>
+        <div style={{ fontFamily:'var(--font-mono)', fontSize:'0.72rem', maxHeight:'calc(100vh - 280px)', overflowY:'auto', padding:'8px 0' }}>
+          {filtered.length === 0 && (
+            <div className="empty-state"><div className="empty-icon">≡</div><div className="empty-text">Sin eventos</div></div>
+          )}
+          {filtered.map((e, i) => (
+            <div
+              key={e.id || i}
               style={{
-                width: '100%',
-                background: 'var(--bg-input)',
-                border: '1px solid var(--border-base)',
-                borderRadius: 4,
-                padding: '7px 12px',
-                color: 'var(--text-primary)',
-                fontFamily: 'var(--font-mono)',
-                fontSize: 12,
-                outline: 'none',
+                display:'flex', gap:10, padding:'4px 14px',
+                borderBottom:'1px solid var(--border)',
+                background: e._live ? 'rgba(79,195,247,0.03)' : 'transparent',
+                transition:'background 0.3s',
               }}
-            />
-          </div>
-        </div>
-      </div>
-
-      <div style={{ display: 'flex', gap: 16 }}>
-        {/* Events list */}
-        <div className="card" style={{ flex: 1 }}>
-          <div className="card-header">
-            <span className="card-title">EVENTOS ({filtered.length})</span>
-          </div>
-          <div>
-            {filtered.length === 0 ? (
-              <div className="empty-state">// Sin resultados</div>
-            ) : (
-              <table className="data-table">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>TIPO</th>
-                    <th>MÓDULO</th>
-                    <th>SEVERIDAD</th>
-                    <th>TIMESTAMP</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filtered.map((ev) => (
-                    <tr
-                      key={ev.id}
-                      onClick={() => setSelected(ev)}
-                      style={{
-                        cursor: 'pointer',
-                        background:
-                          selected?.id === ev.id ? 'var(--accent-primary-dim)' : undefined,
-                      }}
-                    >
-                      <td className="mono" style={{ color: 'var(--text-muted)', fontSize: 11 }}>
-                        {ev.id}
-                      </td>
-                      <td>
-                        <span
-                          style={{
-                            fontFamily: 'var(--font-mono)',
-                            fontSize: 12,
-                            color: MODULE_COLORS[ev.module] || 'var(--text-secondary)',
-                          }}
-                        >
-                          {ev.type}
-                        </span>
-                      </td>
-                      <td>
-                        <span className="chip" style={{ textTransform: 'uppercase', fontSize: 10 }}>
-                          {ev.module}
-                        </span>
-                      </td>
-                      <td>
-                        <span className={`badge ${ev.severity}`}>
-                          <span className="badge-dot" />
-                          {ev.severity}
-                        </span>
-                      </td>
-                      <td className="mono" style={{ fontSize: 11, color: 'var(--text-muted)' }}>
-                        {formatDateTime(ev.timestamp)}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            )}
-          </div>
-        </div>
-
-        {/* Event detail panel */}
-        {selected && (
-          <div className="card" style={{ width: 320, alignSelf: 'flex-start' }}>
-            <div className="card-header">
-              <span className="card-title">DETALLE</span>
-              <button
-                className="btn btn-ghost btn-sm btn-icon"
-                onClick={() => setSelected(null)}
-                style={{ fontSize: 14, padding: '4px 8px' }}
-              >
-                ✕
-              </button>
+            >
+              <span style={{ color:'var(--text-muted)', flexShrink:0, fontSize:'0.65rem', paddingTop:1 }}>{fmtTime(e.timestamp)}</span>
+              <span style={{ color:'var(--blue-bright)', flexShrink:0, minWidth:72, fontSize:'0.68rem' }}>[{e.module}]</span>
+              <span style={{ color: e.event_type.includes('error') ? 'var(--red)' : e.event_type.includes('detected') || e.event_type.includes('alert') ? 'var(--amber)' : 'var(--text-secondary)', flex:1, wordBreak:'break-all' }}>
+                {e.event_type}
+              </span>
+              {e.payload && (
+                <span style={{ color:'var(--text-muted)', fontSize:'0.65rem', maxWidth:200, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', flexShrink:0 }}>
+                  {e.payload.slice(0,80)}
+                </span>
+              )}
             </div>
-            <div className="card-body">
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <DetailRow label="ID" value={`EVT-${selected.id}`} mono />
-                <DetailRow label="TIPO" value={selected.type} mono accent />
-                <DetailRow label="MÓDULO" value={selected.module.toUpperCase()} />
-                <DetailRow label="SEVERIDAD">
-                  <span className={`badge ${selected.severity}`}>
-                    <span className="badge-dot" />
-                    {selected.severity}
-                  </span>
-                </DetailRow>
-                <DetailRow label="TIMESTAMP" value={formatDateTime(selected.timestamp)} mono />
-                <div>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 10,
-                      color: 'var(--text-muted)',
-                      marginBottom: 6,
-                      letterSpacing: 1,
-                    }}
-                  >
-                    DATA PAYLOAD
-                  </div>
-                  <pre
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 11,
-                      color: 'var(--accent-green)',
-                      background: 'var(--bg-input)',
-                      border: '1px solid var(--border-base)',
-                      borderRadius: 4,
-                      padding: 10,
-                      overflow: 'auto',
-                      margin: 0,
-                      maxHeight: 200,
-                    }}
-                  >
-                    {JSON.stringify(selected.data, null, 2)}
-                  </pre>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function DetailRow({ label, value, mono, accent, children }) {
-  return (
-    <div>
-      <div
-        style={{
-          fontFamily: 'var(--font-mono)',
-          fontSize: 9,
-          color: 'var(--text-muted)',
-          letterSpacing: 1.5,
-          marginBottom: 3,
-        }}
-      >
-        {label}
-      </div>
-      {children || (
-        <div
-          style={{
-            fontFamily: mono ? 'var(--font-mono)' : 'var(--font-body)',
-            fontSize: 13,
-            color: accent ? 'var(--accent-primary)' : 'var(--text-primary)',
-          }}
-        >
-          {value}
+          ))}
         </div>
-      )}
+      </div>
     </div>
   );
 }

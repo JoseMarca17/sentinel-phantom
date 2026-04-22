@@ -1,153 +1,113 @@
-import { useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
-import { mockAlerts } from '../services/mockData';
-import { formatDateTime } from '../utils/time';
+// pages/AlertsPage.jsx
+import { useState } from 'react';
+import { useAlerts } from '../hooks/usePiData';
+import { ackAlert } from '../services/api';
+import { fmtRelative, fmtDate, fmtTime } from '../utils/time';
+
+const SEV_ORDER = { CRITICAL:0, HIGH:1, MEDIUM:2, LOW:3, INFO:4 };
+const SEV_COLOR = { CRITICAL:'var(--red)', HIGH:'var(--amber)', MEDIUM:'var(--blue-bright)', LOW:'var(--teal)', INFO:'var(--text-muted)' };
 
 export default function AlertsPage() {
-  const { setPageTitle } = useOutletContext();
-  const [alerts, setAlerts] = useState(mockAlerts);
-  const [filter, setFilter] = useState('all');
+  const { data, refetch } = useAlerts();
+  const [sev,    setSev]    = useState('ALL');
+  const [mod,    setMod]    = useState('ALL');
+  const [acked,  setAcked]  = useState('PENDING');
+  const [search, setSearch] = useState('');
 
-  useEffect(() => {
-    setPageTitle('ALERTAS');
-  }, [setPageTitle]);
+  const alerts = Array.isArray(data) ? data : [];
 
-  const filtered = alerts.filter((a) => {
-    if (filter === 'active') return !a.acked;
-    if (filter === 'acked') return a.acked;
-    return true;
-  });
+  const modules = ['ALL', ...new Set(alerts.map(a => a.module))];
+  const sevs    = ['ALL', 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'INFO'];
 
-  const ack = (id) => {
-    setAlerts((prev) => prev.map((a) => (a.id === id ? { ...a, acked: true } : a)));
-  };
+  const filtered = alerts
+    .filter(a => sev   === 'ALL' || a.severity === sev)
+    .filter(a => mod   === 'ALL' || a.module   === mod)
+    .filter(a => acked === 'ALL' || (acked === 'PENDING' ? !a.acknowledged : a.acknowledged))
+    .filter(a => !search || a.description.toLowerCase().includes(search.toLowerCase()) || (a.device_mac||'').toLowerCase().includes(search.toLowerCase()))
+    .sort((a,b) => SEV_ORDER[a.severity] - SEV_ORDER[b.severity] || new Date(b.timestamp) - new Date(a.timestamp));
 
-  const ackAll = () => {
-    setAlerts((prev) => prev.map((a) => ({ ...a, acked: true })));
-  };
+  async function handleAck(id) {
+    try { await ackAlert(id); } catch {}
+    refetch();
+  }
 
-  const counts = {
-    critical: alerts.filter((a) => a.level === 'critical' && !a.acked).length,
-    warning: alerts.filter((a) => a.level === 'warning' && !a.acked).length,
-    info: alerts.filter((a) => a.level === 'info' && !a.acked).length,
-  };
+  const counts = { CRITICAL:0, HIGH:0, MEDIUM:0, LOW:0 };
+  alerts.filter(a=>!a.acknowledged).forEach(a => { if(counts[a.severity]!==undefined) counts[a.severity]++; });
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-      {/* Summary metrics */}
-      <div className="metric-grid">
-        {[
-          { label: 'CRÍTICAS', value: counts.critical, cls: 'red', metric: 'var(--accent-red)' },
-          { label: 'ADVERTENCIAS', value: counts.warning, cls: 'amber', metric: 'var(--accent-amber)' },
-          { label: 'INFO', value: counts.info, cls: 'accent', metric: 'var(--accent-primary)' },
-          {
-            label: 'RECONOCIDAS',
-            value: alerts.filter((a) => a.acked).length,
-            cls: '',
-            metric: 'var(--text-muted)',
-          },
-        ].map((m) => (
-          <div className="metric-card" key={m.label} style={{ '--metric-color': m.metric }}>
-            <div className="metric-label">{m.label}</div>
-            <div className={`metric-value ${m.cls}`}>{m.value}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Controls */}
-      <div className="card">
-        <div className="card-header">
-          <span className="card-title">REGISTRO DE ALERTAS</span>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <FilterButtons filter={filter} setFilter={setFilter} />
-            <button className="btn btn-ghost btn-sm" onClick={ackAll}>
-              RECONOCER TODO
-            </button>
-          </div>
-        </div>
+    <div className="animate-in">
+      <div className="page-header">
         <div>
-          {filtered.length === 0 ? (
-            <div className="empty-state">// Sin alertas en este filtro</div>
-          ) : (
-            <table className="data-table" style={{ width: '100%' }}>
-              <thead>
-                <tr>
-                  <th>NIVEL</th>
-                  <th>MÓDULO</th>
-                  <th>MENSAJE</th>
-                  <th>TIMESTAMP</th>
-                  <th>ACCIÓN</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filtered.map((alert) => (
-                  <tr key={alert.id} style={{ opacity: alert.acked ? 0.5 : 1 }}>
-                    <td>
-                      <span className={`badge ${alert.level}`}>
-                        <span className="badge-dot" />
-                        {alert.level}
-                      </span>
-                    </td>
-                    <td>
-                      <span
-                        className="chip"
-                        style={{
-                          fontFamily: 'var(--font-mono)',
-                          fontSize: 11,
-                          textTransform: 'uppercase',
-                        }}
-                      >
-                        {alert.module}
-                      </span>
-                    </td>
-                    <td style={{ maxWidth: 380, color: 'var(--text-primary)', fontSize: 13 }}>
-                      {alert.message}
-                    </td>
-                    <td className="mono" style={{ whiteSpace: 'nowrap', fontSize: 11 }}>
-                      {formatDateTime(alert.timestamp)}
-                    </td>
-                    <td>
-                      {!alert.acked ? (
-                        <button
-                          className="btn btn-ghost btn-sm"
-                          onClick={() => ack(alert.id)}
-                        >
-                          ACK
-                        </button>
-                      ) : (
-                        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--text-muted)' }}>
-                          ✓ acked
-                        </span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+          <div className="page-title">Alertas de <span>Seguridad</span></div>
+          <div className="page-subtitle">{filtered.length} alertas · {alerts.filter(a=>!a.acknowledged).length} pendientes</div>
+        </div>
+        <div className="page-actions">
+          {['CRITICAL','HIGH','MEDIUM','LOW'].map(s => (
+            counts[s] > 0 && (
+              <div key={s} style={{ display:'flex', alignItems:'center', gap:4, fontSize:'0.68rem' }}>
+                <div style={{ width:6, height:6, borderRadius:'50%', background: SEV_COLOR[s] }} />
+                <span style={{ color: SEV_COLOR[s] }}>{counts[s]} {s}</span>
+              </div>
+            )
+          ))}
+          <button className="btn btn-ghost btn-sm" onClick={refetch}>↻ Actualizar</button>
         </div>
       </div>
-    </div>
-  );
-}
 
-function FilterButtons({ filter, setFilter }) {
-  const options = [
-    { value: 'all', label: 'TODOS' },
-    { value: 'active', label: 'ACTIVOS' },
-    { value: 'acked', label: 'RECONOCIDOS' },
-  ];
-  return (
-    <div style={{ display: 'flex', gap: 4 }}>
-      {options.map((opt) => (
-        <button
-          key={opt.value}
-          className={`btn btn-sm ${filter === opt.value ? 'btn-primary' : 'btn-ghost'}`}
-          onClick={() => setFilter(opt.value)}
-        >
-          {opt.label}
-        </button>
-      ))}
+      {/* Filtros */}
+      <div style={{ display:'flex', gap:10, marginBottom:14, flexWrap:'wrap', alignItems:'center' }}>
+        <input className="search-input" placeholder="Buscar MAC, descripción..." value={search} onChange={e=>setSearch(e.target.value)} style={{ width:220 }} />
+        <div className="filter-bar" style={{ margin:0 }}>
+          {sevs.map(s => <button key={s} className={`filter-tab ${sev===s?'active':''}`} onClick={()=>setSev(s)}>{s}</button>)}
+        </div>
+        <div className="filter-bar" style={{ margin:0 }}>
+          {['ALL','PENDING','ACKED'].map(a => <button key={a} className={`filter-tab ${acked===a?'active':''}`} onClick={()=>setAcked(a)}>{a}</button>)}
+        </div>
+        <div className="filter-bar" style={{ margin:0 }}>
+          {modules.map(m => <button key={m} className={`filter-tab ${mod===m?'active':''}`} onClick={()=>setMod(m)}>{m.toUpperCase()}</button>)}
+        </div>
+      </div>
+
+      {/* Tabla */}
+      <div className="card" style={{ padding:0 }}>
+        <div className="table-wrap">
+          <table className="tac-table">
+            <thead>
+              <tr>
+                <th>Severidad</th><th>Módulo</th><th>Tipo</th>
+                <th>Descripción</th><th>MAC</th><th>Tiempo</th><th>Estado</th><th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {filtered.length === 0 && (
+                <tr><td colSpan={8}><div className="empty-state"><div className="empty-icon">✓</div><div className="empty-text">Sin alertas para los filtros seleccionados</div></div></td></tr>
+              )}
+              {filtered.map(a => (
+                <tr key={a.id} style={{ opacity: a.acknowledged ? 0.5 : 1 }}>
+                  <td>
+                    <span className={`badge badge-${a.severity.toLowerCase()}`}>{a.severity}</span>
+                  </td>
+                  <td><span className="mono">{a.module}</span></td>
+                  <td><span className="dim">{a.alert_type}</span></td>
+                  <td style={{ maxWidth:260, color:'var(--text-primary)', fontSize:'0.75rem' }}>{a.description}</td>
+                  <td><span className="mono">{a.device_mac || '—'}</span></td>
+                  <td><span className="dim">{fmtRelative(a.timestamp)}</span></td>
+                  <td>
+                    {a.acknowledged
+                      ? <span style={{ color:'var(--text-muted)', fontSize:'0.65rem' }}>ACK</span>
+                      : <span style={{ color:'var(--red)', fontSize:'0.65rem' }}>PENDIENTE</span>}
+                  </td>
+                  <td>
+                    {!a.acknowledged && (
+                      <button className="btn btn-ghost btn-sm" onClick={() => handleAck(a.id)}>ACK</button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,231 +1,152 @@
-import { useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
-import { mockAlerts, mockEvents, mockDevices, mockSystemStatus, mockModules } from '../services/mockData';
-import { formatDateTime } from '../utils/time';
+// pages/ReportsPage.jsx
+import { useState } from 'react';
+import { fmtRelative } from '../utils/time';
+import { mockAlerts, mockDevices, mockSession, mockStats } from '../services/mockData';
 
 export default function ReportsPage() {
-  const { setPageTitle } = useOutletContext();
-  const [exporting, setExporting] = useState(false);
+  const alerts  = mockAlerts;
+  const devices = mockDevices;
+  const session = mockSession;
 
-  useEffect(() => {
-    setPageTitle('REPORTES');
-  }, [setPageTitle]);
+  const critical = alerts.filter(a => a.severity === 'CRITICAL').length;
+  const high     = alerts.filter(a => a.severity === 'HIGH').length;
+  const byModule = {};
+  alerts.forEach(a => { byModule[a.module] = (byModule[a.module]||0)+1; });
 
-  const handleExport = () => {
-    setExporting(true);
-    // Build CSV from mock data
-    const rows = [
-      ['ID', 'TIPO', 'MÓDULO', 'SEVERIDAD', 'TIMESTAMP'],
-      ...mockEvents.map((e) => [
-        e.id,
-        e.type,
-        e.module,
-        e.severity,
-        formatDateTime(e.timestamp),
-      ]),
-    ];
-    const csv = rows.map((r) => r.join(',')).join('\n');
-    const blob = new Blob([csv], { type: 'text/csv' });
-    const url = URL.createObjectURL(blob);
+  const byType = {};
+  devices.forEach(d => { byType[d.device_type] = (byType[d.device_type]||0)+1; });
+
+  function exportJSON() {
+    const data = { session, alerts, devices, generated_at: new Date().toISOString() };
+    const blob = new Blob([JSON.stringify(data,null,2)], { type:'application/json' });
     const a = document.createElement('a');
-    a.href = url;
-    a.download = `sentinel-phantom-${mockSystemStatus.session_id}.csv`;
+    a.href = URL.createObjectURL(blob);
+    a.download = `phantom_report_${session.id.slice(0,8)}.json`;
     a.click();
-    URL.revokeObjectURL(url);
-    setTimeout(() => setExporting(false), 1000);
-  };
+  }
 
-  const threatsByModule = mockModules.map((m) => ({
-    ...m,
-    alerts: mockAlerts.filter((a) => a.module === m.name).length,
-    critical: mockAlerts.filter((a) => a.module === m.name && a.level === 'critical').length,
-  }));
-
-  const topThreats = mockAlerts
-    .filter((a) => a.level === 'critical' || a.level === 'warning')
-    .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
-    .slice(0, 5);
+  function exportCSV() {
+    const rows = [
+      ['id','module','severity','description','timestamp','device_mac'],
+      ...alerts.map(a => [a.id, a.module, a.severity, `"${a.description}"`, a.timestamp, a.device_mac||''])
+    ];
+    const csv = rows.map(r => r.join(',')).join('\n');
+    const blob = new Blob([csv], { type:'text/csv' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'phantom_alerts.csv';
+    a.click();
+  }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-      {/* Session header */}
-      <div className="card" style={{ borderLeft: '3px solid var(--accent-primary)' }}>
-        <div className="card-body">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 16 }}>
-            <div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--text-muted)', letterSpacing: 2, marginBottom: 6 }}>
-                REPORTE DE SESIÓN
-              </div>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 700, color: 'var(--accent-primary)', letterSpacing: 2 }}>
-                {mockSystemStatus.session_id}
-              </div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-muted)', marginTop: 4 }}>
-                Inicio: {formatDateTime(mockSystemStatus.session_start)} · Duración: {mockSystemStatus.uptime}
-              </div>
-            </div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <button
-                className="btn btn-primary"
-                onClick={handleExport}
-                disabled={exporting}
-              >
-                {exporting ? '↓ exportando...' : '↓ EXPORTAR CSV'}
-              </button>
-              <button className="btn btn-ghost" onClick={() => window.print()}>
-                ⎙ IMPRIMIR
-              </button>
-            </div>
-          </div>
+    <div className="animate-in">
+      <div className="page-header">
+        <div>
+          <div className="page-title">Reportes <span>Forenses</span></div>
+          <div className="page-subtitle">Sesión {session.id.slice(0,8).toUpperCase()} · {fmtRelative(session.started_at)}</div>
+        </div>
+        <div className="page-actions">
+          <button className="btn btn-ghost btn-sm" onClick={exportCSV}>↓ Exportar CSV</button>
+          <button className="btn btn-primary btn-sm" onClick={exportJSON}>↓ Exportar JSON</button>
         </div>
       </div>
 
-      {/* Summary metrics */}
-      <div className="metric-grid">
+      {/* Stats */}
+      <div className="grid-4" style={{ marginBottom:16 }}>
         {[
-          { label: 'TOTAL EVENTOS', value: mockEvents.length, color: 'accent', metric: 'var(--accent-primary)' },
-          { label: 'ALERTAS CRÍTICAS', value: mockAlerts.filter((a) => a.level === 'critical').length, color: 'red', metric: 'var(--accent-red)' },
-          { label: 'DISPOSITIVOS DETECTADOS', value: mockDevices.length, color: 'amber', metric: 'var(--accent-amber)' },
-          { label: 'MÓDULOS ACTIVOS', value: mockModules.filter((m) => m.status === 'active').length, color: 'green', metric: 'var(--accent-green)' },
-        ].map((m) => (
-          <div className="metric-card" key={m.label} style={{ '--metric-color': m.metric }}>
-            <div className="metric-label">{m.label}</div>
-            <div className={`metric-value ${m.color}`}>{m.value}</div>
+          { label:'Total alertas', value:alerts.length,  color:'var(--blue-core)' },
+          { label:'Críticas',      value:critical,        color:'var(--red)' },
+          { label:'Altas',         value:high,            color:'var(--amber)' },
+          { label:'Dispositivos',  value:devices.length,  color:'var(--teal)' },
+        ].map(s => (
+          <div key={s.label} className="stat-card" style={{ '--accent-color': s.color }}>
+            <div className="stat-label">{s.label}</div>
+            <div className="stat-value">{s.value}</div>
           </div>
         ))}
       </div>
 
-      <div className="grid-2">
-        {/* Events by module */}
+      <div className="grid-2" style={{ marginBottom:16 }}>
+        {/* Alertas por módulo */}
         <div className="card">
           <div className="card-header">
-            <span className="card-title">ACTIVIDAD POR MÓDULO</span>
+            <span className="card-title">Alertas por <span className="card-title-accent">módulo</span></span>
           </div>
-          <div className="card-body" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {threatsByModule.map((mod) => {
-              const maxEvents = Math.max(...threatsByModule.map((m) => m.events_count), 1);
-              return (
-                <div key={mod.name}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 5 }}>
-                    <span style={{ fontFamily: 'var(--font-display)', fontSize: 13, fontWeight: 600, color: 'var(--text-primary)' }}>
-                      {mod.label}
-                    </span>
-                    <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                      {mod.critical > 0 && (
-                        <span className="badge critical" style={{ padding: '1px 6px' }}>
-                          {mod.critical} críticas
-                        </span>
-                      )}
-                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-muted)' }}>
-                        {mod.events_count} eventos
-                      </span>
-                    </div>
-                  </div>
-                  <div className="progress-bar">
-                    <div
-                      className="progress-fill"
-                      style={{
-                        width: `${(mod.events_count / maxEvents) * 100}%`,
-                        background: mod.critical > 0 ? 'var(--accent-red)' : 'var(--accent-primary)',
-                        opacity: 0.7,
-                      }}
-                    />
-                  </div>
+          <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
+            {Object.entries(byModule).sort((a,b)=>b[1]-a[1]).map(([mod,n]) => (
+              <div key={mod} style={{ display:'flex', alignItems:'center', gap:10 }}>
+                <span style={{ fontSize:'0.72rem', color:'var(--text-secondary)', minWidth:80, fontFamily:'var(--font-mono)' }}>{mod}</span>
+                <div style={{ flex:1, height:6, background:'var(--bg-elevated)', borderRadius:3, overflow:'hidden' }}>
+                  <div style={{ height:'100%', width:`${(n/alerts.length)*100}%`, background:'var(--blue-core)', borderRadius:3, transition:'width 0.5s ease' }} />
                 </div>
-              );
-            })}
+                <span style={{ fontSize:'0.72rem', color:'var(--blue-bright)', minWidth:20, textAlign:'right' }}>{n}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Top threats */}
+        {/* Info de sesión */}
         <div className="card">
           <div className="card-header">
-            <span className="card-title">PRINCIPALES AMENAZAS</span>
+            <span className="card-title">Info de <span className="card-title-accent">sesión</span></span>
           </div>
-          <div className="card-body" style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-            {topThreats.map((alert, i) => (
-              <div
-                key={alert.id}
-                style={{
-                  display: 'flex',
-                  gap: 12,
-                  paddingBottom: 12,
-                  marginBottom: 12,
-                  borderBottom: i < topThreats.length - 1 ? '1px solid var(--border-card)' : 'none',
-                  alignItems: 'flex-start',
-                }}
-              >
-                <div style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 11,
-                  color: 'var(--text-muted)',
-                  paddingTop: 2,
-                  minWidth: 16,
-                }}>
-                  {i + 1}.
-                </div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: 13, color: 'var(--text-primary)', marginBottom: 4, lineHeight: 1.4 }}>
-                    {alert.message}
-                  </div>
-                  <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                    <span className={`badge ${alert.level}`}>
-                      <span className="badge-dot" />
-                      {alert.level}
-                    </span>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-                      {alert.module}
-                    </span>
-                  </div>
-                </div>
+          <div style={{ display:'flex', flexDirection:'column' }}>
+            {[
+              ['Session ID',  session.id.slice(0,20)+'...'],
+              ['Device',      session.device_id],
+              ['Inicio',      fmtRelative(session.started_at)],
+              ['Estado',      session.ended_at ? 'Cerrada' : 'Activa'],
+              ['Notas',       session.notes],
+            ].map(([k,v]) => (
+              <div key={k} style={{ display:'flex', justifyContent:'space-between', padding:'8px 0', borderBottom:'1px solid var(--border)', fontSize:'0.73rem' }}>
+                <span style={{ color:'var(--text-muted)' }}>{k}</span>
+                <span style={{ color:'var(--text-secondary)', fontFamily:'var(--font-mono)', fontSize:'0.68rem', maxWidth:180, textAlign:'right', wordBreak:'break-all' }}>{v}</span>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Full event log */}
+      {/* Dispositivos por tipo */}
+      <div className="card" style={{ marginBottom:16 }}>
+        <div className="card-header">
+          <span className="card-title">Dispositivos por <span className="card-title-accent">tipo</span></span>
+        </div>
+        <div className="grid-3">
+          {Object.entries(byType).map(([type, n]) => (
+            <div key={type} style={{ background:'var(--bg-elevated)', border:'1px solid var(--border)', borderRadius:'var(--r-md)', padding:'12px 14px' }}>
+              <div style={{ fontFamily:'var(--font-display)', fontSize:'1.4rem', fontWeight:700, color:'var(--blue-bright)' }}>{n}</div>
+              <div style={{ fontSize:'0.65rem', color:'var(--text-muted)', textTransform:'uppercase', letterSpacing:'0.1em', marginTop:4 }}>{type}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Timeline de alertas críticas */}
       <div className="card">
         <div className="card-header">
-          <span className="card-title">LOG COMPLETO DE EVENTOS</span>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-muted)' }}>
-            {mockEvents.length} registros
-          </span>
+          <span className="card-title">Timeline <span className="card-title-accent">crítico</span></span>
         </div>
-        <div>
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>TIPO</th>
-                <th>MÓDULO</th>
-                <th>SEVERIDAD</th>
-                <th>DATOS CLAVE</th>
-                <th>TIMESTAMP</th>
-              </tr>
-            </thead>
-            <tbody>
-              {mockEvents.map((ev) => (
-                <tr key={ev.id}>
-                  <td className="mono" style={{ fontSize: 11, color: 'var(--text-muted)' }}>{ev.id}</td>
-                  <td className="mono" style={{ fontSize: 12, color: 'var(--accent-primary)' }}>{ev.type}</td>
-                  <td>
-                    <span className="chip" style={{ textTransform: 'uppercase', fontSize: 10 }}>{ev.module}</span>
-                  </td>
-                  <td>
-                    <span className={`badge ${ev.severity}`}>
-                      <span className="badge-dot" />{ev.severity}
-                    </span>
-                  </td>
-                  <td style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-secondary)', maxWidth: 300 }}>
-                    {Object.entries(ev.data).slice(0, 2).map(([k, v]) => `${k}:${v}`).join(' | ')}
-                  </td>
-                  <td className="mono" style={{ fontSize: 11, color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>
-                    {formatDateTime(ev.timestamp)}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div style={{ display:'flex', flexDirection:'column', gap:0 }}>
+          {alerts.filter(a => ['CRITICAL','HIGH'].includes(a.severity)).map((a,i) => (
+            <div key={a.id} style={{ display:'flex', gap:14, padding:'10px 0', borderBottom:'1px solid var(--border)' }}>
+              <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:0 }}>
+                <div style={{ width:10, height:10, borderRadius:'50%', background: a.severity==='CRITICAL' ? 'var(--red)' : 'var(--amber)', flexShrink:0, marginTop:4 }} />
+                {i < alerts.filter(a=>['CRITICAL','HIGH'].includes(a.severity)).length-1 && (
+                  <div style={{ width:1, flex:1, background:'var(--border)', minHeight:20, marginTop:2 }} />
+                )}
+              </div>
+              <div style={{ flex:1, paddingBottom:4 }}>
+                <div style={{ fontSize:'0.75rem', color:'var(--text-primary)', marginBottom:3 }}>{a.description}</div>
+                <div style={{ display:'flex', gap:10, fontSize:'0.65rem', color:'var(--text-muted)' }}>
+                  <span style={{ color: a.severity==='CRITICAL' ? 'var(--red)' : 'var(--amber)' }}>{a.severity}</span>
+                  <span>{a.module}</span>
+                  <span>{fmtRelative(a.timestamp)}</span>
+                  {a.device_mac && <span style={{ fontFamily:'var(--font-mono)', color:'var(--blue-bright)' }}>{a.device_mac}</span>}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

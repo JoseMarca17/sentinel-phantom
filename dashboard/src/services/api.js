@@ -1,65 +1,22 @@
+// services/api.js
 import axios from 'axios';
 
-const PI_BASE_URL = import.meta.env.VITE_PI_API_URL || 'http://192.168.1.100:5000';
-const SERVER_BASE_URL = import.meta.env.VITE_SERVER_API_URL || 'http://localhost:5001';
+const PI_BASE = import.meta.env.VITE_PI_API_URL || 'http://192.168.1.50:5000/api';
 
-export const piApi = axios.create({
-  baseURL: PI_BASE_URL,
-  timeout: 5000,
-  headers: { 'Content-Type': 'application/json' },
-});
+const api = axios.create({ baseURL: PI_BASE, timeout: 5000 });
 
-export const serverApi = axios.create({
-  baseURL: SERVER_BASE_URL,
-  timeout: 8000,
-  headers: { 'Content-Type': 'application/json' },
-});
+export const getHealth   = () => api.get('/health');
+export const getEvents   = (p={}) => api.get('/events', { params: p });
+export const getAlerts   = (p={}) => api.get('/alerts', { params: p });
+export const getDevices  = (p={}) => api.get('/devices', { params: p });
+export const getModules  = () => api.get('/modules');
+export const startModule = (n) => api.post(`/modules/${n}/start`);
+export const stopModule  = (n) => api.post(`/modules/${n}/stop`);
+export const ackAlert    = (id) => api.post(`/alerts/${id}/acknowledge`);
+export const forceSync   = () => api.post('/modules/sync/force');
+export const getSyncStatus = () => api.get('/modules/sync/status');
+export const getAlertsSummary = () => api.get('/alerts/summary');
+export const getEventStats    = () => api.get('/events/stats');
+export const getDeviceStats   = () => api.get('/devices/stats');
 
-piApi.interceptors.response.use(
-  (res) => res,
-  (err) => {
-    console.warn('[PI API Error]', err.message);
-    return Promise.reject(err);
-  }
-);
-
-// Events endpoints
-export const eventsApi = {
-  getAll: (params) => piApi.get('/api/events', { params }),
-  getById: (id) => piApi.get(`/api/events/${id}`),
-};
-
-// Alerts endpoints
-export const alertsApi = {
-  getAll: (params) => piApi.get('/api/alerts', { params }),
-  acknowledge: (id) => piApi.patch(`/api/alerts/${id}/ack`),
-  acknowledgeAll: () => piApi.post('/api/alerts/ack-all'),
-};
-
-// Modules endpoints
-export const modulesApi = {
-  getAll: () => piApi.get('/api/modules'),
-  getStatus: (name) => piApi.get(`/api/modules/${name}/status`),
-  start: (name) => piApi.post(`/api/modules/${name}/start`),
-  stop: (name) => piApi.post(`/api/modules/${name}/stop`),
-  getConfig: (name) => piApi.get(`/api/modules/${name}/config`),
-  updateConfig: (name, data) => piApi.put(`/api/modules/${name}/config`, data),
-};
-
-// Devices endpoints
-export const devicesApi = {
-  getAll: (params) => piApi.get('/api/devices', { params }),
-  getById: (id) => piApi.get(`/api/devices/${id}`),
-  whitelist: (id) => piApi.post(`/api/devices/${id}/whitelist`),
-  blacklist: (id) => piApi.post(`/api/devices/${id}/blacklist`),
-};
-
-// Reports (server)
-export const reportsApi = {
-  getDailySummary: () => serverApi.get('/api/reports/daily'),
-  getTopThreats: () => serverApi.get('/api/reports/threats'),
-  getSessions: () => serverApi.get('/api/reports/sessions'),
-  exportCsv: () => serverApi.get('/api/export/csv', { responseType: 'blob' }),
-};
-
-export default piApi;
+export default api;

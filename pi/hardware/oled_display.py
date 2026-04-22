@@ -83,5 +83,4 @@ class OLEDDisplay:
     def is_available(self) -> bool:
         return self.display is not None
 
-
 oled = OLEDDisplay()
