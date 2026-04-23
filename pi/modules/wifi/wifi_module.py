@@ -1,12 +1,13 @@
-from core.event_bus import bus
+from core.event_bus import EventBus
 from core.logger import get_logger
-from modules.WiFi.detector import WiFiDetector
-from modules.WiFi.attacker import WifiAttacker
-from modules.WiFi.pmkid import PMKIDCapture
-from modules.WiFi.evil_twin import EvilTwin
+from modules.wifi.detector import WiFiDetector
+from modules.wifi.attacker import WifiAttacker
+from modules.wifi.pmkid import PMKIDCapture
+from modules.wifi.evil_twin import EvilTwin
 import threading
 
 log = get_logger("wifi.module")
+bus = EventBus()
 
 class WifiModule:
     def __init__(self, interface='wlan1'):

@@ -1,0 +1,25 @@
+# test_ids.py
+import sys, os
+sys.path.insert(0, os.path.abspath('.'))
+
+from modules.wifi.ids import WifiIDS
+from core.event_bus import event_bus
+
+# Suscribirse para ver los eventos
+def on_alert(data):
+    print(f"[ALERTA] {data}")
+
+event_bus.subscribe('wifi.alert', on_alert)
+
+ids = WifiIDS()
+ids.add_known_ap('AA:BB:CC:DD:EE:FF', 'MiRedLegitima')
+ids.start()
+
+print("IDS corriendo. Presiona Ctrl+C para detener.")
+try:
+    import time
+    while True:
+        time.sleep(1)
+except KeyboardInterrupt:
+    ids.stop()
+    print("IDS detenido.")

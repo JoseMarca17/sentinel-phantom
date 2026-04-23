@@ -633,3 +633,565 @@
 2026-04-22 18:16:39  [INFO    ]  database.sync                 SyncManager detenido
 2026-04-22 18:16:39  [INFO    ]  database.local                Conexión SQLite cerrada
 2026-04-22 18:16:39  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-22 19:06:03  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 19:06:03  [INFO    ]  database.local                SQLite abierto en /home/phantomx/centinel-phantom/pi/database/phantom.db
+2026-04-22 19:06:04  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-22 19:06:04  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-22 19:06:04  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-22 19:06:04  [WARNING ]  main                          OLED no disponible: Failed to add edge detection
+2026-04-22 19:06:08  [WARNING ]  main                          WiFi module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 19:06:08  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 19:06:08  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 19:06:08  [INFO    ]  database.local                Sesión creada: 4d8ac5b4-a340-43c6-8afa-7523e8385a07
+2026-04-22 19:06:08  [INFO    ]  main                          Sesión creada: 4d8ac5b4-a340-43c6-8afa-7523e8385a07
+2026-04-22 19:06:08  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-22 19:06:08  [INFO    ]  database.sync                 SyncManager iniciado (intervalo: 60s → http://192.168.1.100:8000)
+2026-04-22 19:06:08  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-22 19:06:08  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 19:06:08  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-22 19:06:08  [INFO    ]  main                            Módulos activos: []
+2026-04-22 19:06:08  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 19:12:44  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-22 19:12:44  [INFO    ]  main                          Apagando módulos...
+2026-04-22 19:12:44  [INFO    ]  database.local                Sesión cerrada: 4d8ac5b4-a340-43c6-8afa-7523e8385a07
+2026-04-22 19:12:44  [INFO    ]  database.sync                 SyncManager detenido
+2026-04-22 19:12:44  [INFO    ]  database.local                Conexión SQLite cerrada
+2026-04-22 19:12:44  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-22 23:52:15  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-22 23:52:15  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-22 23:52:15  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-22 23:52:15  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-22 23:52:15  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-22 23:52:20  [WARNING ]  main                          WiFi module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 23:52:20  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 23:52:20  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-22 23:52:20  [INFO    ]  main                          Sesión creada: 8839868a-8ac6-4476-b285-eb7066441123
+2026-04-22 23:52:20  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-22 23:52:20  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-22 23:52:20  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 23:52:20  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-22 23:52:20  [INFO    ]  main                            Módulos activos: []
+2026-04-22 23:52:20  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-22 23:52:20  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-22 23:52:20  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-22 23:53:58  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-22 23:53:58  [INFO    ]  main                          Apagando módulos...
+2026-04-22 23:53:58  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 00:44:06  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 00:44:06  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 00:44:06  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 00:44:06  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 00:44:06  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-23 00:44:11  [WARNING ]  main                          WiFi module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 00:44:11  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 00:44:11  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 00:44:11  [INFO    ]  main                          Sesión creada: 85285161-14a7-4173-9ccc-20e206bdca17
+2026-04-23 00:44:11  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 00:44:11  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 00:44:11  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 00:44:11  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 00:44:11  [INFO    ]  main                            Módulos activos: []
+2026-04-23 00:44:11  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 00:44:11  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 00:44:11  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 00:44:41  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 00:44:41  [INFO    ]  main                          Apagando módulos...
+2026-04-23 00:44:41  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 00:47:11  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 00:49:07  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 00:52:47  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 00:52:48  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 00:52:48  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 00:52:48  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 00:52:48  [WARNING ]  main                          OLED no disponible: OledDisplay() takes no arguments
+2026-04-23 00:52:52  [WARNING ]  main                          WiFi module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 00:52:52  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 00:52:52  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 00:52:52  [INFO    ]  main                          Sesión creada: 8a1ae4d5-6f09-464c-990a-64264d85d850
+2026-04-23 00:52:52  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 00:52:52  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 00:52:52  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 00:52:52  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 00:52:52  [INFO    ]  main                            Módulos activos: []
+2026-04-23 00:52:52  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 00:52:52  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 00:52:52  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 00:53:13  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 00:53:13  [INFO    ]  main                          Apagando módulos...
+2026-04-23 00:53:13  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 01:03:36  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 01:03:37  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 01:03:37  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 01:03:37  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 01:03:37  [WARNING ]  main                          OLED no disponible: OledDisplay() takes no arguments
+2026-04-23 01:03:41  [WARNING ]  main                          WiFi module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:03:41  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:03:41  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:03:41  [INFO    ]  main                          Sesión creada: a16e843a-2fee-40e6-ac77-9888b3371583
+2026-04-23 01:03:41  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 01:03:41  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 01:03:41  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 01:03:41  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 01:03:41  [INFO    ]  main                            Módulos activos: []
+2026-04-23 01:03:41  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 01:03:41  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 01:03:41  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 01:13:26  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 01:13:26  [INFO    ]  main                          Apagando módulos...
+2026-04-23 01:13:26  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 01:14:40  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 01:14:41  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 01:14:41  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 01:14:41  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 01:14:41  [WARNING ]  main                          OLED no disponible: [Errno 5] Input/output error
+2026-04-23 01:14:46  [WARNING ]  main                          WiFi module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:14:46  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:14:47  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:14:47  [INFO    ]  main                          Sesión creada: 542f7330-7af0-42c0-aeef-a3c44ccf6627
+2026-04-23 01:14:47  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 01:14:47  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 01:14:47  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 01:14:47  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 01:14:47  [INFO    ]  main                            Módulos activos: []
+2026-04-23 01:14:47  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 01:14:47  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 01:14:47  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 01:20:40  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 01:20:40  [INFO    ]  main                          Apagando módulos...
+2026-04-23 01:20:40  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 01:22:45  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 01:22:45  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 01:22:45  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 01:22:45  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 01:22:45  [WARNING ]  main                          OLED no disponible: No I2C device at address: 0x48
+2026-04-23 01:22:50  [WARNING ]  main                          WiFi module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:22:50  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:22:50  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:22:50  [INFO    ]  main                          Sesión creada: 82bb8a48-33c2-4796-b251-c8eabf49c264
+2026-04-23 01:22:50  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 01:22:50  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 01:22:50  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 01:22:50  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 01:22:50  [INFO    ]  main                            Módulos activos: []
+2026-04-23 01:22:50  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 01:22:50  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 01:22:50  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 01:23:03  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 01:23:03  [INFO    ]  main                          Apagando módulos...
+2026-04-23 01:23:03  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 01:23:07  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 01:23:07  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 01:23:07  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 01:23:07  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 01:23:07  [WARNING ]  main                          OLED no disponible: No I2C device at address: 0x48
+2026-04-23 01:23:11  [WARNING ]  main                          WiFi module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:23:11  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:23:11  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:23:11  [INFO    ]  main                          Sesión creada: 787d7c29-4d3d-402f-aa84-e24682d03e67
+2026-04-23 01:23:11  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 01:23:11  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 01:23:11  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 01:23:11  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 01:23:11  [INFO    ]  main                            Módulos activos: []
+2026-04-23 01:23:11  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 01:23:11  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 01:23:11  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 01:24:30  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 01:24:30  [INFO    ]  main                          Apagando módulos...
+2026-04-23 01:24:30  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 01:25:40  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 01:25:41  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 01:25:41  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 01:25:41  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 01:25:46  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-23 01:25:51  [WARNING ]  main                          WiFi module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:25:51  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:25:51  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 01:25:51  [INFO    ]  main                          Sesión creada: ab7dceba-0698-4f5f-87eb-5bc3b75a46cd
+2026-04-23 01:25:51  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 01:25:52  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 01:25:52  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 01:25:52  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 01:25:52  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 01:25:52  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 01:25:52  [INFO    ]  main                            Módulos activos: []
+2026-04-23 01:25:52  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 01:26:04  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 01:26:04  [INFO    ]  main                          Apagando módulos...
+2026-04-23 01:26:04  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 03:04:13  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:10:49  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:10:50  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 03:10:50  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 03:10:50  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 03:10:50  [WARNING ]  main                          OLED no disponible: name 'JoystickAD1115' is not defined
+2026-04-23 03:10:54  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 03:10:54  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:10:54  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:10:54  [INFO    ]  main                          Sesión creada: 774cb832-7dea-418a-abef-0e2c908f8e47
+2026-04-23 03:10:54  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 03:10:54  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 03:10:54  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:10:54  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 03:10:54  [INFO    ]  main                            Módulos activos: []
+2026-04-23 03:10:54  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:10:54  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 03:10:54  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 03:11:19  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 03:11:19  [INFO    ]  main                          Apagando módulos...
+2026-04-23 03:11:19  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 03:12:16  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:12:17  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 03:12:17  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 03:12:17  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 03:12:17  [WARNING ]  main                          OLED no disponible: name 'event_bus' is not defined
+2026-04-23 03:12:21  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 03:12:21  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:12:21  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:12:21  [INFO    ]  main                          Sesión creada: 92a69dbd-f98a-417d-aa35-7bf12f309731
+2026-04-23 03:12:21  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 03:12:21  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 03:12:21  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:12:21  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 03:12:21  [INFO    ]  main                            Módulos activos: []
+2026-04-23 03:12:21  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:12:21  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 03:12:21  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 03:12:30  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 03:12:30  [INFO    ]  main                          Apagando módulos...
+2026-04-23 03:12:30  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 03:14:54  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:14:55  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 03:14:55  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 03:14:55  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 03:14:55  [WARNING ]  main                          OLED no disponible: Channel must be an integer or list/tuple of integers
+2026-04-23 03:14:59  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 03:14:59  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:14:59  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:14:59  [INFO    ]  main                          Sesión creada: 6f0af029-b894-4f81-a9fb-17166e4fa1ef
+2026-04-23 03:14:59  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 03:14:59  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 03:14:59  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:14:59  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 03:15:00  [INFO    ]  main                            Módulos activos: []
+2026-04-23 03:15:00  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:15:00  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 03:15:00  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 03:15:41  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 03:15:41  [INFO    ]  main                          Apagando módulos...
+2026-04-23 03:15:41  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 03:17:23  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:17:24  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 03:17:24  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 03:17:24  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 03:17:29  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-23 03:17:34  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 03:17:34  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:17:34  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:17:34  [INFO    ]  main                          Sesión creada: 07d9301c-958f-407c-904b-6ac18e11f039
+2026-04-23 03:17:34  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 03:17:35  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 03:17:35  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 03:17:35  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 03:17:35  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:17:35  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 03:17:35  [INFO    ]  main                            Módulos activos: []
+2026-04-23 03:17:35  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:17:40  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 03:17:40  [INFO    ]  main                          Apagando módulos...
+2026-04-23 03:17:40  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 03:23:36  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:23:37  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 03:23:37  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 03:23:37  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 03:23:37  [WARNING ]  main                          OLED no disponible: I2C device not found on address: 0x3C
+2026-04-23 03:23:43  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 03:23:43  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:23:43  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:23:43  [INFO    ]  main                          Sesión creada: a962cec0-0b2f-42bc-bba1-2017a015cd74
+2026-04-23 03:23:43  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 03:23:43  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 03:23:43  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:23:43  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 03:23:43  [INFO    ]  main                            Módulos activos: []
+2026-04-23 03:23:43  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:23:43  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 03:23:43  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 03:24:03  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 03:24:03  [INFO    ]  main                          Apagando módulos...
+2026-04-23 03:24:03  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 03:25:11  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:25:12  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 03:25:12  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 03:25:12  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 03:25:17  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-23 03:25:22  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 03:25:22  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:25:22  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:25:22  [INFO    ]  main                          Sesión creada: 4d3363dd-5244-4719-99e0-25056b03c666
+2026-04-23 03:25:22  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 03:25:23  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 03:25:23  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 03:25:23  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 03:25:23  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:25:23  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 03:25:23  [INFO    ]  main                            Módulos activos: []
+2026-04-23 03:25:23  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:25:49  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 03:25:49  [INFO    ]  main                          Apagando módulos...
+2026-04-23 03:25:49  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 03:29:50  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:29:50  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 03:29:50  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 03:29:50  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 03:29:55  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-23 03:30:01  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 03:30:01  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:30:01  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:30:01  [INFO    ]  main                          Sesión creada: fd90ff40-df34-4a52-ac6f-4640f40f832a
+2026-04-23 03:30:01  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 03:30:01  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 03:30:01  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 03:30:01  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 03:30:01  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:30:01  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 03:30:01  [INFO    ]  main                            Módulos activos: []
+2026-04-23 03:30:01  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:30:08  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 03:30:08  [INFO    ]  main                          Apagando módulos...
+2026-04-23 03:30:08  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 03:38:02  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:38:03  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 03:38:03  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 03:38:03  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 03:38:08  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-23 03:38:11  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 03:38:11  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:38:11  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:38:12  [INFO    ]  main                          Sesión creada: 92b1943a-0bcf-4e7e-8828-a0037066ffa7
+2026-04-23 03:38:12  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 03:38:12  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 03:38:12  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 03:38:12  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 03:38:12  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:38:12  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 03:38:12  [INFO    ]  main                            Módulos activos: []
+2026-04-23 03:38:12  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:38:22  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 03:38:22  [INFO    ]  main                          Apagando módulos...
+2026-04-23 03:38:22  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 03:38:51  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:38:51  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 03:38:51  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 03:38:51  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 03:38:56  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-23 03:39:01  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 03:39:01  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:39:01  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:39:02  [INFO    ]  main                          Sesión creada: b67ba8ea-817b-49e1-bc63-468f62de82b2
+2026-04-23 03:39:02  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 03:39:02  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 03:39:02  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 03:39:02  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 03:39:02  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:39:02  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 03:39:02  [INFO    ]  main                            Módulos activos: []
+2026-04-23 03:39:02  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:39:16  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 03:39:16  [INFO    ]  main                          Apagando módulos...
+2026-04-23 03:39:16  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 03:48:52  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:48:53  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 03:48:53  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 03:48:53  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 03:48:53  [WARNING ]  main                          OLED no disponible: 'OledDisplay' object has no attribute '_lock'
+2026-04-23 03:48:58  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 03:48:58  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:48:58  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:48:58  [INFO    ]  main                          Sesión creada: ee8ba108-da57-4dd4-977c-56e4965e18bb
+2026-04-23 03:48:58  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 03:48:58  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 03:48:58  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:48:58  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 03:48:58  [INFO    ]  main                            Módulos activos: []
+2026-04-23 03:48:58  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:48:58  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 03:48:58  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 03:49:21  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 03:49:21  [INFO    ]  main                          Apagando módulos...
+2026-04-23 03:49:21  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 03:49:54  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 03:49:54  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 03:49:54  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 03:49:54  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 03:49:59  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-23 03:50:05  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 03:50:05  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:50:05  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 03:50:05  [INFO    ]  main                          Sesión creada: 9874ed18-2297-4cb3-bd23-eea0f5bf4e68
+2026-04-23 03:50:05  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 03:50:05  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 03:50:05  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 03:50:05  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 03:50:05  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:50:05  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 03:50:05  [INFO    ]  main                            Módulos activos: []
+2026-04-23 03:50:05  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 03:50:33  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 03:50:33  [INFO    ]  main                          Apagando módulos...
+2026-04-23 03:50:33  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 13:08:39  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 13:08:40  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 13:08:40  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 13:08:40  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 13:08:40  [WARNING ]  main                          OLED no disponible: [Errno 5] Input/output error
+2026-04-23 13:08:44  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 13:08:44  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:08:44  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:08:44  [INFO    ]  main                          Sesión creada: ac6f29bd-064f-4cf8-8dac-3e94a84b32d0
+2026-04-23 13:08:44  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 13:08:44  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 13:08:44  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:08:44  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 13:08:44  [INFO    ]  main                            Módulos activos: []
+2026-04-23 13:08:44  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:08:44  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 13:08:44  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 13:09:15  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 13:09:15  [INFO    ]  main                          Apagando módulos...
+2026-04-23 13:09:15  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 13:09:18  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 13:09:18  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 13:09:18  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 13:09:18  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 13:09:18  [WARNING ]  main                          OLED no disponible: [Errno 5] Input/output error
+2026-04-23 13:09:21  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 13:09:21  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:09:21  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:09:21  [INFO    ]  main                          Sesión creada: 476b950a-42df-4d82-8d40-2c8f8fe87704
+2026-04-23 13:09:21  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 13:09:21  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 13:09:21  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:09:21  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 13:09:21  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 13:09:21  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 13:09:21  [INFO    ]  main                            Módulos activos: []
+2026-04-23 13:09:21  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:16:58  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 13:16:58  [INFO    ]  main                          Apagando módulos...
+2026-04-23 13:16:58  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 13:17:01  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 13:17:01  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 13:17:01  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 13:17:01  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 13:17:01  [INFO    ]  main                          Bus I2C compartido creado ✓
+2026-04-23 13:17:01  [WARNING ]  main                          OLED no disponible: [Errno 5] Input/output error
+2026-04-23 13:17:01  [WARNING ]  main                          Joystick no disponible: No I2C device at address: 0x48
+2026-04-23 13:17:05  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 13:17:05  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:17:05  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:17:05  [INFO    ]  main                          Sesión creada: 803d3a78-69c9-47b2-9576-22c2935d6b4d
+2026-04-23 13:17:05  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 13:17:05  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 13:17:05  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:17:05  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 13:17:05  [INFO    ]  main                            Módulos activos: []
+2026-04-23 13:17:05  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:17:05  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 13:17:05  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 13:18:32  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 13:18:32  [INFO    ]  main                          Apagando módulos...
+2026-04-23 13:18:32  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 13:18:48  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 13:18:49  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 13:18:49  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 13:18:49  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 13:18:49  [INFO    ]  main                          Bus I2C compartido creado ✓
+2026-04-23 13:18:54  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-23 13:18:54  [INFO    ]  main                          Joystick iniciado correctamente ✓
+2026-04-23 13:18:57  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 13:18:57  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:18:57  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:18:57  [INFO    ]  main                          Sesión creada: b31169b7-4772-4685-8986-55269c5cda56
+2026-04-23 13:18:57  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 13:18:58  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 13:18:58  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 13:18:58  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 13:18:58  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:18:58  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 13:18:58  [INFO    ]  main                            Módulos activos: []
+2026-04-23 13:18:58  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:24:02  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 13:24:02  [INFO    ]  main                          Apagando módulos...
+2026-04-23 13:24:02  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 13:24:05  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 13:24:05  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 13:24:05  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 13:24:05  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 13:24:05  [INFO    ]  main                          Bus I2C compartido creado ✓
+2026-04-23 13:24:08  [WARNING ]  main                          OLED no disponible: I2C device not found on address: 0x3C
+2026-04-23 13:24:08  [WARNING ]  main                          Joystick no disponible: No I2C device at address: 0x48
+2026-04-23 13:24:11  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 13:24:11  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:24:11  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:24:11  [INFO    ]  main                          Sesión creada: 4ff07d87-44b4-4dc3-8b0f-30f9ab1358ec
+2026-04-23 13:24:11  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 13:24:11  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 13:24:11  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:24:11  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 13:24:11  [INFO    ]  main                            Módulos activos: []
+2026-04-23 13:24:11  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:24:11  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 13:24:11  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 13:25:50  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 13:25:50  [INFO    ]  main                          Apagando módulos...
+2026-04-23 13:25:50  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 13:25:53  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 13:25:53  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 13:25:53  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 13:25:53  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 13:25:53  [INFO    ]  main                          Bus I2C compartido creado ✓
+2026-04-23 13:25:58  [INFO    ]  main                          OLED iniciado correctamente ✓
+2026-04-23 13:25:58  [INFO    ]  main                          Joystick iniciado correctamente ✓
+2026-04-23 13:26:02  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 13:26:02  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:26:02  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:26:02  [INFO    ]  main                          Sesión creada: 82cd1b04-4049-451c-b663-697bd38e53cd
+2026-04-23 13:26:02  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 13:26:03  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 13:26:03  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 13:26:03  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 13:26:03  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:26:03  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 13:26:03  [INFO    ]  main                            Módulos activos: []
+2026-04-23 13:26:03  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:30:06  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 13:30:06  [INFO    ]  main                          Apagando módulos...
+2026-04-23 13:30:06  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 13:47:52  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 13:48:50  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 13:49:31  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 13:49:31  [INFO    ]  main                          ╔══════════════════════════════════════════╗
+2026-04-23 13:49:31  [INFO    ]  main                          ║       SENTINEL PHANTOM — Iniciando       ║
+2026-04-23 13:49:31  [INFO    ]  main                          ╚══════════════════════════════════════════╝
+2026-04-23 13:49:31  [INFO    ]  main                          Bus I2C compartido creado ✓
+2026-04-23 13:49:31  [WARNING ]  main                          OLED no disponible: name 'OledDisplay' is not defined
+2026-04-23 13:49:31  [INFO    ]  main                          Joystick iniciado correctamente ✓
+2026-04-23 13:49:35  [WARNING ]  main                          WiFi module no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 13:49:35  [WARNING ]  main                          IR module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:49:35  [WARNING ]  main                          nRF24 module no disponible: cannot import name 'event_bus' from 'core.event_bus' (/home/phantomx/centinel-phantom/pi/core/event_bus.py)
+2026-04-23 13:49:35  [INFO    ]  main                          Sesión creada: ae1f6240-3d0e-4c44-a4cd-d262f7495e1f
+2026-04-23 13:49:35  [INFO    ]  main                          Event handlers registrados en el bus
+2026-04-23 13:49:35  [INFO    ]  main                          Iniciando módulos tácticos...
+2026-04-23 13:49:35  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:49:35  [INFO    ]  main                            SENTINEL PHANTOM — Sistema operativo
+2026-04-23 13:49:35  [INFO    ]  main                            Módulos activos: []
+2026-04-23 13:49:35  [INFO    ]  main                          ═══════════════════════════════════════════════════════
+2026-04-23 13:49:35  [INFO    ]  main                          Iniciando API Flask + SocketIO...
+2026-04-23 13:49:35  [INFO    ]  api                           API pendiente de implementación — stub activo
+2026-04-23 13:49:36  [INFO    ]  main                          Señal de cierre recibida (SIGINT/SIGTERM)
+2026-04-23 13:49:36  [INFO    ]  main                          Apagando módulos...
+2026-04-23 13:49:36  [INFO    ]  main                          SENTINEL PHANTOM — Apagado completo. Hasta la próxima.
+2026-04-23 13:52:17  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 13:54:14  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 13:57:16  [INFO    ]  core.event_bus                EventBus inicializado
