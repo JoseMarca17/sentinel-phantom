@@ -1,706 +1,250 @@
-# import asyncio
-# import signal
-# import sys
-# import threading
-# import uuid
-# from datetime import datetime
-
-# from config import DEVICE_ID, MODULES_ENABLED
-# from core.event_bus import bus
-# from core.logger import get_logger
-# from database.local_db import db
-# from database.models import Event, Session
-# from database.sync import sync_manager
-# from hardware.oled_display import OledDisplay
-# from hardware.joystick import JoystickADS1115
-# log = get_logger("main")
-
-# # ── Registro de módulos ───────────────────────────────────────────────────────
-# MODULE_REGISTRY: dict = {}
-
-
-# def _oled_message(oled, text: str) -> None:
-#     """Envía un mensaje simple al OLED sin romper el flujo si falla."""
-#     if not oled:
-#         return
-
-#     try:
-#         oled.show_alert(
-#             message=text,
-#             module="SYSTEM",
-#             level="info",
-#         )
-#     except Exception:
-#         pass
-
-
-# def _load_modules() -> None:
-#     """Importa e instancia los módulos habilitados."""
-
-#     if MODULES_ENABLED.get("wifi"):
-#         try:
-#             from modules.wifi.wifi_module import WifiModule as WiFiModule
-
-#             MODULE_REGISTRY["wifi"] = WiFiModule()
-#             log.info("Módulo WiFi cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"WiFi module no disponible: {e}")
-
-#     if MODULES_ENABLED.get("bluetooth"):
-#         try:
-#             from modules.bluetooth.bt_module import BluetoothModule
-
-#             MODULE_REGISTRY["bluetooth"] = BluetoothModule()
-#             log.info("Módulo Bluetooth cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"Bluetooth module no disponible: {e}")
-
-#     if MODULES_ENABLED.get("rfid"):
-#         try:
-#             from modules.rfid.rfid_module import RFIDModule
-
-#             MODULE_REGISTRY["rfid"] = RFIDModule()
-#             log.info("Módulo RFID cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"RFID module no disponible: {e}")
-
-#     if MODULES_ENABLED.get("tscm"):
-#         try:
-#             from modules.tscm.tscm_module import TSCMModule
-
-#             MODULE_REGISTRY["tscm"] = TSCMModule()
-#             log.info("Módulo TSCM cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"TSCM module no disponible: {e}")
-
-#     if MODULES_ENABLED.get("ir"):
-#         try:
-#             from modules.ir.ir_module import IRModule
-
-#             MODULE_REGISTRY["ir"] = IRModule()
-#             log.info("Módulo IR cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"IR module no disponible: {e}")
-
-#     if MODULES_ENABLED.get("nrf24"):
-#         try:
-#             from modules.nrf24.nrf24_module import NRF24Module
-
-#             MODULE_REGISTRY["nrf24"] = NRF24Module()
-#             log.info("Módulo nRF24 cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"nRF24 module no disponible: {e}")
-
-
-# # ── Sesión de auditoría ───────────────────────────────────────────────────────
-
-# def _create_session() -> str:
-#     session_id = str(uuid.uuid4())
-
-#     session = Session(
-#         id=session_id,
-#         device_id=DEVICE_ID,
-#         started_at=datetime.utcnow().isoformat(),
-#         notes="Sesión automática — Open House 2026",
-#     )
-
-#     db.create_session(session)
-#     log.info(f"Sesión creada: {session_id}")
-
-#     return session_id
-
-
-# # ── Handlers de eventos del bus ───────────────────────────────────────────────
-
-# def _setup_event_handlers(session_id: str) -> None:
-#     """Suscribe handlers globales que persisten eventos/alertas en SQLite."""
-
-#     import json
-
-#     def on_alert(event: dict) -> None:
-#         from database.models import Alert
-
-#         payload = event.get("payload", {})
-
-#         alert = Alert(
-#             session_id=payload.get("session_id", session_id),
-#             module=payload.get("module", "unknown"),
-#             alert_type=payload.get("alert_type", "GENERIC"),
-#             severity=payload.get("severity", "INFO"),
-#             description=payload.get("description", str(payload)),
-#             device_mac=payload.get("mac"),
-#             extra=json.dumps(payload.get("extra")) if payload.get("extra") else None,
-#         )
-
-#         db.insert_alert(alert)
-
-#     def on_event(event: dict) -> None:
-#         payload = event.get("payload", {})
-#         topic = event.get("topic", "")
-
-#         parts = topic.split(".", 1)
-#         module = parts[0] if len(parts) >= 1 else "unknown"
-#         ev_type = parts[1] if len(parts) >= 2 else topic
-
-#         ev = Event(
-#             session_id=payload.get("session_id", session_id),
-#             module=module,
-#             event_type=ev_type,
-#             payload=json.dumps(payload),
-#         )
-
-#         db.insert_event(ev)
-
-#     # Alertas
-#     for suffix in [
-#         "alert",
-#         "threat",
-#         "deauth_detected",
-#         "evil_twin_detected",
-#         "drone_detected",
-#         "mousejack_detected",
-#     ]:
-#         bus.subscribe(f"*.{suffix}", on_alert)
-
-#     # Todos los eventos
-#     bus.subscribe("*", on_event)
-
-#     log.info("Event handlers registrados en el bus")
-
-
-# # ── API en thread separado ────────────────────────────────────────────────────
-
-# def _start_api() -> None:
-#     from api.app import run_api
-
-#     log.info("Iniciando API Flask + SocketIO...")
-#     run_api(MODULE_REGISTRY)
-
-
-# # ── Loop principal ────────────────────────────────────────────────────────────
-
-# async def _main_loop(session_id: str) -> None:
-#     """Inicia todos los módulos habilitados y espera señal de cierre."""
-
-#     log.info("Iniciando módulos tácticos...")
-
-#     for name, module in MODULE_REGISTRY.items():
-#         try:
-#             await module.start()
-#         except Exception as exc:
-#             log.error(f"No se pudo iniciar '{name}': {exc}")
-
-#     log.info("═" * 55)
-#     log.info("  SENTINEL PHANTOM — Sistema operativo")
-
-#     activos = [
-#         n
-#         for n, m in MODULE_REGISTRY.items()
-#         if hasattr(m, "status") and getattr(m.status, "value", None) == "RUNNING"
-#     ]
-
-#     log.info(f"  Módulos activos: {activos}")
-#     log.info("═" * 55)
-
-#     stop = asyncio.Event()
-
-#     def _handle_signal(*_):
-#         log.info("Señal de cierre recibida (SIGINT/SIGTERM)")
-#         stop.set()
-
-#     loop = asyncio.get_running_loop()
-
-#     for sig in (signal.SIGINT, signal.SIGTERM):
-#         try:
-#             loop.add_signal_handler(sig, _handle_signal)
-#         except NotImplementedError:
-#             signal.signal(sig, _handle_signal)
-
-#     await stop.wait()
-
-#     # Shutdown ordenado
-#     log.info("Apagando módulos...")
-
-#     for name, module in MODULE_REGISTRY.items():
-#         try:
-#             await module.stop()
-#         except Exception as exc:
-#             log.error(f"Error al detener '{name}': {exc}")
-
-#     db.close_session(session_id, notes="Sesión cerrada correctamente")
-
-#     sync_manager.stop()
-#     db.close()
-
-#     log.info("SENTINEL PHANTOM — Apagado completo. Hasta la próxima.")
-
-
-# # ── Entry point ───────────────────────────────────────────────────────────────
-
-# def main() -> None:
-
-#     log.info("╔══════════════════════════════════════════╗")
-#     log.info("║       SENTINEL PHANTOM — Iniciando       ║")
-#     log.info("╚══════════════════════════════════════════╝")
-
-#     # ── 0. Iniciar OLED primero ─────────────────────
-#     i2c_lock = threading.Lock()
-#     try:
-#         oled = OledDisplay(bus,i2c_lock)
-#         # joystick = JoystickADS1115(bus,i2c_lock)
-#         oled.show_boot()
-
-#         log.info("OLED iniciado correctamente ✓")
-
-#     except Exception as e:
-#         log.warning(f"OLED no disponible: {e}")
-#         oled = None
-
-#     # ── 1. Cargar módulos ───────────────────────────
-
-#     _oled_message(oled, "Cargando modulos")
-
-#     _load_modules()
-
-#     # ── 2. Crear sesión ─────────────────────────────
-
-#     _oled_message(oled, "Creando sesion")
-
-#     session_id = _create_session()
-
-#     # ── 3. Registrar handlers ───────────────────────
-
-#     _oled_message(oled, "Configurando eventos")
-
-#     _setup_event_handlers(session_id)
-
-#     # ── 4. Sync manager ─────────────────────────────
-
-#     _oled_message(oled, "Iniciando sincronizacion")
-
-#     sync_manager.start()
-
-#     # ── 5. API thread ───────────────────────────────
-
-#     _oled_message(oled, "Iniciando API")
-
-#     api_thread = threading.Thread(
-#         target=_start_api,
-#         daemon=True,
-#         name="api-server",
-#     )
-
-#     api_thread.start()
-
-#     # ── 6. Mostrar menú final ───────────────────────
-
-#     if oled:
-#         try:
-#             oled.draw_menu()
-#         except Exception:
-#             pass
-
-#     # ── 7. Loop principal ───────────────────────────
-
-#     try:
-#         asyncio.run(_main_loop(session_id))
-
-#     except KeyboardInterrupt:
-#         log.info("Interrupción por teclado")
-
-#     except Exception as exc:
-#         log.critical(f"Error fatal: {exc}", exc_info=True)
-#         sys.exit(1)
-
-
-# if __name__ == "__main__":
-#     main()
-
-
-# import asyncio
-# import signal
-# import sys
-# import threading
-# import uuid
-# from datetime import datetime
-
-# from config import DEVICE_ID, MODULES_ENABLED
-# from core.event_bus import bus
-# from core.logger import get_logger
-# from database.local_db import db
-# from database.models import Event, Session
-# from database.sync import sync_manager
-# # from hardware.oled_display import OledDisplay
-# from hardware.joystick import JoystickADS1115
-# log = get_logger("main")
-
-# # ── Registro de módulos ───────────────────────────────────────────────────────
-# MODULE_REGISTRY: dict = {}
-
-
-# def _oled_message(oled, text: str) -> None:
-#     """Envía un mensaje simple al OLED sin romper el flujo si falla."""
-#     if not oled:
-#         return
-
-#     try:
-#         oled.show_alert(
-#             message=text,
-#             module="SYSTEM",
-#             level="info",
-#         )
-#     except Exception:
-#         pass
-
-
-# def _load_modules() -> None:
-#     """Importa e instancia los módulos habilitados."""
-
-#     if MODULES_ENABLED.get("wifi"):
-#         try:
-#             from modules.wifi.wifi_module import WifiModule as WiFiModule
-
-#             MODULE_REGISTRY["wifi"] = WiFiModule()
-#             log.info("Módulo WiFi cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"WiFi module no disponible: {e}")
-
-#     if MODULES_ENABLED.get("bluetooth"):
-#         try:
-#             from modules.bluetooth.bt_module import BluetoothModule
-
-#             MODULE_REGISTRY["bluetooth"] = BluetoothModule()
-#             log.info("Módulo Bluetooth cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"Bluetooth module no disponible: {e}")
-
-#     if MODULES_ENABLED.get("rfid"):
-#         try:
-#             from modules.rfid.rfid_module import RFIDModule
-
-#             MODULE_REGISTRY["rfid"] = RFIDModule()
-#             log.info("Módulo RFID cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"RFID module no disponible: {e}")
-
-#     if MODULES_ENABLED.get("tscm"):
-#         try:
-#             from modules.tscm.tscm_module import TSCMModule
-
-#             MODULE_REGISTRY["tscm"] = TSCMModule()
-#             log.info("Módulo TSCM cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"TSCM module no disponible: {e}")
-
-#     if MODULES_ENABLED.get("ir"):
-#         try:
-#             from modules.ir.ir_module import IRModule
-
-#             MODULE_REGISTRY["ir"] = IRModule()
-#             log.info("Módulo IR cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"IR module no disponible: {e}")
-
-#     if MODULES_ENABLED.get("nrf24"):
-#         try:
-#             from modules.nrf24.nrf24_module import NRF24Module
-
-#             MODULE_REGISTRY["nrf24"] = NRF24Module()
-#             log.info("Módulo nRF24 cargado ✓")
-#         except ImportError as e:
-#             log.warning(f"nRF24 module no disponible: {e}")
-
-
-# # ── Sesión de auditoría ───────────────────────────────────────────────────────
-
-# def _create_session() -> str:
-#     session_id = str(uuid.uuid4())
-
-#     session = Session(
-#         id=session_id,
-#         device_id=DEVICE_ID,
-#         started_at=datetime.utcnow().isoformat(),
-#         notes="Sesión automática — Open House 2026",
-#     )
-
-#     db.create_session(session)
-#     log.info(f"Sesión creada: {session_id}")
-
-#     return session_id
-
-
-# # ── Handlers de eventos del bus ───────────────────────────────────────────────
-
-# def _setup_event_handlers(session_id: str) -> None:
-#     """Suscribe handlers globales que persisten eventos/alertas en SQLite."""
-
-#     import json
-
-#     def on_alert(event: dict) -> None:
-#         from database.models import Alert
-
-#         payload = event.get("payload", {})
-
-#         alert = Alert(
-#             session_id=payload.get("session_id", session_id),
-#             module=payload.get("module", "unknown"),
-#             alert_type=payload.get("alert_type", "GENERIC"),
-#             severity=payload.get("severity", "INFO"),
-#             description=payload.get("description", str(payload)),
-#             device_mac=payload.get("mac"),
-#             extra=json.dumps(payload.get("extra")) if payload.get("extra") else None,
-#         )
-
-#         db.insert_alert(alert)
-
-#     def on_event(event: dict) -> None:
-#         payload = event.get("payload", {})
-#         topic = event.get("topic", "")
-
-#         parts = topic.split(".", 1)
-#         module = parts[0] if len(parts) >= 1 else "unknown"
-#         ev_type = parts[1] if len(parts) >= 2 else topic
-
-#         ev = Event(
-#             session_id=payload.get("session_id", session_id),
-#             module=module,
-#             event_type=ev_type,
-#             payload=json.dumps(payload),
-#         )
-
-#         db.insert_event(ev)
-
-#     # Alertas
-#     for suffix in [
-#         "alert",
-#         "threat",
-#         "deauth_detected",
-#         "evil_twin_detected",
-#         "drone_detected",
-#         "mousejack_detected",
-#     ]:
-#         bus.subscribe(f"*.{suffix}", on_alert)
-
-#     # Todos los eventos
-#     bus.subscribe("*", on_event)
-
-#     log.info("Event handlers registrados en el bus")
-
-
-# # ── API en thread separado ────────────────────────────────────────────────────
-
-# def _start_api() -> None:
-#     from api.app import run_api
-
-#     log.info("Iniciando API Flask + SocketIO...")
-#     run_api(MODULE_REGISTRY)
-
-
-# # ── Loop principal ────────────────────────────────────────────────────────────
-
-# async def _main_loop(session_id: str) -> None:
-#     """Inicia todos los módulos habilitados y espera señal de cierre."""
-
-#     log.info("Iniciando módulos tácticos...")
-
-#     for name, module in MODULE_REGISTRY.items():
-#         try:
-#             await module.start()
-#         except Exception as exc:
-#             log.error(f"No se pudo iniciar '{name}': {exc}")
-
-#     log.info("═" * 55)
-#     log.info("  SENTINEL PHANTOM — Sistema operativo")
-
-#     activos = [
-#         n
-#         for n, m in MODULE_REGISTRY.items()
-#         if hasattr(m, "status") and getattr(m.status, "value", None) == "RUNNING"
-#     ]
-
-#     log.info(f"  Módulos activos: {activos}")
-#     log.info("═" * 55)
-
-#     stop = asyncio.Event()
-
-#     def _handle_signal(*_):
-#         log.info("Señal de cierre recibida (SIGINT/SIGTERM)")
-#         stop.set()
-
-#     loop = asyncio.get_running_loop()
-
-#     for sig in (signal.SIGINT, signal.SIGTERM):
-#         try:
-#             loop.add_signal_handler(sig, _handle_signal)
-#         except NotImplementedError:
-#             signal.signal(sig, _handle_signal)
-
-#     await stop.wait()
-
-#     # Shutdown ordenado
-#     log.info("Apagando módulos...")
-
-#     for name, module in MODULE_REGISTRY.items():
-#         try:
-#             await module.stop()
-#         except Exception as exc:
-#             log.error(f"Error al detener '{name}': {exc}")
-
-#     db.close_session(session_id, notes="Sesión cerrada correctamente")
-
-#     sync_manager.stop()
-#     db.close()
-
-#     log.info("SENTINEL PHANTOM — Apagado completo. Hasta la próxima.")
-
-
-# # ── Entry point ───────────────────────────────────────────────────────────────
-
-# def main() -> None:
-
-#     log.info("╔══════════════════════════════════════════╗")
-#     log.info("║       SENTINEL PHANTOM — Iniciando       ║")
-#     log.info("╚══════════════════════════════════════════╝")
-
-#     # ── 0. Crear lock e instancia I2C compartidos ───
-#     import board
-#     import busio
-
-#     i2c_lock = threading.Lock()
-
-#     try:
-#         shared_i2c = busio.I2C(board.SCL, board.SDA)
-#         log.info("Bus I2C compartido creado ✓")
-#     except Exception as e:
-#         log.warning(f"No se pudo crear bus I2C compartido: {e}")
-#         shared_i2c = None
-
-#     # ── 1. Iniciar OLED ─────────────────────────────
-#     try:
-#         oled = OledDisplay(bus, i2c_lock)
-#         oled.show_boot()
-#         log.info("OLED iniciado correctamente ✓")
-#     except Exception as e:
-#         log.warning(f"OLED no disponible: {e}")
-#         oled = None
-
-#     # ── 2. Iniciar Joystick ─────────────────────────
-#     try:
-#         joystick = JoystickADS1115(bus, i2c_lock, i2c_bus=shared_i2c)
-#         log.info("Joystick iniciado correctamente ✓")
-#     except Exception as e:
-#         log.warning(f"Joystick no disponible: {e}")
-
-#     # ── 3. Cargar módulos ───────────────────────────
-
-#     _oled_message(oled, "Cargando modulos")
-
-#     _load_modules()
-
-#     # ── 4. Crear sesión ─────────────────────────────
-
-#     _oled_message(oled, "Creando sesion")
-
-#     session_id = _create_session()
-
-#     # ── 5. Registrar handlers ───────────────────────
-
-#     _oled_message(oled, "Configurando eventos")
-
-#     _setup_event_handlers(session_id)
-
-#     # ── 6. Sync manager ─────────────────────────────
-
-#     _oled_message(oled, "Iniciando sincronizacion")
-
-#     sync_manager.start()
-
-#     # ── 7. API thread ───────────────────────────────
-
-#     _oled_message(oled, "Iniciando API")
-
-#     api_thread = threading.Thread(
-#         target=_start_api,
-#         daemon=True,
-#         name="api-server",
-#     )
-
-#     api_thread.start()
-
-#     # ── 8. Mostrar menú final ───────────────────────
-
-#     if oled:
-#         try:
-#             oled.draw_menu()
-#         except Exception:
-#             pass
-
-#     # ── 9. Loop principal ───────────────────────────
-
-#     try:
-#         asyncio.run(_main_loop(session_id))
-
-#     except KeyboardInterrupt:
-#         log.info("Interrupción por teclado")
-
-#     except Exception as exc:
-#         log.critical(f"Error fatal: {exc}", exc_info=True)
-#         sys.exit(1)
-
-
-# if __name__ == "__main__":
-#     main()
-
-import threading
-import time
+import asyncio
 import board
 import busio
+import threading
+
+from api.app import run_api
 
 from core.event_bus import bus
+from core.logger import get_logger
 from hardware.oled_display import OledDisplay
-from hardware.joystick import JoystickADS1115
+from hardware.joystick import Joystick
+from modules.rfid.rfid_module import RFIDModule
+from modules.bluethooth.bt_module import BluetoothModule
+from modules.nrf.nrf_module import NrfController
+from modules.wifi.wifi_module import WifiModule
+from api.app import run_api, socketio
+import threading
+log = get_logger("main")
+
+rfid     = None
+bt       = None
+nrf      = None
+oled     = None
+wifi_ids = None
+_loop    = None
 
 
-def main():
-    print("SENTINEL PHANTOM INICIANDO...")
+def handle_oled_action(event):
+    action = event["payload"]["action"]
+    log.info(f"Acción recibida: {action}")
 
-    # ── BUS I2C COMPARTIDO ─────────────────
-    i2c = busio.I2C(board.SCL, board.SDA)
+    # ── RFID ──────────────────────────────────────────────────────────────────
+    if action == "clone_rfid":
+        if rfid is None:
+            log.error("RFID no inicializado")
+            return
 
-    # ── LOCK GLOBAL ────────────────────────
+        future = asyncio.run_coroutine_threadsafe(rfid.clone_card(), _loop)
+
+        def on_done_rfid(f):
+            exc = f.exception()
+            if exc:
+                log.error(f"clone_card() terminó con excepción: {exc}")
+            else:
+                log.info(f"clone_card() terminó OK: {f.result()}")
+
+        future.add_done_callback(on_done_rfid)
+
+    # ── BLUETOOTH ─────────────────────────────────────────────────────────────
+    elif action == "bt_scan":
+        if bt is None:
+            log.error("Bluetooth no inicializado")
+            return
+
+        future = asyncio.run_coroutine_threadsafe(
+            bt.run_scan(duration=10), _loop
+        )
+
+        def on_done_bt(f):
+            exc = f.exception()
+            if exc:
+                log.error(f"bt_scan() terminó con excepción: {exc}")
+            else:
+                log.info(f"bt_scan() terminó OK: {f.result()}")
+
+        future.add_done_callback(on_done_bt)
+
+    # ── NRF: escaneo WiFi ─────────────────────────────────────────────────────
+    elif action == "nrf_wifi_scan":
+        if nrf is None:
+            log.error("NRF no inicializado")
+            return
+
+        def on_scan_done(networks):
+            bus.publish_sync("oled:wifi_nets", {"networks": networks})
+
+        def on_status(msg):
+            bus.publish_sync("oled:wifi_status", {"msg": msg})
+
+        nrf.on_scan_done(on_scan_done)
+        nrf.on_status(on_status)
+        nrf.scan()
+
+    # ── NRF: ataque WiFi ──────────────────────────────────────────────────────
+    elif action == "nrf_wifi_attack":
+        if nrf is None:
+            log.error("NRF no inicializado")
+            return
+
+        net_idx = event["payload"].get("net_idx", 0)
+        nrf.select(net_idx)
+        nrf.start_wifi()
+
+    # ── NRF: BT jam ───────────────────────────────────────────────────────────
+    elif action == "nrf_bt":
+        if nrf is None:
+            log.error("NRF no inicializado")
+            return
+
+        def on_status_bt(msg):
+            bus.publish_sync("oled:wifi_status", {"msg": msg})
+
+        nrf.on_status(on_status_bt)
+        nrf.start_bt()
+        bus.publish_sync("oled:bt_active", {})
+
+    elif action == "nrf_stop":
+        if nrf is None:
+            return
+        nrf.stop()
+        bus.publish_sync("oled:return_menu", {})
+
+    # ── ESTADO ────────────────────────────────────────────────────────────────
+    elif action == "status":
+        lines = [
+            f"RFID: {'OK' if rfid     else 'X'}",
+            f"BT:   {'OK' if bt       else 'X'}",
+            f"NRF:  {'OK' if nrf      else 'X'}",
+            f"WIFI: {'OK' if wifi_ids else 'X'}",
+        ]
+        bus.publish_sync("oled:status", {"lines": lines})
+
+    # ── WIFI: todo delegado a WifiModule vía bus ──────────────────────────────
+    elif action in (
+        "wifi_ids_start",      "wifi_ids_stop",
+        "wifi_deauth",         "wifi_do_deauth",
+        "wifi_beacon_flood",   "wifi_do_beacon",
+        "wifi_evil_twin",
+        "wifi_pmkid",          "wifi_do_pmkid",
+        "wifi_sniffer_start",  "wifi_sniffer_stop",
+        "wifi_sniffer_devices",
+    ):
+        if wifi_ids is None:
+            log.error("Wifi no inicializado")
+        # WifiModule está suscrito a oled:action y maneja estas acciones
+    # Emitir acción al dashboard
+    
+    else:
+        log.warning(f"Acción desconocida: {action}")
+    
+    socketio.emit("action", {
+        "action": action
+    })
+
+
+async def main():
+    global rfid, bt, nrf, oled, wifi_ids, _loop
+
+    _loop = asyncio.get_running_loop()
+
+    log.info("═══ SENTINEL PHANTOM ═══")
+
+    i2c      = busio.I2C(board.SCL, board.SDA)
     i2c_lock = threading.Lock()
 
-    # ── OLED ──────────────────────────────
+    # ── OLED ──────────────────────────────────────────────────────────────────
     try:
         oled = OledDisplay(bus, i2c_lock, i2c)
         oled.show_boot()
-        print("OLED OK")
+        oled.draw_menu()
+        log.info("OLED OK")
     except Exception as e:
-        print("OLED ERROR:", e)
+        log.warning(f"OLED no disponible: {e}")
         oled = None
 
-    # ── JOYSTICK ──────────────────────────
+    # ── JOYSTICK ──────────────────────────────────────────────────────────────
     try:
-        joystick = JoystickADS1115(bus, i2c_lock, i2c)
-        print("Joystick OK")
+        joystick = Joystick(bus, i2c_lock, i2c)
+        log.info("Joystick OK")
     except Exception as e:
-        print("Joystick ERROR:", e)
+        log.warning(f"Joystick no disponible: {e}")
+        joystick = None
 
-    # ── MENÚ ──────────────────────────────
-    if oled:
-        oled.draw_menu()
+    # ── RFID ──────────────────────────────────────────────────────────────────
+    try:
+        rfid = RFIDModule()
+        await rfid.start()
+        log.info("RFID OK")
+    except Exception as e:
+        log.warning(f"RFID no disponible: {e}")
+        rfid = None
 
-    # ── LOOP ──────────────────────────────
+    # ── BLUETOOTH ─────────────────────────────────────────────────────────────
+    try:
+        bt = BluetoothModule()
+        await bt.start()
+        log.info("Bluetooth OK")
+    except Exception as e:
+        log.warning(f"Bluetooth no disponible: {e}")
+        bt = None
+
+    # ── WiFi Module ───────────────────────────────────────────────────────────
+    try:
+        wifi_ids = WifiModule()
+        log.info("WifiModule OK")
+    except Exception as e:
+        log.warning(f"WifiModule no disponible: {e}")
+        wifi_ids = None
+
+    # ── NRF ───────────────────────────────────────────────────────────────────
+    try:
+        nrf = NrfController(port="/dev/ttyUSB1")
+        log.info("NRF OK")
+    except Exception as e:
+        log.warning(f"NRF no disponible: {e}")
+        nrf = None
+
+    bus.subscribe("oled:action", handle_oled_action)
+
     try:
         while True:
-            time.sleep(1)
+            await asyncio.sleep(1)
+    except asyncio.CancelledError:
+        pass
+    finally:
+        log.info("Cerrando...")
 
-    except KeyboardInterrupt:
-        print("Cerrando sistema...")
+        if rfid:
+            await rfid.stop()
+        if bt:
+            await bt.stop()
+        if nrf:
+            nrf.stop()
+        if joystick:
+            joystick.stop()
         if oled:
             oled.cleanup()
-        joystick.stop()
+    # ── API WEB (FLASK + SOCKET.IO) ─────────────────────────────
+# ── REGISTRO DE MÓDULOS ──
+module_registry = {
+    "rfid": rfid,
+    "bluetooth": bt,
+    "wifi": wifi_ids,
+}
 
+# ── INICIAR API ──
+api_thread = threading.Thread(
+    target=run_api,
+    args=(module_registry,),
+    daemon=True
+)
+api_thread.start()
+
+log.info("API + Socket.IO corriendo")
 
 if __name__ == "__main__":
-    main()
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("Bye")

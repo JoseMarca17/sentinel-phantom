@@ -1,7 +1,6 @@
 """
 SENTINEL PHANTOM - RFID Reader
 Lee PN532 (I2C, 13.56 MHz) y RC522 (SPI, 125 kHz) via ESP32 por USB serial.
-También puede leer directo si los módulos están en la Pi.
 """
 
 import json
@@ -24,21 +23,19 @@ class RFIDReader:
     def __init__(self):
         self._ser: Optional[serial.Serial] = None
         self._last_uid = ""
-        self._cooldown  = 2.0   # segundos entre lecturas del mismo UID
+        self._cooldown = 2.0
         self._last_time = 0.0
         self._connect()
 
     def _connect(self):
         try:
             self._ser = serial.Serial(
-                port      = ESP32_PORT,
-                baudrate  = ESP32_BAUD,
-                timeout   = 1.0,
+                port=ESP32_PORT,
+                baudrate=ESP32_BAUD,
+                timeout=1.0,
             )
-            time.sleep(2)  # esperar boot del ESP32
-            # Limpiar buffer de arranque
+            time.sleep(2)
             self._ser.reset_input_buffer()
-            # Verificar conexión
             self._ser.write(b"PING\n")
             resp = self._ser.readline().decode("utf-8", errors="ignore").strip()
             if "PONG" in resp:
@@ -69,7 +66,6 @@ class RFIDReader:
 
             data = json.loads(line)
 
-            # Solo procesar eventos de SCAN
             if data.get("event") != "SCAN":
                 return None
 
@@ -77,24 +73,23 @@ class RFIDReader:
             if not uid:
                 return None
 
-            # Anti-rebote: mismo UID en menos de cooldown
             now = time.time()
             if uid == self._last_uid and (now - self._last_time) < self._cooldown:
                 return None
 
-            self._last_uid  = uid
+            self._last_uid = uid
             self._last_time = now
 
             return {
-                "uid":    uid,
-                "source": data.get("source", "UNKNOWN"),
-                "type":   self._detect_type(data.get("source", "")),
+                "uid":        uid,
+                "source":     data.get("source", "UNKNOWN"),
+                "type":       self._detect_type(data.get("source", "")),
                 "authorized": data.get("authorized", False),
-                "raw":    data,
+                "raw":        data,
             }
 
         except json.JSONDecodeError:
-            pass  # línea de debug del ESP32, ignorar
+            pass
         except serial.SerialException as exc:
             log.error(f"Error serial: {exc}")
             self._ser = None
@@ -107,15 +102,37 @@ class RFIDReader:
             return "RFID (125 kHz)"
         return "UNKNOWN"
 
-    def send_command(self, cmd: str) -> Optional[dict]:
-        """Envía un comando al ESP32 y espera respuesta JSON."""
+    def send_command(self, cmd: str, timeout: float = 3.0) -> Optional[dict]:
+        """
+        Envía un comando al ESP32 y espera su respuesta JSON.
+        Ignora eventos SCAN que lleguen mientras espera — esos son del
+        loop de escaneo normal del ESP32 y no son la respuesta al comando.
+        """
         if not self.connected:
             return None
         try:
             self._ser.reset_input_buffer()
             self._ser.write(f"{cmd}\n".encode())
-            resp = self._ser.readline().decode("utf-8", errors="ignore").strip()
-            return json.loads(resp) if resp else None
+
+            deadline = time.time() + timeout
+            while time.time() < deadline:
+                line = self._ser.readline().decode("utf-8", errors="ignore").strip()
+                if not line:
+                    continue
+                try:
+                    data = json.loads(line)
+                    # Ignorar SCANs que el ESP32 emita mientras procesa el comando
+                    if data.get("event") == "SCAN":
+                        log.debug(f"SCAN ignorado mientras esperaba respuesta a {cmd!r}")
+                        continue
+                    # Cualquier otra respuesta es nuestra
+                    return data
+                except json.JSONDecodeError:
+                    continue  # línea de debug del ESP32
+
+            log.warning(f"Timeout esperando respuesta para comando: {cmd!r}")
+            return None
+
         except Exception as exc:
             log.error(f"Error enviando comando {cmd!r}: {exc}")
             return None

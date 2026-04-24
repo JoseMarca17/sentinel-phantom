@@ -1,13 +1,12 @@
 """
 SENTINEL PHANTOM - WIFI Evil Twin Module
 
-Versión corregida:
-- Sin imports circulares
-- Con clase EvilTwin real (engine)
-- Controller limpio
+Integra el ataque Evil Twin con el sistema principal y el OLED.
+Sigue la misma arquitectura que RFIDModule.
 """
 
 import asyncio
+import time
 
 from core.base_module import BaseModule
 from core.logger import get_logger
@@ -16,40 +15,11 @@ from core.event_bus import bus
 from hardware.pico_bridge import PicoBridge
 from database.local_db import LocalDB
 
+from modules.wifi.evil_twin import EvilTwinModule
+
 
 log = get_logger("module.wifi.evil_twin")
 
-
-# ─────────────────────────────────────────
-# 🔧 ENGINE (BAJO NIVEL)
-# ─────────────────────────────────────────
-
-class EvilTwin:
-    def __init__(self, pico=None, bus=None, db=None):
-        self.pico = pico
-        self.bus = bus
-        self.db = db
-        self.running = False
-        self.clients = 0
-
-    def start(self, ssid, channel, password=""):
-        self.running = True
-        log.info(f"[EvilTwin] AP levantado: {ssid} (ch {channel})")
-
-        # Aquí iría lógica real (hostapd, dnsmasq, etc)
-        return True
-
-    def stop(self):
-        self.running = False
-        log.info("[EvilTwin] detenido")
-
-    def get_status(self):
-        return {"count": self.clients}
-
-
-# ─────────────────────────────────────────
-# 🧠 CONTROLLER (ASYNC)
-# ─────────────────────────────────────────
 
 class EvilTwinController(BaseModule):
 
@@ -74,7 +44,7 @@ class EvilTwinController(BaseModule):
             self.pico = PicoBridge()
             self.db = LocalDB()
 
-            self.evil = EvilTwin(
+            self.evil = EvilTwinModule(
                 pico=self.pico,
                 bus=bus,
                 db=self.db
@@ -116,6 +86,7 @@ class EvilTwinController(BaseModule):
                 )
 
                 await asyncio.sleep(2)
+
                 continue
 
             await asyncio.sleep(0.2)
@@ -127,12 +98,15 @@ class EvilTwinController(BaseModule):
     async def _teardown(self):
 
         try:
+
             if self.evil and self.evil.running:
+
                 self.evil.stop()
 
             log.info("Evil Twin detenido")
 
         except Exception as e:
+
             log.error(f"Evil Twin teardown error: {e}")
 
     # ─────────────────────────────────────────
@@ -158,6 +132,7 @@ class EvilTwinController(BaseModule):
         await asyncio.sleep(1)
 
         try:
+
             loop = asyncio.get_event_loop()
 
             result = await loop.run_in_executor(
@@ -169,13 +144,16 @@ class EvilTwinController(BaseModule):
             )
 
             if result:
+
                 log.info("Evil Twin iniciado")
 
                 bus.publish_sync(
                     "oled:wifi_status",
                     {"msg": "Evil Twin activo"}
                 )
+
             else:
+
                 bus.publish_sync(
                     "oled:wifi_status",
                     {"msg": "Fallo inicio"}
@@ -199,6 +177,7 @@ class EvilTwinController(BaseModule):
         log.info("stop_evil_twin()")
 
         try:
+
             loop = asyncio.get_event_loop()
 
             await loop.run_in_executor(
@@ -220,4 +199,8 @@ class EvilTwinController(BaseModule):
             log.error(f"Evil Twin stop error: {e}")
 
         finally:
-            bus.publish_sync("oled:return_menu", {})
+
+            bus.publish_sync(
+                "oled:return_menu",
+                {}
+            )

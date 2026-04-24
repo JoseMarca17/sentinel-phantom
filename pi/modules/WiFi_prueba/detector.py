@@ -1,5 +1,18 @@
 """
-SENTINEL PHANTOM - WIFI IDS Module
+SENTINEL PHANTOM - WIFI Detector Module
+
+Integra WiFiDetector con:
+- OLED display
+- Event bus
+- BaseModule lifecycle
+- Async runtime
+
+Detecta:
+- Evil Twin
+- Deauth
+- Beacon flood
+- Channel hop
+- Security downgrade
 """
 
 import asyncio
@@ -8,25 +21,18 @@ from core.base_module import BaseModule
 from core.logger import get_logger
 from core.event_bus import bus
 
-# IMPORT CORRECTO — motor real del IDS
-from modules.wifi.engine import WifiIDS as WifiIDSEngine
 
 
-log = get_logger("module.wifi.ids")
+log = get_logger("module.wifi.detector")
 
 
-from modules.wifi.engine import WifiIDS as WifiIDSEngine
-
-class WifiIDS:
+class WiFiDetectorModule(BaseModule):
 
     def __init__(self):
-        self.engine = WifiIDSEngine()
+        super().__init__("wifi_detector", enabled=True)
 
-    async def start(self):
-        await self.engine.start()
-
-    async def stop(self):
-        await self.engine.stop()
+        self.detector = None
+        self._running_event = None
 
     # ─────────────────────────────────────────
     # SETUP
@@ -38,26 +44,30 @@ class WifiIDS:
 
         try:
 
-            self.ids = WifiIDSEngine(
-                iface="wlan1",
-                on_alert=self._on_alert,
-                on_event=self._on_event
+            self.detector = WiFiDetector(
+                interface="wlan1"
             )
 
-            log.info("WiFi IDS listo ✓")
+            # Suscribirse a alertas
+            bus.subscribe(
+                "wifi.alert",
+                self._on_alert
+            )
+
+            log.info("WiFi Detector listo ✓")
 
             bus.publish_sync(
                 "oled:wifi_status",
-                {"msg": "IDS listo"}
+                {"msg": "Detector listo"}
             )
 
         except Exception as e:
 
-            log.error(f"IDS init error: {e}")
+            log.error(f"Detector init error: {e}")
 
             bus.publish_sync(
                 "oled:wifi_status",
-                {"msg": "Error IDS"}
+                {"msg": "Error Detector"}
             )
 
     # ─────────────────────────────────────────
@@ -72,7 +82,7 @@ class WifiIDS:
 
                 bus.publish_sync(
                     "oled:wifi_status",
-                    {"msg": "IDS monitoreando"}
+                    {"msg": "Escaneando WiFi"}
                 )
 
                 await asyncio.sleep(3)
@@ -89,69 +99,61 @@ class WifiIDS:
 
         try:
 
-            if self.ids and self.ids.running:
-                self.ids.stop()
+            if self.detector and self.detector.running:
 
-            log.info("IDS detenido")
+                self.detector.stop()
+
+            log.info("WiFi Detector detenido")
 
         except Exception as e:
 
-            log.error(f"IDS teardown error: {e}")
+            log.error(f"Detector teardown error: {e}")
 
     # ─────────────────────────────────────────
-    # EVENT HANDLERS
+    # ALERT HANDLER
     # ─────────────────────────────────────────
 
-    def _on_alert(self, level, alert_type, data):
+    def _on_alert(self, event):
 
-        log.warning(f"ALERTA IDS: {alert_type}")
+        try:
 
-        msg = ""
+            alert_type = event.get("type", "unknown")
 
-        if alert_type == "evil_twin":
-            msg = "Evil Twin detectado"
+            log.warning(f"ALERTA: {alert_type}")
 
-        elif alert_type == "deauth_flood":
-            msg = "Deauth flood"
+            msg = "Alerta WiFi"
 
-        elif alert_type == "beacon_flood":
-            msg = "Beacon flood"
+            if alert_type == "evil_twin_detected":
+                msg = "Evil Twin"
 
-        else:
-            msg = alert_type
+            elif alert_type == "deauth_detected":
+                msg = "Deauth"
 
-        bus.publish_sync(
-            "oled:wifi_status",
-            {"msg": msg}
-        )
+            elif alert_type == "beacon_flood_detected":
+                msg = "Beacon flood"
 
-        bus.publish_sync(
-            "alert:new",
-            {
-                "level": level,
-                "module": "wifi",
-                "message": msg,
-                "data": data
-            }
-        )
+            bus.publish_sync(
+                "oled:wifi_status",
+                {"msg": msg}
+            )
 
-    def _on_event(self, event_type, data):
+        except Exception as e:
 
-        log.info(f"Evento IDS: {event_type}")
+            log.error(f"Alert handler error: {e}")
 
     # ─────────────────────────────────────────
     # ACTIONS
     # ─────────────────────────────────────────
 
-    async def start_ids(self, learn_seconds: int = 60):
+    async def start_detector(self):
 
-        log.info("start_ids()")
+        log.info("start_detector()")
 
         self._running_event.set()
 
         bus.publish_sync(
             "oled:wifi_status",
-            {"msg": "Iniciando IDS"}
+            {"msg": "Iniciando detector"}
         )
 
         await asyncio.sleep(1)
@@ -160,42 +162,32 @@ class WifiIDS:
 
             loop = asyncio.get_event_loop()
 
-            result = await loop.run_in_executor(
+            await loop.run_in_executor(
                 None,
-                self.ids.start,
-                learn_seconds
+                self.detector.start
             )
-
-            if result:
-
-                bus.publish_sync(
-                    "oled:wifi_status",
-                    {"msg": "IDS activo"}
-                )
-
-            else:
-
-                bus.publish_sync(
-                    "oled:wifi_status",
-                    {"msg": "IDS fallo"}
-                )
-
-            return result
-
-        except Exception as e:
-
-            log.error(f"IDS start error: {e}")
 
             bus.publish_sync(
                 "oled:wifi_status",
-                {"msg": "Error IDS"}
+                {"msg": "Detector activo"}
+            )
+
+            return True
+
+        except Exception as e:
+
+            log.error(f"Detector start error: {e}")
+
+            bus.publish_sync(
+                "oled:wifi_status",
+                {"msg": "Error detector"}
             )
 
             return False
 
-    async def stop_ids(self):
+    async def stop_detector(self):
 
-        log.info("stop_ids()")
+        log.info("stop_detector()")
 
         try:
 
@@ -203,21 +195,21 @@ class WifiIDS:
 
             await loop.run_in_executor(
                 None,
-                self.ids.stop
+                self.detector.stop
             )
 
             self._running_event.clear()
 
             bus.publish_sync(
                 "oled:wifi_status",
-                {"msg": "IDS detenido"}
+                {"msg": "Detector detenido"}
             )
 
             await asyncio.sleep(1)
 
         except Exception as e:
 
-            log.error(f"IDS stop error: {e}")
+            log.error(f"Detector stop error: {e}")
 
         finally:
 

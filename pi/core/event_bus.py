@@ -1,13 +1,15 @@
 import asyncio
 from collections import defaultdict
-from typing import Any, Callable, Coroutine
+from typing import Any, Callable
+from database.local_db import insert_event, insert_alert # Asumiendo que existen estas funciones
 
+
+
+bus.subscribe_all(global_persistence_handler)
 from core.logger import get_logger
 
 log = get_logger("core.event_bus")
 
-
-# Tipo para handlers (pueden ser sync o async)
 Handler = Callable[[dict], Any]
 
 
@@ -30,14 +32,13 @@ class EventBus:
 
     def _init(self) -> None:
         self._subscribers: dict[str, list[Handler]] = defaultdict(list)
-        self._wildcard_subscribers: list[Handler] = []   # suscritos a "*"
-        self._loop: asyncio.AbstractEventLoop | None = None
+        self._wildcard_subscribers: list[Handler] = []
         log.info("EventBus inicializado")
 
     # ── Suscripción ──────────────────────────────────────────────────────────
 
     def subscribe(self, topic: str, handler: Handler) -> None:
-        """Suscribe un handler a un topic.  Usa '*' para recibir todos los eventos."""
+        """Suscribe un handler a un topic. Usa '*' para recibir todos los eventos."""
         if topic == "*":
             if handler not in self._wildcard_subscribers:
                 self._wildcard_subscribers.append(handler)
@@ -54,7 +55,7 @@ class EventBus:
         elif topic in self._subscribers:
             self._subscribers[topic] = [h for h in self._subscribers[topic] if h is not handler]
 
-    # ── Publicación ──────────────────────────────────────────────────────────
+    # ── Publicación async ────────────────────────────────────────────────────
 
     async def publish(self, topic: str, payload: dict | None = None) -> None:
         """Publica un evento de forma asíncrona a todos los handlers suscritos."""
@@ -75,21 +76,59 @@ class EventBus:
                 if asyncio.iscoroutine(result):
                     await result
             except Exception as exc:
-                log.error(f"Error en handler '{getattr(handler, '__qualname__', handler)}' para '{topic}': {exc}")
+                log.error(
+                    f"Error en handler '{getattr(handler, '__qualname__', handler)}' "
+                    f"para '{topic}': {exc}"
+                )
+
+    # ── Publicación síncrona ─────────────────────────────────────────────────
 
     def publish_sync(self, topic: str, payload: dict | None = None) -> None:
         """
-        Publica un evento desde código síncrono (ej. threads de hardware).
-        Usa el loop existente si está corriendo, de lo contrario asyncio.run().
+        Publica un evento desde código síncrono (threads de hardware, callbacks, etc).
+
+        Llama los handlers síncronos DIRECTAMENTE en el thread actual — sin pasar
+        por el event loop — para evitar que los eventos queden en cola sin ejecutarse.
+
+        Los handlers async se schedulan en el loop con run_coroutine_threadsafe.
         """
-        try:
-            loop = asyncio.get_event_loop()
-            if loop.is_running():
-                asyncio.run_coroutine_threadsafe(self.publish(topic, payload), loop)
-            else:
-                loop.run_until_complete(self.publish(topic, payload))
-        except RuntimeError:
-            asyncio.run(self.publish(topic, payload))
+        payload = payload or {}
+        event = {"topic": topic, "payload": payload}
+
+        handlers = self._subscribers.get(topic, []) + self._wildcard_subscribers
+
+        if not handlers:
+            log.debug(f"Evento sin handlers: {topic}")
+            return
+
+        log.debug(f"publish_sync '{topic}' → {len(handlers)} handler(s)")
+
+        for handler in handlers:
+            try:
+                result = handler(event)
+
+                # Handler async — schedularlo en el loop si está corriendo
+                if asyncio.iscoroutine(result):
+                    try:
+                        loop = asyncio.get_event_loop()
+                        if loop.is_running():
+                            asyncio.run_coroutine_threadsafe(result, loop)
+                        else:
+                            loop.run_until_complete(result)
+                    except RuntimeError:
+                        asyncio.run(result)
+
+            except Exception as exc:
+                log.error(
+                    f"Error en handler '{getattr(handler, '__qualname__', handler)}' "
+                    f"para '{topic}': {exc}"
+                )
+    def global_persistence_handler(event_type, payload):
+    # Guardar automáticamente todo lo que pase por el bus
+    if "alert" in event_type:
+        insert_alert(payload)
+    elif "status" not in event_type: # No guardar status temporales
+        insert_event(payload)
 
     # ── Utilidades ───────────────────────────────────────────────────────────
 

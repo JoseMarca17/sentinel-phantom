@@ -1195,3 +1195,1779 @@
 2026-04-23 13:52:17  [INFO    ]  core.event_bus                EventBus inicializado
 2026-04-23 13:54:14  [INFO    ]  core.event_bus                EventBus inicializado
 2026-04-23 13:57:16  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 14:44:26  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 14:44:26  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 14:44:28  [INFO    ]  main                          OLED OK
+2026-04-23 14:44:29  [WARNING ]  main                          Joystick error: [Errno 5] Input/output error
+2026-04-23 14:44:32  [WARNING ]  main                          WiFi no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 14:45:20  [INFO    ]  main                          Cerrando...
+2026-04-23 14:45:23  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 14:45:24  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 14:45:25  [INFO    ]  main                          OLED OK
+2026-04-23 14:45:26  [INFO    ]  main                          Joystick OK
+2026-04-23 14:45:29  [WARNING ]  main                          WiFi no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 14:48:00  [INFO    ]  main                          Cerrando...
+2026-04-23 14:48:03  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 14:48:03  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 14:48:05  [INFO    ]  main                          OLED OK
+2026-04-23 14:48:06  [INFO    ]  main                          Joystick OK
+2026-04-23 14:48:09  [WARNING ]  main                          WiFi no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 14:48:42  [INFO    ]  main                          Cerrando...
+2026-04-23 14:48:45  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 14:48:45  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 14:48:47  [INFO    ]  main                          OLED OK
+2026-04-23 14:48:48  [INFO    ]  main                          Joystick OK
+2026-04-23 14:48:51  [WARNING ]  main                          WiFi no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 14:50:30  [INFO    ]  main                          Cerrando...
+2026-04-23 14:50:56  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 14:50:56  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 14:50:58  [INFO    ]  main                          OLED OK
+2026-04-23 14:50:59  [INFO    ]  main                          Joystick OK
+2026-04-23 14:51:02  [WARNING ]  main                          WiFi no disponible: cannot import name 'PicoBridge' from 'hardware.pico_bridge' (/home/phantomx/centinel-phantom/pi/hardware/pico_bridge.py)
+2026-04-23 14:57:10  [INFO    ]  main                          Cerrando...
+2026-04-23 15:00:54  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:00:54  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:00:56  [INFO    ]  main                          OLED OK
+2026-04-23 15:00:56  [INFO    ]  main                          Joystick OK
+2026-04-23 15:01:00  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 15:01:00  [INFO    ]  wifi.module                   Iniciando modulo WiFi...
+2026-04-23 15:01:00  [INFO    ]  wifi.detector                 Activando modo monitor en wlan1...
+2026-04-23 15:01:00  [INFO    ]  wifi.module                   Modulo WiFi activo.
+2026-04-23 15:01:00  [INFO    ]  wifi.detector                 Modo monitor activo.
+2026-04-23 15:01:00  [INFO    ]  wifi.detector                 Iniciando en wlan1 | Canales [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+2026-04-23 15:01:01  [INFO    ]  wifi.detector                 RED | Andres                    9A:C2:82:FE:EE:15  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:01  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:01  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:01  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:02  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:02  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1E:4E:14  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:03  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:03  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:03  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:07  [INFO    ]  wifi.detector                 RED | TECNOLOGICO1              60:A4:B7:EF:86:3E  CH:3  {'WPA2/PSK'}
+2026-04-23 15:01:16  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-23 15:01:17  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-23 15:01:17  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-23 15:01:18  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-23 15:01:18  [INFO    ]  wifi.detector                 RED | DOC-UALP                  02:7B:C8:EA:B0:E0  CH:6  {'WPA2/PSK'}
+2026-04-23 15:01:18  [INFO    ]  wifi.detector                 RED | DNA-LP                    1E:7B:C8:EA:B0:E0  CH:6  {'WPA2/PSK'}
+2026-04-23 15:01:29  [INFO    ]  wifi.detector                 RED | HPC6DFE1                  02:27:27:62:3C:5C  CH:10  {'OPN'}
+2026-04-23 15:01:30  [INFO    ]  wifi.detector                 RED | UEBU                      AC:84:C6:6D:43:74  CH:11  {'WPA/PSK', 'WPA2/PSK'}
+2026-04-23 15:01:31  [INFO    ]  wifi.detector                 RED |                                B2:06:C3:1D:31:A1  CH:10  {'WPA2/PSK'}
+2026-04-23 15:01:32  [INFO    ]  wifi.detector                 RED | LAB_REDES                 90:F6:52:A4:85:CF  CH:11  {'OPN'}
+2026-04-23 15:01:32  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:32  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:32  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:32  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:32  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:32  [INFO    ]  wifi.detector                 RED | DNA-LP                    1E:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:32  [INFO    ]  wifi.detector                 RED |                           32:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:32  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:32  [INFO    ]  wifi.detector                 RED | EST-UALP                  0A:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:33  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:33  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:34  [INFO    ]  wifi.detector                 RED | DIRECT-3C-EPSON-1638E8    A6:D7:3C:16:B8:E8  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:34  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:35  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:35  [INFO    ]  wifi.detector                 RED | GalaxyS9                  02:9D:6B:33:45:EB  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:36  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 15:01:36  [INFO    ]  wifi.detector                 RED |                           DA:55:A8:1E:4E:14  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:37  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:37  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:14  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:37  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:37  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:38  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:38  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:43  [INFO    ]  wifi.detector                 RED |                           62:A4:B7:EF:8D:28  CH:3  {'WPA2/PSK'}
+2026-04-23 15:01:43  [INFO    ]  wifi.detector                 RED |                           62:A4:B7:EF:86:3E  CH:3  {'WPA2/PSK'}
+2026-04-23 15:01:49  [INFO    ]  wifi.detector                 RED | A56 de Kelly              C2:D7:66:88:C9:B6  CH:6  {'WPA2/PSK'}
+2026-04-23 15:01:50  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 15:01:53  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-23 15:01:57  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 15:02:10  [INFO    ]  main                          Cerrando sistema...
+2026-04-23 15:11:34  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:12:53  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:13:10  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:13:14  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:13:15  [INFO    ]  main                          OLED OK
+2026-04-23 15:13:15  [WARNING ]  main                          Joystick no disponible: Joystick.__init__() missing 2 required positional arguments: 'i2c_lock' and 'i2c_bus'
+2026-04-23 15:13:15  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 15:14:57  [INFO    ]  main                          Cerrando...
+2026-04-23 15:14:57  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 15:14:57  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 15:14:59  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:15:03  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:15:05  [INFO    ]  main                          OLED OK
+2026-04-23 15:15:05  [WARNING ]  main                          Joystick no disponible: 'Joystick' object has no attribute 'start'
+2026-04-23 15:15:05  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 15:16:38  [INFO    ]  main                          Cerrando...
+2026-04-23 15:16:38  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 15:16:38  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 15:16:41  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:16:45  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:16:46  [INFO    ]  main                          OLED OK
+2026-04-23 15:16:47  [INFO    ]  main                          Joystick OK (auto-start)
+2026-04-23 15:16:47  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 15:19:14  [INFO    ]  main                          Cerrando...
+2026-04-23 15:19:14  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 15:19:14  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 15:19:17  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:19:20  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:19:22  [INFO    ]  main                          OLED OK
+2026-04-23 15:19:22  [INFO    ]  main                          Joystick OK (auto-start)
+2026-04-23 15:19:22  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 15:20:07  [INFO    ]  main                          Cerrando...
+2026-04-23 15:20:07  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 15:20:07  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 15:21:18  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:21:22  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:21:23  [INFO    ]  main                          OLED OK
+2026-04-23 15:21:24  [INFO    ]  main                          Joystick OK (auto-start)
+2026-04-23 15:21:24  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 15:23:25  [INFO    ]  main                          Cerrando...
+2026-04-23 15:23:25  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 15:23:25  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 15:39:54  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:39:58  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:40:00  [INFO    ]  main                          OLED OK
+2026-04-23 15:40:00  [INFO    ]  main                          Joystick OK (auto-start)
+2026-04-23 15:40:00  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 15:40:42  [INFO    ]  main                          Cerrando...
+2026-04-23 15:40:42  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 15:40:42  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 15:45:47  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:46:26  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:46:34  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:46:34  [WARNING ]  main                          OLED no disponible: 'OledDisplay' object has no attribute 'run_splash'
+2026-04-23 15:46:35  [INFO    ]  main                          Joystick OK (auto-start)
+2026-04-23 15:46:35  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 15:48:29  [INFO    ]  main                          Cerrando...
+2026-04-23 15:48:29  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 15:48:29  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 15:48:32  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:48:48  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:48:52  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:49:07  [INFO    ]  main                          OLED OK
+2026-04-23 15:49:07  [INFO    ]  main                          Joystick OK (auto-start)
+2026-04-23 15:49:07  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 15:50:28  [INFO    ]  main                          Cerrando...
+2026-04-23 15:50:28  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 15:50:28  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 15:51:44  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:51:48  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:52:02  [INFO    ]  main                          OLED OK
+2026-04-23 15:52:03  [INFO    ]  main                          Joystick OK (auto-start)
+2026-04-23 15:52:03  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 15:52:40  [INFO    ]  main                          Cerrando...
+2026-04-23 15:52:40  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 15:52:40  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 15:53:46  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:53:50  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:54:14  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 15:54:18  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 15:54:32  [INFO    ]  main                          OLED OK
+2026-04-23 15:54:33  [INFO    ]  main                          Joystick OK (auto-start)
+2026-04-23 15:54:33  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 15:55:59  [INFO    ]  main                          Cerrando...
+2026-04-23 15:55:59  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 15:55:59  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 16:41:57  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 16:42:03  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 16:42:18  [INFO    ]  main                          OLED OK
+2026-04-23 16:42:18  [WARNING ]  main                          Joystick no disponible: [Errno 5] Input/output error
+2026-04-23 16:42:18  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 16:42:29  [INFO    ]  main                          Cerrando...
+2026-04-23 16:42:29  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 16:42:29  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 16:43:26  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 16:43:30  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 16:43:45  [INFO    ]  main                          OLED OK
+2026-04-23 16:43:45  [WARNING ]  main                          Joystick no disponible: [Errno 5] Input/output error
+2026-04-23 16:43:45  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 16:43:59  [INFO    ]  main                          Cerrando...
+2026-04-23 16:44:00  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 16:44:00  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 16:46:13  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 16:46:21  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 16:46:25  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 16:46:40  [INFO    ]  main                          OLED OK
+2026-04-23 16:46:41  [INFO    ]  main                          Joystick OK (auto-start)
+2026-04-23 16:46:41  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 16:47:08  [INFO    ]  main                          Cerrando...
+2026-04-23 16:47:08  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 16:47:08  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 16:48:23  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 16:48:27  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 16:48:42  [INFO    ]  main                          OLED OK
+2026-04-23 16:48:42  [INFO    ]  main                          Joystick OK (auto-start)
+2026-04-23 16:48:42  [INFO    ]  main                          WiFi cargado ✓
+2026-04-23 16:51:26  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 16:51:29  [INFO    ]  wifi.detector                 Activando modo monitor en wlan1...
+2026-04-23 16:51:30  [INFO    ]  wifi.detector                 Modo monitor activo.
+2026-04-23 16:51:30  [INFO    ]  wifi.detector                 Iniciando en wlan1 | Canales [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+2026-04-23 16:51:30  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:30  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:30  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:30  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:30  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:30  [WARNING ]  wifi.detector                 EVIL TWIN | DOC-UALP | real=EA:55:A8:1D:97:47 fake=EA:55:A8:1D:97:50 CH:1
+2026-04-23 16:51:30  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:30  [WARNING ]  wifi.detector                 EVIL TWIN | ADM-UALP | real=E4:55:A8:1D:97:50 fake=E4:55:A8:1D:97:47 CH:1
+2026-04-23 16:51:30  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:31  [WARNING ]  wifi.detector                 EVIL TWIN | EST-UALP | real=E2:55:A8:1D:97:50 fake=E2:55:A8:1D:97:47 CH:1
+2026-04-23 16:51:31  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:31  [WARNING ]  wifi.detector                 EVIL TWIN | ADM-UALP | real=E4:55:A8:1D:97:50 fake=E4:55:A8:1E:4E:DE CH:1
+2026-04-23 16:51:31  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:31  [WARNING ]  wifi.detector                 EVIL TWIN | IT24 | real=EE:55:A8:1D:97:47 fake=EE:55:A8:1E:4E:DE CH:1
+2026-04-23 16:51:31  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:31  [WARNING ]  wifi.detector                 EVIL TWIN | DNA-LP | real=F6:55:A8:1D:97:47 fake=F6:55:A8:1E:4E:DE CH:1
+2026-04-23 16:51:31  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:31  [WARNING ]  wifi.detector                 EVIL TWIN | IT24 | real=EE:55:A8:1D:97:47 fake=EE:55:A8:1D:97:50 CH:1
+2026-04-23 16:51:31  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:32  [WARNING ]  wifi.detector                 EVIL TWIN | DNA-LP | real=F6:55:A8:1D:97:47 fake=F6:55:A8:1D:97:50 CH:1
+2026-04-23 16:51:32  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:34  [INFO    ]  wifi.detector                 RED | alba                      DE:14:8F:5D:BB:02  CH:1  {'WPA2/PSK'}
+2026-04-23 16:51:43  [INFO    ]  wifi.detector                 RED |                                62:A7:B9:3C:C6:5D  CH:5  {'WPA2/PSK'}
+2026-04-23 16:51:46  [WARNING ]  wifi.detector                 EVIL TWIN | DNA-LP | real=F6:55:A8:1D:97:47 fake=F6:55:A8:1E:4E:11 CH:6
+2026-04-23 16:51:46  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:11  CH:6  {'WPA2/PSK'}
+2026-04-23 16:51:46  [WARNING ]  wifi.detector                 EVIL TWIN | ADM-UALP | real=E4:55:A8:1D:97:50 fake=E4:55:A8:1D:93:72 CH:6
+2026-04-23 16:51:46  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1D:93:72  CH:6  {'WPA2/PSK'}
+2026-04-23 16:51:47  [WARNING ]  wifi.detector                 EVIL TWIN | DNA-LP | real=F6:55:A8:1D:97:47 fake=F6:55:A8:1E:4D:F4 CH:6
+2026-04-23 16:51:47  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-23 16:51:49  [INFO    ]  wifi.detector                 RED | OP MEGA CENTER _Guest     7A:FE:CE:1E:2A:BA  CH:7  {'WPA2/PSK'}
+2026-04-23 16:51:55  [INFO    ]  wifi.detector                 RED | Andres                    9A:C2:82:FE:EE:15  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:01  [WARNING ]  wifi.detector                 EVIL TWIN | ADM-UALP | real=E4:55:A8:1D:97:50 fake=E4:55:A8:1E:4D:F6 CH:11
+2026-04-23 16:52:01  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:01  [WARNING ]  wifi.detector                 EVIL TWIN | IT24 | real=EE:55:A8:1D:97:47 fake=EE:55:A8:1E:4D:F6 CH:11
+2026-04-23 16:52:01  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:01  [WARNING ]  wifi.detector                 EVIL TWIN | DNA-LP | real=F6:55:A8:1D:97:47 fake=F6:55:A8:1E:4D:F6 CH:11
+2026-04-23 16:52:01  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:02  [WARNING ]  wifi.detector                 EVIL TWIN | DNA-LP | real=F6:55:A8:1D:97:47 fake=1E:7B:C8:EA:B0:F9 CH:11
+2026-04-23 16:52:02  [INFO    ]  wifi.detector                 RED | DNA-LP                    1E:7B:C8:EA:B0:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:02  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:52:02  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:52:02  [WARNING ]  wifi.detector                 EVIL TWIN | EST-UALP | real=E2:55:A8:1D:97:50 fake=0A:7B:C8:EA:B0:F9 CH:11
+2026-04-23 16:52:02  [INFO    ]  wifi.detector                 RED | EST-UALP                  0A:7B:C8:EA:B0:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:03  [WARNING ]  wifi.detector                 CHANNEL HOP | EST-UALP | 0A:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:52:03  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | 1E:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:52:04  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:52:04  [WARNING ]  wifi.detector                 EVIL TWIN | ADM-UALP | real=E4:55:A8:1D:97:50 fake=0C:7B:C8:EA:B0:F9 CH:11
+2026-04-23 16:52:04  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:04  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | 0C:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:52:04  [INFO    ]  wifi.detector                 RED | TECNO CAMON 20 Pro        3A:59:89:7D:8C:EB  CH:11  {'WPA3-transition/PSK'}
+2026-04-23 16:52:05  [WARNING ]  wifi.detector                 EVIL TWIN | DOC-UALP | real=EA:55:A8:1D:97:47 fake=EA:55:A8:1E:4E:F5 CH:11
+2026-04-23 16:52:05  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:09  [INFO    ]  wifi.detector                 RED | DIR-UALP                  60:A4:B7:EF:8D:85  CH:2  {'WPA2/PSK'}
+2026-04-23 16:52:20  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4E:11 | CH 1 → 6
+2026-04-23 16:52:21  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F4 | CH 1 → 6
+2026-04-23 16:52:21  [WARNING ]  wifi.detector                 EVIL TWIN | DNA-LP | real=F6:55:A8:1D:97:47 fake=F6:55:A8:1E:4D:F7 CH:6
+2026-04-23 16:52:21  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-23 16:52:22  [WARNING ]  wifi.detector                 EVIL TWIN | EST-UALP | real=E2:55:A8:1D:97:50 fake=E2:55:A8:1D:93:72 CH:6
+2026-04-23 16:52:22  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1D:93:72  CH:6  {'WPA2/PSK'}
+2026-04-23 16:52:23  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F7 | CH 1 → 6
+2026-04-23 16:52:33  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:52:36  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | 0C:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:52:36  [WARNING ]  wifi.detector                 CHANNEL HOP | EST-UALP | 0A:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:52:36  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | 1E:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:52:37  [WARNING ]  wifi.detector                 EVIL TWIN | IT24 | real=EE:55:A8:1D:97:47 fake=EE:55:A8:1E:4E:F5 CH:11
+2026-04-23 16:52:37  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:37  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:52:38  [WARNING ]  wifi.detector                 EVIL TWIN | DNA-LP | real=F6:55:A8:1D:97:47 fake=F6:55:A8:1E:4E:F5 CH:11
+2026-04-23 16:52:38  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:38  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:52:38  [WARNING ]  wifi.detector                 EVIL TWIN | ADM-UALP | real=E4:55:A8:1D:97:50 fake=E4:55:A8:1E:4E:F5 CH:11
+2026-04-23 16:52:38  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:39  [WARNING ]  wifi.detector                 EVIL TWIN | ADM-UALP | real=E4:55:A8:1D:97:50 fake=E4:55:A8:1E:4D:F9 CH:11
+2026-04-23 16:52:39  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:39  [WARNING ]  wifi.detector                 CHANNEL HOP | DOC-UALP | EA:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:52:39  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:52:39  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:52:39  [WARNING ]  wifi.detector                 EVIL TWIN | IT24 | real=EE:55:A8:1D:97:47 fake=EE:55:A8:1E:4D:F9 CH:11
+2026-04-23 16:52:39  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 16:52:43  [INFO    ]  wifi.detector                 RED | EMI4.0                    60:32:B1:9A:75:8B  CH:2  {'WPA2/PSK'}
+2026-04-23 16:52:54  [WARNING ]  wifi.detector                 EVIL TWIN | IT24 | real=EE:55:A8:1D:97:47 fake=EE:55:A8:1D:93:72 CH:6
+2026-04-23 16:52:54  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1D:93:72  CH:6  {'WPA2/PSK'}
+2026-04-23 16:52:54  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4E:11 | CH 1 → 6
+2026-04-23 16:52:55  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1D:93:72 | CH 1 → 6
+2026-04-23 16:52:55  [WARNING ]  wifi.detector                 EVIL TWIN | DNA-LP | real=F6:55:A8:1D:97:47 fake=1E:7B:C8:EA:B0:DD CH:6
+2026-04-23 16:52:55  [INFO    ]  wifi.detector                 RED | DNA-LP                    1E:7B:C8:EA:B0:DD  CH:6  {'WPA2/PSK'}
+2026-04-23 16:52:55  [WARNING ]  wifi.detector                 EVIL TWIN | DOC-UALP | real=EA:55:A8:1D:97:47 fake=02:7B:C8:EA:B0:DD CH:6
+2026-04-23 16:52:55  [INFO    ]  wifi.detector                 RED | DOC-UALP                  02:7B:C8:EA:B0:DD  CH:6  {'WPA2/PSK'}
+2026-04-23 16:52:56  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F4 | CH 1 → 6
+2026-04-23 16:52:58  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1D:93:72 | CH 1 → 6
+2026-04-23 16:52:58  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F7 | CH 1 → 6
+2026-04-23 16:52:59  [WARNING ]  wifi.detector                 EVIL TWIN | OP MEGA CENTER _Guest | real=7A:FE:CE:1E:2A:BA fake=7A:FE:CE:1E:2C:26 CH:7
+2026-04-23 16:52:59  [INFO    ]  wifi.detector                 RED | OP MEGA CENTER _Guest     7A:FE:CE:1E:2C:26  CH:7  {'WPA2/PSK'}
+2026-04-23 16:53:11  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:53:11  [WARNING ]  wifi.detector                 CHANNEL HOP | DOC-UALP | EA:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:53:11  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4D:F9 | CH 1 → 11
+2026-04-23 16:53:11  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:53:11  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | 1E:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:53:11  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | 0C:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:53:11  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4D:F9 | CH 1 → 11
+2026-04-23 16:53:11  [WARNING ]  wifi.detector                 CHANNEL HOP | EST-UALP | 0A:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:53:11  [WARNING ]  wifi.detector                 EVIL TWIN | EST-UALP | real=E2:55:A8:1D:97:50 fake=E2:55:A8:1E:4E:F5 CH:11
+2026-04-23 16:53:11  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 16:53:12  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:53:13  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:53:14  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:53:27  [INFO    ]  wifi.detector                 RED | VICERECTORADO             B0:A7:B9:3C:C6:5B  CH:5  {'WPA2/PSK'}
+2026-04-23 16:53:29  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | 1E:7B:C8:EA:B0:DD | CH 1 → 6
+2026-04-23 16:53:29  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F4 | CH 1 → 6
+2026-04-23 16:53:29  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F7 | CH 1 → 6
+2026-04-23 16:53:30  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4E:11 | CH 1 → 6
+2026-04-23 16:53:31  [WARNING ]  wifi.detector                 EVIL TWIN | ADM-UALP | real=E4:55:A8:1D:97:50 fake=0C:7B:C8:EA:B0:DD CH:6
+2026-04-23 16:53:31  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:DD  CH:6  {'WPA2/PSK'}
+2026-04-23 16:53:31  [WARNING ]  wifi.detector                 CHANNEL HOP | DOC-UALP | 02:7B:C8:EA:B0:DD | CH 1 → 6
+2026-04-23 16:53:31  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1D:93:72 | CH 1 → 6
+2026-04-23 16:53:31  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1D:93:72 | CH 1 → 6
+2026-04-23 16:53:34  [WARNING ]  wifi.detector                 EVIL TWIN | OP MEGA CENTER _Guest | real=7A:FE:CE:1E:2A:BA fake=7A:FE:CE:1E:06:82 CH:7
+2026-04-23 16:53:34  [INFO    ]  wifi.detector                 RED | OP MEGA CENTER _Guest     7A:FE:CE:1E:06:82  CH:7  {'WPA2/PSK'}
+2026-04-23 16:53:45  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:53:45  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:53:45  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:53:45  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:53:46  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:53:47  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:53:47  [WARNING ]  wifi.detector                 CHANNEL HOP | DOC-UALP | EA:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:53:47  [WARNING ]  wifi.detector                 CHANNEL HOP | EST-UALP | 0A:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:53:47  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | 1E:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:53:47  [WARNING ]  wifi.detector                 EVIL TWIN | DNA-LP | real=F6:55:A8:1D:97:47 fake=1E:7B:C8:EA:B0:F2 CH:11
+2026-04-23 16:53:47  [INFO    ]  wifi.detector                 RED | DNA-LP                    1E:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-23 16:53:48  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4D:F9 | CH 1 → 11
+2026-04-23 16:53:48  [WARNING ]  wifi.detector                 CHANNEL HOP | EST-UALP | E2:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:54:03  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F4 | CH 1 → 6
+2026-04-23 16:54:04  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4E:11 | CH 1 → 6
+2026-04-23 16:54:05  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | 1E:7B:C8:EA:B0:DD | CH 1 → 6
+2026-04-23 16:54:05  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F7 | CH 1 → 6
+2026-04-23 16:54:06  [WARNING ]  wifi.detector                 EVIL TWIN | IT24 | real=EE:55:A8:1D:97:47 fake=EE:55:A8:1E:4D:F4 CH:6
+2026-04-23 16:54:06  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-23 16:54:16  [INFO    ]  wifi.detector                 RED | UEA                       60:32:B1:9A:60:C4  CH:9  {'WPA2/PSK'}
+2026-04-23 16:54:19  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:54:20  [WARNING ]  wifi.detector                 CHANNEL HOP | EST-UALP | E2:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:54:20  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:54:20  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:54:20  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:54:20  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:54:20  [WARNING ]  wifi.detector                 CHANNEL HOP | DOC-UALP | EA:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:54:20  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:54:21  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | 1E:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:54:22  [INFO    ]  wifi.detector                 RED | LAB_REDES                 90:F6:52:A4:85:CF  CH:11  {'OPN'}
+2026-04-23 16:54:22  [WARNING ]  wifi.detector                 CHANNEL HOP | EST-UALP | 0A:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:54:38  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F4 | CH 1 → 6
+2026-04-23 16:54:38  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F7 | CH 1 → 6
+2026-04-23 16:54:38  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4E:11 | CH 1 → 6
+2026-04-23 16:54:39  [INFO    ]  wifi.detector                 RED | AP00004039                4A:6F:42:18:FF:C1  CH:6  {'WPA2/PSK'}
+2026-04-23 16:54:39  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1D:93:72 | CH 1 → 6
+2026-04-23 16:54:39  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | 1E:7B:C8:EA:B0:DD | CH 1 → 6
+2026-04-23 16:54:40  [WARNING ]  wifi.detector                 CHANNEL HOP | EST-UALP | E2:55:A8:1D:93:72 | CH 1 → 6
+2026-04-23 16:54:53  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:54:53  [WARNING ]  wifi.detector                 CHANNEL HOP | EST-UALP | E2:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:54:53  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:54:54  [WARNING ]  wifi.detector                 CHANNEL HOP | DOC-UALP | EA:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:54:54  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4E:F5 | CH 1 → 11
+2026-04-23 16:54:54  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:54:54  [WARNING ]  wifi.detector                 CHANNEL HOP | DNA-LP | F6:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:54:56  [WARNING ]  wifi.detector                 CHANNEL HOP | IT24 | EE:55:A8:1E:4D:F9 | CH 1 → 11
+2026-04-23 16:54:56  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4D:F6 | CH 1 → 11
+2026-04-23 16:54:56  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | 0C:7B:C8:EA:B0:F9 | CH 1 → 11
+2026-04-23 16:54:56  [WARNING ]  wifi.detector                 CHANNEL HOP | ADM-UALP | E4:55:A8:1E:4D:F9 | CH 1 → 11
+2026-04-23 16:56:40  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 16:56:46  [INFO    ]  wifi.detector                 Activando modo monitor en wlan1...
+2026-04-23 16:56:46  [INFO    ]  wifi.detector                 Modo monitor activo.
+2026-04-23 16:56:46  [INFO    ]  wifi.detector                 Iniciando en wlan1 | Canales [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+2026-04-23 16:56:47  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:47  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:47  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:47  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:47  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:47  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:47  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:47  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:47  [INFO    ]  wifi.detector                 RED | HUAWEI P40 lite           D2:5D:9B:E0:25:31  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:48  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:49  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:50  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 16:56:51  [INFO    ]  wifi.detector                 RED | EMI4.0                    60:32:B1:9A:75:8B  CH:2  {'WPA2/PSK'}
+2026-04-23 16:56:56  [INFO    ]  wifi.detector                 RED | VICERECTORADO             B0:A7:B9:3C:C6:5B  CH:5  {'WPA2/PSK'}
+2026-04-23 16:57:01  [INFO    ]  wifi.detector                 RED |                                62:A7:B9:3C:C6:5D  CH:5  {'WPA2/PSK'}
+2026-04-23 16:57:02  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:11  CH:6  {'WPA2/PSK'}
+2026-04-23 16:57:03  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-23 16:57:03  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-23 16:57:05  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-23 16:57:15  [INFO    ]  wifi.detector                 RED | Andres                    9A:C2:82:FE:EE:15  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:18  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:18  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:18  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:18  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:18  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:19  [INFO    ]  wifi.detector                 RED | EST-UALP                  0A:7B:C8:EA:B0:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:19  [INFO    ]  wifi.detector                 RED | TECNO CAMON 20 Pro        3A:59:89:7D:8C:EB  CH:11  {'WPA3-transition/PSK'}
+2026-04-23 16:57:19  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:19  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:19  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:19  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:22  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:22  [INFO    ]  wifi.detector                 RED | DNA-LP                    1E:7B:C8:EA:B0:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:24  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 16:57:25  [INFO    ]  wifi.detector                 RED | DIR-UALP                  60:A4:B7:EF:8D:85  CH:2  {'WPA2/PSK'}
+2026-04-23 16:57:26  [INFO    ]  wifi.detector                 RED | KITTY                     F2:05:FA:EA:97:61  CH:2  {'WPA2/PSK'}
+2026-04-23 16:57:33  [INFO    ]  wifi.detector                 RED | SALA DE REUNIONES         60:32:B1:9A:5B:D8  CH:4  {'WPA2/PSK'}
+2026-04-23 16:57:40  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-23 16:57:53  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:54  [INFO    ]  wifi.detector                 RED | DNA-LP                    1E:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:55  [INFO    ]  wifi.detector                 RED | EST-UALP                  0A:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-23 16:57:56  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 16:58:13  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:DD  CH:6  {'WPA2/PSK'}
+2026-04-23 16:58:14  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-23 16:58:15  [INFO    ]  wifi.detector                 RED | OP MEGA CENTER _Guest     7A:FE:CE:1E:2A:BA  CH:7  {'WPA2/PSK'}
+2026-04-23 17:06:19  [INFO    ]  main                          Cerrando...
+2026-04-23 17:06:19  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 17:06:19  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 17:07:02  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:07:06  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:07:21  [INFO    ]  main                          OLED OK
+2026-04-23 17:07:22  [INFO    ]  main                          Joystick OK
+2026-04-23 17:07:22  [INFO    ]  main                          WiFi OK
+2026-04-23 17:07:24  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:07:24  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:07:24  [INFO    ]  module.rfid                   Esperando tarjetas RFID...
+2026-04-23 17:07:25  [INFO    ]  main                          RFID OK
+2026-04-23 17:08:19  [INFO    ]  main                          Cerrando...
+2026-04-23 17:08:19  [INFO    ]  wifi.module                   Deteniendo modulo WiFi...
+2026-04-23 17:08:19  [INFO    ]  wifi.detector                 Detector detenido.
+2026-04-23 17:08:19  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 17:11:13  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:11:17  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:11:31  [INFO    ]  main                          OLED OK
+2026-04-23 17:11:32  [INFO    ]  main                          Joystick OK
+2026-04-23 17:11:32  [INFO    ]  main                          WiFi OK
+2026-04-23 17:11:34  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:11:34  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:11:34  [INFO    ]  main                          RFID OK
+2026-04-23 17:11:34  [INFO    ]  module.rfid                   Esperando tarjetas RFID...
+2026-04-23 17:12:11  [INFO    ]  module.rfid                   UID detectado: C31B6003
+2026-04-23 17:12:18  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 17:22:48  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:22:52  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:23:07  [INFO    ]  main                          OLED OK
+2026-04-23 17:23:07  [INFO    ]  main                          Joystick OK
+2026-04-23 17:23:07  [INFO    ]  main                          WiFi OK
+2026-04-23 17:23:09  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:23:09  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:23:09  [INFO    ]  main                          RFID OK
+2026-04-23 17:23:09  [INFO    ]  module.rfid                   Esperando tarjetas RFID...
+2026-04-23 17:23:47  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 17:23:53  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 17:28:45  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:28:48  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:29:03  [INFO    ]  main                          OLED OK
+2026-04-23 17:29:04  [INFO    ]  main                          Joystick OK
+2026-04-23 17:29:04  [INFO    ]  main                          WiFi OK
+2026-04-23 17:29:06  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:29:06  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:29:06  [INFO    ]  main                          RFID OK
+2026-04-23 17:29:06  [INFO    ]  module.rfid                   Esperando tarjetas RFID...
+2026-04-23 17:29:25  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:29:29  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:29:44  [INFO    ]  main                          OLED OK
+2026-04-23 17:29:44  [INFO    ]  main                          Joystick OK
+2026-04-23 17:29:44  [INFO    ]  main                          WiFi OK
+2026-04-23 17:29:46  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:29:46  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:29:46  [INFO    ]  main                          RFID OK
+2026-04-23 17:29:46  [INFO    ]  module.rfid                   Esperando tarjetas RFID...
+2026-04-23 17:34:54  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:34:55  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:35:12  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:35:12  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:36:00  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:36:00  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:36:17  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:36:17  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:37:32  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:37:36  [INFO    ]  wifi.detector                 Activando modo monitor en wlan1...
+2026-04-23 17:37:36  [INFO    ]  wifi.detector                 Modo monitor activo.
+2026-04-23 17:37:36  [INFO    ]  wifi.detector                 Iniciando en wlan1 | Canales [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+2026-04-23 17:37:36  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 17:37:36  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 17:37:36  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 17:37:36  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 17:37:36  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:DE  CH:1  {'WPA2/PSK'}
+2026-04-23 17:37:37  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 17:37:37  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 17:37:37  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1D:97:47  CH:1  {'WPA2/PSK'}
+2026-04-23 17:37:38  [INFO    ]  wifi.detector                 RED | Andres                    9A:C2:82:FE:EE:15  CH:11  {'WPA2/PSK'}
+2026-04-23 17:37:40  [INFO    ]  wifi.detector                 RED | EMI4.0                    60:32:B1:9A:75:8B  CH:2  {'WPA2/PSK'}
+2026-04-23 17:37:46  [INFO    ]  wifi.detector                 RED | EST-UALP                  28:CD:C1:0A:59:AD  CH:6  {'OPN'}
+2026-04-23 17:37:47  [INFO    ]  wifi.detector                 RED | VICERECTORADO             B0:A7:B9:3C:C6:5B  CH:5  {'WPA2/PSK'}
+2026-04-23 17:37:49  [INFO    ]  wifi.detector                 RED | A34 de Sr                 F6:AC:6C:4D:04:11  CH:6  {'WPA2/PSK'}
+2026-04-23 17:37:49  [INFO    ]  wifi.detector                 RED |                                62:A7:B9:3C:C6:5D  CH:5  {'WPA2/PSK'}
+2026-04-23 17:37:52  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-23 17:37:53  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1D:93:72  CH:6  {'WPA2/PSK'}
+2026-04-23 17:37:54  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:11  CH:6  {'WPA2/PSK'}
+2026-04-23 17:37:56  [INFO    ]  wifi.detector                 RED | OP MEGA CENTER _Guest     7A:FE:CE:1E:2A:BA  CH:7  {'WPA2/PSK'}
+2026-04-23 17:37:57  [INFO    ]  wifi.detector                 RED | OP MEGA CENTER _Guest     7A:FE:CE:1E:2C:26  CH:7  {'WPA2/PSK'}
+2026-04-23 17:38:07  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 17:38:07  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 17:38:08  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 17:38:08  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 17:38:08  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 17:38:08  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 17:38:08  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4E:F5  CH:11  {'WPA2/PSK'}
+2026-04-23 17:38:08  [INFO    ]  wifi.detector                 RED | DIRECT-BdLAPTOP-PMPMPLLS  6A:EC:C5:FE:E4:1C  CH:11  {'WPA2/PSK'}
+2026-04-23 17:38:08  [INFO    ]  wifi.detector                 RED | TECNO CAMON 20 Pro        3A:59:89:7D:8C:EB  CH:11  {'WPA3-transition/PSK'}
+2026-04-23 17:38:11  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 17:38:26  [INFO    ]  wifi.detector                 RED | DNA-LP                    1E:7B:C8:EA:B0:DD  CH:6  {'WPA2/PSK'}
+2026-04-23 17:38:27  [INFO    ]  wifi.detector                 RED | EST-UALP                  0A:7B:C8:EA:B0:DD  CH:6  {'WPA2/PSK'}
+2026-04-23 17:38:27  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:DD  CH:6  {'WPA2/PSK'}
+2026-04-23 17:38:27  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F4  CH:6  {'WPA2/PSK'}
+2026-04-23 17:38:28  [INFO    ]  wifi.detector                 RED | DOC-UALP                  02:7B:C8:EA:B0:DD  CH:6  {'WPA2/PSK'}
+2026-04-23 17:38:29  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-23 17:38:42  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F6  CH:11  {'WPA2/PSK'}
+2026-04-23 17:39:22  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 17:39:47  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 17:39:47  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 17:40:30  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 17:40:55  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:40:55  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:41:12  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:41:12  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:41:27  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 17:41:37  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 17:41:37  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 17:41:38  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1D:97:50  CH:1  {'WPA2/PSK'}
+2026-04-23 17:41:42  [INFO    ]  module.rfid                   UID detectado: C31B6003
+2026-04-23 17:42:28  [INFO    ]  wifi.detector                 RED | EST-UALP                  E2:55:A8:1D:93:72  CH:6  {'WPA2/PSK'}
+2026-04-23 17:43:03  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:43:03  [WARNING ]  wifi.detector                 DEAUTH | 0c:7b:c8:ea:b0:dd → 8e:ce:10:bc:a7:e4 | CH 6
+2026-04-23 17:43:03  [WARNING ]  wifi.detector                 DEAUTH | 0c:7b:c8:ea:b0:dd → 8e:ce:10:bc:a7:e4 | CH 6
+2026-04-23 17:43:03  [WARNING ]  wifi.detector                 DEAUTH | 0c:7b:c8:ea:b0:dd → 8e:ce:10:bc:a7:e4 | CH 6
+2026-04-23 17:43:03  [WARNING ]  wifi.detector                 DEAUTH | 0c:7b:c8:ea:b0:dd → 8e:ce:10:bc:a7:e4 | CH 6
+2026-04-23 17:43:03  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:43:19  [INFO    ]  wifi.detector                 RED | DNA-LP                    1E:7B:C8:EA:B0:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 17:43:20  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:43:20  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:43:21  [INFO    ]  wifi.detector                 RED | COBRATE                   D8:32:14:C7:5B:08  CH:1  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-23 17:43:32  [INFO    ]  module.rfid                   UID detectado: C31B6003
+2026-04-23 17:43:37  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 17:43:42  [INFO    ]  module.rfid                   UID detectado: C31B6003
+2026-04-23 17:43:45  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 17:43:52  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 17:43:52  [INFO    ]  wifi.detector                 RED | EST-UALP                  0A:7B:C8:EA:B0:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 17:44:27  [INFO    ]  wifi.detector                 RED | DNA-LP                    F6:55:A8:1E:4D:F9  CH:11  {'WPA2/PSK'}
+2026-04-23 17:44:35  [INFO    ]  wifi.detector                 RED | BIBLIOTECA UALP           60:A4:B7:EF:86:D7  CH:3  {'WPA2/PSK'}
+2026-04-23 17:44:45  [INFO    ]  wifi.detector                 RED | DOC-UALP                  EA:55:A8:1D:93:72  CH:6  {'WPA2/PSK'}
+2026-04-23 17:45:05  [INFO    ]  wifi.detector                 RED | Jose Chain                F8:63:D9:9B:D9:A1  CH:1  {'WPA2/PSK', 'WPA/PSK'}
+2026-04-23 17:45:07  [INFO    ]  wifi.detector                 RED | DIR-UALP                  60:A4:B7:EF:8D:85  CH:2  {'WPA2/PSK'}
+2026-04-23 17:45:35  [INFO    ]  wifi.detector                 RED | DIRECT-44035B02           46:D2:44:03:DB:02  CH:11  {'WPA2/PSK'}
+2026-04-23 17:45:37  [INFO    ]  wifi.detector                 RED | A35 de Carlos Eduardo     AE:71:C7:C5:6E:0B  CH:11  {'WPA2/PSK'}
+2026-04-23 17:45:56  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-23 17:45:56  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4D:F7  CH:6  {'WPA2/PSK'}
+2026-04-23 17:46:16  [INFO    ]  wifi.detector                 RED | SALA DOC-SISTEMAS         60:32:B1:9A:5C:BC  CH:2  {'WPA2/PSK'}
+2026-04-23 17:46:28  [INFO    ]  wifi.detector                 RED | ADM-UALP                  E4:55:A8:1E:4E:11  CH:6  {'WPA2/PSK'}
+2026-04-23 17:46:46  [INFO    ]  wifi.detector                 RED | ADM-UALP                  0C:7B:C8:EA:B0:F2  CH:11  {'WPA2/PSK'}
+2026-04-23 17:46:59  [INFO    ]  wifi.detector                 RED | AP00004039                4A:6F:42:18:FF:C1  CH:6  {'WPA2/PSK'}
+2026-04-23 17:48:13  [INFO    ]  wifi.detector                 RED | IT24                      EE:55:A8:1E:4E:11  CH:6  {'WPA2/PSK'}
+2026-04-23 17:48:44  [WARNING ]  wifi.detector                 DEAUTH | f6:ac:6c:4d:04:11 → ff:ff:ff:ff:ff:ff | CH 5
+2026-04-23 17:48:44  [WARNING ]  wifi.detector                 DEAUTH | f6:ac:6c:4d:04:11 → d0:39:57:3b:a0:b3 | CH 5
+2026-04-23 17:48:44  [WARNING ]  wifi.detector                 DEAUTH | f6:ac:6c:4d:04:11 → be:9a:54:02:9a:a3 | CH 5
+2026-04-23 17:48:44  [WARNING ]  wifi.detector                 DEAUTH | f6:ac:6c:4d:04:11 → be:9a:54:02:9a:a3 | CH 5
+2026-04-23 17:49:00  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:49:00  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:49:17  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:49:17  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:49:51  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 17:49:55  [INFO    ]  module.rfid                   UID detectado: C31B6003
+2026-04-23 17:53:15  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:53:15  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:53:30  [INFO    ]  main                          OLED OK
+2026-04-23 17:53:31  [INFO    ]  main                          Joystick OK
+2026-04-23 17:53:33  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:53:33  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:53:33  [INFO    ]  main                          RFID OK
+2026-04-23 17:53:54  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 17:53:59  [INFO    ]  module.rfid                   UID detectado: C31B6003
+2026-04-23 17:54:02  [INFO    ]  module.rfid                   UID detectado: C31B6003
+2026-04-23 17:54:03  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 17:54:06  [INFO    ]  main                          Cerrando...
+2026-04-23 17:54:06  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 17:55:49  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:56:06  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:56:07  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:56:21  [INFO    ]  main                          OLED OK
+2026-04-23 17:56:22  [INFO    ]  main                          Joystick OK
+2026-04-23 17:56:24  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 17:56:24  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 17:56:24  [INFO    ]  main                          RFID OK
+2026-04-23 17:56:38  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.__init__.<locals>.<lambda>' para 'nav:select': 'defense'
+2026-04-23 17:56:42  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.__init__.<locals>.<lambda>' para 'nav:down': 'defense'
+2026-04-23 17:56:43  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.__init__.<locals>.<lambda>' para 'nav:up': 'defense'
+2026-04-23 17:56:45  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.__init__.<locals>.<lambda>' para 'nav:down': 'defense'
+2026-04-23 17:56:45  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.__init__.<locals>.<lambda>' para 'nav:up': 'defense'
+2026-04-23 17:56:46  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.__init__.<locals>.<lambda>' para 'nav:up': 'defense'
+2026-04-23 17:57:11  [INFO    ]  module.rfid                   UID detectado: C31B6003
+2026-04-23 17:57:14  [INFO    ]  module.rfid                   UID detectado: C31B6003
+2026-04-23 17:59:40  [INFO    ]  main                          Cerrando...
+2026-04-23 17:59:40  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 17:59:43  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 17:59:43  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 17:59:58  [INFO    ]  main                          OLED OK
+2026-04-23 17:59:59  [INFO    ]  main                          Joystick OK
+2026-04-23 18:00:01  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:00:01  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 18:00:01  [INFO    ]  main                          RFID OK
+2026-04-23 18:00:10  [INFO    ]  main                          Acción recibida: clone_rfid
+2026-04-23 18:00:10  [INFO    ]  module.rfid                   clone_card() iniciado
+2026-04-23 18:00:12  [INFO    ]  module.rfid                   Cediendo reader al cloner
+2026-04-23 18:00:12  [INFO    ]  module.rfid.cloner            Iniciando flujo de clonado
+2026-04-23 18:00:12  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (15.0s)...
+2026-04-23 18:00:16  [INFO    ]  module.rfid.cloner            UID detectado: C31B6003
+2026-04-23 18:00:18  [WARNING ]  module.rfid.cloner            READ 4 falló: {'event': 'ERROR', 'msg': 'Fallo lectura bloque'}
+2026-04-23 18:00:21  [INFO    ]  module.rfid.cloner            UID detectado: C0EFFB5F
+2026-04-23 18:00:22  [INFO    ]  module.rfid.cloner            Datos capturados: PHANTOM_SIG_2026
+2026-04-23 18:00:25  [INFO    ]  module.rfid.cloner            Esperando tarjeta DESTINO...
+2026-04-23 18:00:26  [WARNING ]  module.rfid.cloner            WRITE falló: {'event': 'ERROR', 'msg': 'Fallo escritura'}
+2026-04-23 18:00:30  [INFO    ]  module.rfid.cloner            Clonado exitoso
+2026-04-23 18:00:30  [INFO    ]  module.rfid                   Clonado terminado: {'status': 'SUCCESS'}
+2026-04-23 18:00:30  [INFO    ]  module.rfid                   _cloning_event limpiado, _run retoma control
+2026-04-23 18:00:30  [INFO    ]  main                          clone_card() terminó OK: {'status': 'SUCCESS'}
+2026-04-23 18:00:31  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 18:00:36  [INFO    ]  module.rfid                   UID detectado: C31B6003
+2026-04-23 18:00:39  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 18:02:52  [INFO    ]  main                          Cerrando...
+2026-04-23 18:02:52  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 18:02:54  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 18:02:54  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 18:03:09  [INFO    ]  main                          OLED OK
+2026-04-23 18:03:09  [INFO    ]  main                          Joystick OK
+2026-04-23 18:03:11  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:03:11  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 18:03:12  [INFO    ]  main                          RFID OK
+2026-04-23 18:03:17  [INFO    ]  main                          Acción recibida: clone_rfid
+2026-04-23 18:03:17  [INFO    ]  module.rfid                   clone_card() iniciado
+2026-04-23 18:03:19  [INFO    ]  module.rfid                   Cediendo reader al cloner
+2026-04-23 18:03:19  [INFO    ]  module.rfid.cloner            Iniciando flujo de clonado
+2026-04-23 18:03:19  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (15.0s)...
+2026-04-23 18:03:21  [INFO    ]  module.rfid.cloner            UID detectado: C0EFFB5F
+2026-04-23 18:03:22  [WARNING ]  module.rfid.cloner            READ 4 falló: {'event': 'ERROR', 'msg': 'Fallo lectura bloque'}
+2026-04-23 18:03:24  [INFO    ]  module.rfid.cloner            UID detectado: C0EFFB5F
+2026-04-23 18:03:24  [WARNING ]  module.rfid.cloner            READ 4 falló: {'event': 'ERROR', 'msg': 'Fallo lectura bloque'}
+2026-04-23 18:03:26  [INFO    ]  module.rfid.cloner            UID detectado: C0EFFB5F
+2026-04-23 18:03:27  [INFO    ]  module.rfid.cloner            Datos capturados: PHANTOM_SIG_2026
+2026-04-23 18:03:31  [INFO    ]  module.rfid.cloner            Esperando tarjeta DESTINO...
+2026-04-23 18:03:32  [INFO    ]  module.rfid.cloner            Clonado exitoso
+2026-04-23 18:03:32  [INFO    ]  module.rfid                   Clonado terminado: {'status': 'SUCCESS'}
+2026-04-23 18:03:32  [INFO    ]  module.rfid                   _cloning_event limpiado, _run retoma control
+2026-04-23 18:03:32  [INFO    ]  main                          clone_card() terminó OK: {'status': 'SUCCESS'}
+2026-04-23 18:03:44  [INFO    ]  main                          Acción recibida: clone_rfid
+2026-04-23 18:03:44  [INFO    ]  module.rfid                   clone_card() iniciado
+2026-04-23 18:03:46  [INFO    ]  module.rfid                   Cediendo reader al cloner
+2026-04-23 18:03:46  [INFO    ]  module.rfid.cloner            Iniciando flujo de clonado
+2026-04-23 18:03:46  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (15.0s)...
+2026-04-23 18:03:47  [INFO    ]  module.rfid.cloner            UID detectado: C31B6003
+2026-04-23 18:03:48  [INFO    ]  module.rfid.cloner            Datos capturados: PHANTOM_SIG_2026
+2026-04-23 18:03:52  [INFO    ]  module.rfid.cloner            Esperando tarjeta DESTINO...
+2026-04-23 18:03:53  [INFO    ]  module.rfid.cloner            Clonado exitoso
+2026-04-23 18:03:53  [INFO    ]  module.rfid                   Clonado terminado: {'status': 'SUCCESS'}
+2026-04-23 18:03:53  [INFO    ]  module.rfid                   _cloning_event limpiado, _run retoma control
+2026-04-23 18:03:53  [INFO    ]  main                          clone_card() terminó OK: {'status': 'SUCCESS'}
+2026-04-23 18:03:58  [INFO    ]  main                          Cerrando...
+2026-04-23 18:03:58  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 18:04:28  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:04:35  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:04:48  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:05:19  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:05:38  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:06:03  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 18:06:03  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 18:06:18  [INFO    ]  main                          OLED OK
+2026-04-23 18:06:18  [INFO    ]  main                          Joystick OK
+2026-04-23 18:06:20  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:06:20  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 18:06:20  [INFO    ]  main                          RFID OK
+2026-04-23 18:06:32  [INFO    ]  main                          Acción recibida: clone_rfid
+2026-04-23 18:06:32  [INFO    ]  module.rfid                   clone_card() iniciado
+2026-04-23 18:06:33  [INFO    ]  module.rfid                   Cediendo reader al cloner
+2026-04-23 18:06:33  [INFO    ]  module.rfid.cloner            Iniciando flujo de clonado
+2026-04-23 18:06:34  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (15.0s)...
+2026-04-23 18:06:34  [INFO    ]  module.rfid.cloner            UID detectado: C0EFFB5F
+2026-04-23 18:06:34  [INFO    ]  module.rfid.cloner            Datos capturados: PHANTOM_SIG_2026
+2026-04-23 18:06:38  [INFO    ]  module.rfid.cloner            Esperando tarjeta DESTINO...
+2026-04-23 18:06:39  [INFO    ]  module.rfid.cloner            Clonado exitoso
+2026-04-23 18:06:39  [INFO    ]  module.rfid                   Clonado terminado: {'status': 'SUCCESS'}
+2026-04-23 18:06:39  [INFO    ]  module.rfid                   _cloning_event limpiado, _run retoma control
+2026-04-23 18:06:39  [INFO    ]  main                          clone_card() terminó OK: {'status': 'SUCCESS'}
+2026-04-23 18:06:41  [INFO    ]  module.rfid                   UID detectado: C0EFFB5F
+2026-04-23 18:06:50  [INFO    ]  main                          Cerrando...
+2026-04-23 18:06:50  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 18:06:56  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:47:05  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 18:47:06  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 18:47:20  [INFO    ]  main                          OLED OK
+2026-04-23 18:47:21  [INFO    ]  main                          Joystick OK
+2026-04-23 18:47:23  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:47:23  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 18:47:23  [INFO    ]  main                          RFID OK
+2026-04-23 18:47:25  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 18:47:25  [INFO    ]  main                          Bluetooth OK
+2026-04-23 18:47:32  [INFO    ]  main                          Acción recibida: status
+2026-04-23 18:47:46  [INFO    ]  main                          Cerrando...
+2026-04-23 18:47:46  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 18:47:46  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 18:47:49  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 18:47:50  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 18:48:04  [INFO    ]  main                          OLED OK
+2026-04-23 18:48:05  [INFO    ]  main                          Joystick OK
+2026-04-23 18:48:07  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:48:07  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 18:48:07  [INFO    ]  main                          RFID OK
+2026-04-23 18:48:09  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 18:48:09  [INFO    ]  main                          Bluetooth OK
+2026-04-23 18:48:17  [INFO    ]  main                          Acción recibida: bt_scan
+2026-04-23 18:48:17  [INFO    ]  module.bluetooth              Iniciando escaneo BLE
+2026-04-23 18:48:27  [INFO    ]  module.bluetooth              35 dispositivo(s) encontrado(s)
+2026-04-23 18:48:27  [INFO    ]  main                          bt_scan() terminó OK: None
+2026-04-23 18:50:33  [INFO    ]  main                          Cerrando...
+2026-04-23 18:50:33  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 18:50:33  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 18:50:37  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 18:50:37  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 18:50:52  [INFO    ]  main                          OLED OK
+2026-04-23 18:50:53  [INFO    ]  main                          Joystick OK
+2026-04-23 18:50:55  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:50:55  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 18:50:55  [INFO    ]  main                          RFID OK
+2026-04-23 18:50:57  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 18:50:57  [INFO    ]  main                          Bluetooth OK
+2026-04-23 18:51:20  [INFO    ]  main                          Acción recibida: bt_scan
+2026-04-23 18:51:20  [INFO    ]  module.bluetooth              Iniciando escaneo BLE
+2026-04-23 18:51:31  [INFO    ]  module.bluetooth              34 dispositivo(s) encontrado(s)
+2026-04-23 18:52:40  [INFO    ]  main                          bt_scan() terminó OK: None
+2026-04-23 18:56:19  [INFO    ]  main                          Cerrando...
+2026-04-23 18:56:19  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 18:56:19  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 18:56:23  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 18:56:23  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 18:56:38  [INFO    ]  main                          OLED OK
+2026-04-23 18:56:38  [INFO    ]  main                          Joystick OK
+2026-04-23 18:56:40  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 18:56:40  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 18:56:40  [INFO    ]  main                          RFID OK
+2026-04-23 18:56:42  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 18:56:42  [INFO    ]  main                          Bluetooth OK
+2026-04-23 18:56:53  [INFO    ]  main                          Acción recibida: bt_scan
+2026-04-23 18:56:54  [INFO    ]  module.bluetooth              Iniciando escaneo BLE
+2026-04-23 18:57:04  [INFO    ]  module.bluetooth              26 dispositivo(s) encontrado(s)
+2026-04-23 18:57:06  [INFO    ]  module.bluetooth              Mostrando 1/26: Desconocido
+2026-04-23 18:57:08  [INFO    ]  module.bluetooth              Mostrando 2/26: Desconocido
+2026-04-23 18:57:10  [INFO    ]  module.bluetooth              Mostrando 3/26: Desconocido
+2026-04-23 18:57:12  [INFO    ]  module.bluetooth              Mostrando 4/26: Desconocido
+2026-04-23 18:57:14  [INFO    ]  module.bluetooth              Mostrando 5/26: Desconocido
+2026-04-23 18:57:16  [INFO    ]  module.bluetooth              Mostrando 6/26: Desconocido
+2026-04-23 18:57:18  [INFO    ]  module.bluetooth              Mostrando 7/26: Desconocido
+2026-04-23 18:57:20  [INFO    ]  module.bluetooth              Mostrando 8/26: realme Buds T5
+2026-04-23 18:57:23  [INFO    ]  module.bluetooth              Mostrando 9/26: Desconocido
+2026-04-23 18:57:25  [INFO    ]  module.bluetooth              Mostrando 10/26: Desconocido
+2026-04-23 18:57:27  [INFO    ]  module.bluetooth              Mostrando 11/26: Desconocido
+2026-04-23 18:57:29  [INFO    ]  module.bluetooth              Mostrando 12/26: Desconocido
+2026-04-23 18:57:31  [INFO    ]  module.bluetooth              Mostrando 13/26: Desconocido
+2026-04-23 18:57:33  [INFO    ]  module.bluetooth              Mostrando 14/26: Desconocido
+2026-04-23 18:57:35  [INFO    ]  module.bluetooth              Mostrando 15/26: Smart Tag
+2026-04-23 18:57:37  [INFO    ]  module.bluetooth              Mostrando 16/26: Desconocido
+2026-04-23 18:57:40  [INFO    ]  module.bluetooth              Mostrando 17/26: Desconocido
+2026-04-23 18:57:42  [INFO    ]  module.bluetooth              Mostrando 18/26: Desconocido
+2026-04-23 18:57:44  [INFO    ]  module.bluetooth              Mostrando 19/26: Desconocido
+2026-04-23 18:57:46  [INFO    ]  module.bluetooth              Mostrando 20/26: Desconocido
+2026-04-23 18:57:48  [INFO    ]  module.bluetooth              Mostrando 21/26: QCY Watch GT2
+2026-04-23 18:57:50  [INFO    ]  module.bluetooth              Mostrando 22/26: Desconocido
+2026-04-23 18:57:52  [INFO    ]  module.bluetooth              Mostrando 23/26: Desconocido
+2026-04-23 18:57:55  [INFO    ]  module.bluetooth              Mostrando 24/26: Desconocido
+2026-04-23 18:57:57  [INFO    ]  module.bluetooth              Mostrando 25/26: Desconocido
+2026-04-23 18:57:59  [INFO    ]  module.bluetooth              Mostrando 26/26: Desconocido
+2026-04-23 18:58:01  [INFO    ]  main                          bt_scan() terminó OK: None
+2026-04-23 18:58:19  [INFO    ]  main                          Acción recibida: clone_rfid
+2026-04-23 18:58:19  [INFO    ]  module.rfid                   clone_card() iniciado
+2026-04-23 18:58:21  [INFO    ]  module.rfid                   Cediendo reader al cloner
+2026-04-23 18:58:21  [INFO    ]  module.rfid.cloner            Iniciando flujo de clonado
+2026-04-23 18:58:21  [INFO    ]  module.rfid.cloner            Esperando tarjeta ORIGEN (15.0s)...
+2026-04-23 18:58:22  [INFO    ]  module.rfid.cloner            UID detectado: C31B6003
+2026-04-23 18:58:23  [INFO    ]  module.rfid.cloner            Datos capturados: PHANTOM_SIG_2026
+2026-04-23 18:58:27  [INFO    ]  module.rfid.cloner            Esperando tarjeta DESTINO...
+2026-04-23 18:58:27  [INFO    ]  module.rfid.cloner            Clonado exitoso
+2026-04-23 18:58:27  [INFO    ]  module.rfid                   Clonado terminado: {'status': 'SUCCESS'}
+2026-04-23 18:58:27  [INFO    ]  module.rfid                   _cloning_event limpiado, _run retoma control
+2026-04-23 18:58:28  [INFO    ]  main                          clone_card() terminó OK: {'status': 'SUCCESS'}
+2026-04-23 18:58:34  [INFO    ]  main                          Cerrando...
+2026-04-23 18:58:34  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 18:58:34  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 19:09:08  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:09:09  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 19:09:24  [INFO    ]  main                          OLED OK
+2026-04-23 19:09:24  [INFO    ]  main                          Joystick OK
+2026-04-23 19:09:26  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 19:09:26  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 19:09:26  [INFO    ]  main                          RFID OK
+2026-04-23 19:09:28  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 19:09:28  [INFO    ]  main                          Bluetooth OK
+2026-04-23 19:09:28  [INFO    ]  main                          NRF OK
+2026-04-23 19:09:46  [INFO    ]  main                          Acción recibida: nrf_wifi
+2026-04-23 19:09:48  [INFO    ]  nrf                           Serial conectado en /dev/ttyUSB0
+2026-04-23 19:09:49  [INFO    ]  nrf                           Comando '1' enviado al ESP32
+2026-04-23 19:10:39  [INFO    ]  main                          Cerrando...
+2026-04-23 19:10:39  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 19:10:39  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 19:10:39  [INFO    ]  nrf                           Serial cerrado
+2026-04-23 19:10:39  [INFO    ]  nrf                           Sesión NRF finalizada
+2026-04-23 19:10:42  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:10:43  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 19:10:57  [INFO    ]  main                          OLED OK
+2026-04-23 19:10:58  [INFO    ]  main                          Joystick OK
+2026-04-23 19:11:00  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 19:11:00  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 19:11:00  [INFO    ]  main                          RFID OK
+2026-04-23 19:11:02  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 19:11:02  [INFO    ]  main                          Bluetooth OK
+2026-04-23 19:11:02  [INFO    ]  main                          NRF OK
+2026-04-23 19:11:08  [INFO    ]  main                          Acción recibida: bt_scan
+2026-04-23 19:11:08  [INFO    ]  module.bluetooth              Iniciando escaneo BLE
+2026-04-23 19:11:19  [INFO    ]  module.bluetooth              28 dispositivo(s) encontrado(s)
+2026-04-23 19:11:20  [INFO    ]  module.bluetooth              Mostrando 1/28: Desconocido
+2026-04-23 19:11:22  [INFO    ]  module.bluetooth              Mostrando 2/28: Desconocido
+2026-04-23 19:11:24  [INFO    ]  main                          Cerrando...
+2026-04-23 19:11:24  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 19:11:24  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 19:13:55  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:18:42  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:19:16  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:26:16  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:26:17  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 19:26:32  [INFO    ]  main                          OLED OK
+2026-04-23 19:26:32  [INFO    ]  main                          Joystick OK
+2026-04-23 19:26:34  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 19:26:34  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 19:26:34  [INFO    ]  main                          RFID OK
+2026-04-23 19:26:36  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 19:26:36  [INFO    ]  main                          Bluetooth OK
+2026-04-23 19:26:36  [INFO    ]  main                          NRF OK
+2026-04-23 19:26:52  [INFO    ]  main                          Acción recibida: nrf_wifi_scan
+2026-04-23 19:26:54  [INFO    ]  nrf                           Serial conectado en /dev/ttyUSB0
+2026-04-23 19:26:54  [INFO    ]  nrf                           → ESP32: SCAN
+2026-04-23 19:26:54  [INFO    ]  nrf                           [ESP32] {"ent:ERRmgdo"}
+2026-04-23 19:27:14  [ERROR   ]  nrf                           Timeout esperando datos del escaneo
+2026-04-23 19:27:24  [INFO    ]  main                          Acción recibida: nrf_wifi_scan
+2026-04-23 19:27:26  [INFO    ]  nrf                           Serial conectado en /dev/ttyUSB0
+2026-04-23 19:27:26  [INFO    ]  nrf                           → ESP32: SCAN
+2026-04-23 19:27:27  [INFO    ]  nrf                           [ESP32] ERROR"":"cmddcido"}
+2026-04-23 19:27:46  [INFO    ]  main                          Cerrando...
+2026-04-23 19:27:46  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 19:27:46  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 19:27:46  [INFO    ]  nrf                           → ESP32: STOP
+2026-04-23 19:27:46  [ERROR   ]  nrf                           Timeout esperando datos del escaneo
+2026-04-23 19:27:50  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:27:50  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 19:28:05  [INFO    ]  main                          OLED OK
+2026-04-23 19:28:05  [INFO    ]  main                          Joystick OK
+2026-04-23 19:28:07  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 19:28:07  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 19:28:07  [INFO    ]  main                          RFID OK
+2026-04-23 19:28:09  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 19:28:09  [INFO    ]  main                          Bluetooth OK
+2026-04-23 19:28:09  [INFO    ]  main                          NRF OK
+2026-04-23 19:28:39  [INFO    ]  main                          Acción recibida: wifi_ids_start
+2026-04-23 19:28:39  [WARNING ]  main                          Acción desconocida: wifi_ids_start
+2026-04-23 19:29:42  [INFO    ]  main                          Cerrando...
+2026-04-23 19:29:42  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 19:29:42  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 19:29:46  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:29:46  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 19:30:01  [INFO    ]  main                          OLED OK
+2026-04-23 19:30:01  [INFO    ]  main                          Joystick OK
+2026-04-23 19:30:03  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 19:30:03  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 19:30:03  [INFO    ]  main                          RFID OK
+2026-04-23 19:30:05  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 19:30:05  [INFO    ]  main                          Bluetooth OK
+2026-04-23 19:30:05  [INFO    ]  main                          NRF OK
+2026-04-23 19:30:16  [INFO    ]  main                          Acción recibida: wifi_detector
+2026-04-23 19:30:16  [WARNING ]  main                          Acción desconocida: wifi_detector
+2026-04-23 19:31:50  [INFO    ]  main                          Cerrando...
+2026-04-23 19:31:50  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 19:31:50  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 19:34:02  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:37:03  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:38:23  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:38:23  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 19:38:38  [INFO    ]  main                          OLED OK
+2026-04-23 19:38:38  [INFO    ]  main                          Joystick OK
+2026-04-23 19:38:40  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 19:38:40  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 19:38:41  [INFO    ]  main                          RFID OK
+2026-04-23 19:38:42  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 19:38:42  [INFO    ]  main                          Bluetooth OK
+2026-04-23 19:38:42  [WARNING ]  main                          Wifi IDS no disponible: name 'WifiIDS' is not defined
+2026-04-23 19:38:42  [INFO    ]  main                          NRF OK
+2026-04-23 19:38:50  [INFO    ]  main                          Acción recibida: nrf_wifi_scan
+2026-04-23 19:38:52  [INFO    ]  nrf                           Serial conectado en /dev/ttyUSB1
+2026-04-23 19:38:52  [INFO    ]  nrf                           [status] Escaneando...
+2026-04-23 19:38:53  [INFO    ]  nrf                           → ESP32: SCAN
+2026-04-23 19:38:53  [INFO    ]  nrf                           Esperando SCAN_START...
+2026-04-23 19:38:53  [INFO    ]  nrf                           [ESP32] SCAN_START
+2026-04-23 19:38:53  [INFO    ]  nrf                           Leyendo redes...
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:0:Andres:11:-52
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:1:A34 de Sr:6:-56
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:2:ADM-UALP:1:-59
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:3:DNA-LP:1:-59
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:4:IT24:1:-60
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:5:ADM-UALP:1:-73
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:6:EST-UALP:1:-73
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:7:IT24:1:-73
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:8:DOC-UALP:1:-73
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:9:DNA-LP:1:-73
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:10:DNA-LP:6:-79
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:11:ADM-UALP:11:-81
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:12:EST-UALP:11:-81
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:13:IT24:11:-81
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:14:DNA-LP:11:-81
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:15:DOC-UALP:11:-82
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:16:IT24:11:-83
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:17:DNA-LP:11:-83
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:18:ADM-UALP:11:-84
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:19:DNA-LP:11:-85
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:20:ADM-UALP:11:-87
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:21:IT24:11:-87
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:22:ADM-UALP:11:-88
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:23:EST-UALP:11:-88
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:24:DNA-LP:11:-89
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] NETWORK:25:EMI4.0:2:-91
+2026-04-23 19:38:56  [INFO    ]  nrf                           [ESP32] SCAN_END:26
+2026-04-23 19:38:56  [INFO    ]  nrf                           Escaneo terminado: 26 redes encontradas
+2026-04-23 19:38:56  [INFO    ]  nrf                           Redes parseadas: 26
+2026-04-23 19:39:29  [INFO    ]  main                          Acción recibida: nrf_wifi_attack
+2026-04-23 19:39:29  [INFO    ]  nrf                           Red seleccionada: A34 de Sr ch6 (nRF ch37)
+2026-04-23 19:39:32  [INFO    ]  nrf                           Serial conectado en /dev/ttyUSB1
+2026-04-23 19:39:32  [INFO    ]  nrf                           → ESP32: WIFI:37
+2026-04-23 19:39:32  [INFO    ]  nrf                           [ESP32] READY
+2026-04-23 19:39:32  [INFO    ]  nrf                           [status] Jam: A34 de Sr
+2026-04-23 19:40:12  [INFO    ]  main                          Acción recibida: nrf_wifi_attack
+2026-04-23 19:40:12  [INFO    ]  nrf                           Red seleccionada: A34 de Sr ch6 (nRF ch37)
+2026-04-23 19:40:12  [INFO    ]  nrf                           → ESP32: STOP
+2026-04-23 19:40:12  [INFO    ]  nrf                           [ESP32] READY
+2026-04-23 19:40:15  [INFO    ]  nrf                           Serial conectado en /dev/ttyUSB1
+2026-04-23 19:40:15  [INFO    ]  nrf                           → ESP32: WIFI:37
+2026-04-23 19:40:15  [INFO    ]  nrf                           [ESP32] READY
+2026-04-23 19:40:15  [INFO    ]  nrf                           [status] Jam: A34 de Sr
+2026-04-23 19:41:17  [INFO    ]  main                          Acción recibida: nrf_bt
+2026-04-23 19:41:17  [INFO    ]  nrf                           → ESP32: STOP
+2026-04-23 19:41:17  [INFO    ]  nrf                           [ESP32] READY
+2026-04-23 19:41:20  [INFO    ]  nrf                           Serial conectado en /dev/ttyUSB1
+2026-04-23 19:41:20  [INFO    ]  nrf                           → ESP32: BT
+2026-04-23 19:41:20  [INFO    ]  nrf                           [ESP32] READY
+2026-04-23 19:41:20  [INFO    ]  nrf                           [status] BT Jam ACTIVO
+2026-04-23 19:43:40  [INFO    ]  main                          Cerrando...
+2026-04-23 19:43:40  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 19:43:40  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 19:43:40  [INFO    ]  nrf                           → ESP32: STOP
+2026-04-23 19:43:40  [INFO    ]  nrf                           [ESP32] READY
+2026-04-23 19:44:37  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:49:33  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:50:08  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:50:09  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 19:50:23  [INFO    ]  main                          OLED OK
+2026-04-23 19:50:24  [INFO    ]  main                          Joystick OK
+2026-04-23 19:50:26  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 19:50:26  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 19:50:26  [INFO    ]  main                          RFID OK
+2026-04-23 19:50:28  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 19:50:28  [INFO    ]  main                          Bluetooth OK
+2026-04-23 19:50:28  [WARNING ]  main                          Wifi IDS no disponible: name 'WifiIDS' is not defined
+2026-04-23 19:50:28  [INFO    ]  main                          NRF OK
+2026-04-23 19:50:41  [INFO    ]  main                          Acción recibida: nrf_wifi_scan
+2026-04-23 19:50:44  [INFO    ]  nrf                           Serial conectado en /dev/ttyUSB1
+2026-04-23 19:50:44  [INFO    ]  nrf                           [status] Escaneando...
+2026-04-23 19:50:44  [INFO    ]  nrf                           → ESP32: SCAN
+2026-04-23 19:50:44  [INFO    ]  nrf                           Esperando SCAN_START...
+2026-04-23 19:50:44  [INFO    ]  nrf                           [ESP32] SCAN_START
+2026-04-23 19:50:44  [INFO    ]  nrf                           Leyendo redes...
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:0:A34 de Sr:6:-57
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:1:Andres:11:-60
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:2:DNA-LP:1:-68
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:3:ADM-UALP:1:-69
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:4:IT24:1:-69
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:5:ADM-UALP:1:-78
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:6:EST-UALP:1:-78
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:7:IT24:1:-78
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:8:DOC-UALP:1:-78
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:9:DNA-LP:1:-78
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:10:DNA-LP:6:-82
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:11:ADM-UALP:11:-83
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:12:IT24:11:-84
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:13:IT24:11:-84
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:14:DNA-LP:11:-85
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:15:IT24:11:-86
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:16:ADM-UALP:11:-86
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:17:DNA-LP:11:-87
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] NETWORK:18:EMI4.0:2:-95
+2026-04-23 19:50:47  [INFO    ]  nrf                           [ESP32] SCAN_END:19
+2026-04-23 19:50:47  [INFO    ]  nrf                           Escaneo terminado: 19 redes encontradas
+2026-04-23 19:50:47  [INFO    ]  nrf                           Redes parseadas: 19
+2026-04-23 19:51:03  [INFO    ]  main                          Acción recibida: nrf_bt
+2026-04-23 19:51:05  [INFO    ]  nrf                           Serial conectado en /dev/ttyUSB1
+2026-04-23 19:51:05  [INFO    ]  nrf                           → ESP32: BT
+2026-04-23 19:51:05  [INFO    ]  nrf                           [ESP32] READY
+2026-04-23 19:51:05  [INFO    ]  nrf                           [status] BT Jam ACTIVO
+2026-04-23 19:51:08  [INFO    ]  main                          Acción recibida: nrf_stop
+2026-04-23 19:51:08  [INFO    ]  nrf                           → ESP32: STOP
+2026-04-23 19:51:08  [INFO    ]  nrf                           [ESP32] READY
+2026-04-23 19:51:18  [INFO    ]  main                          Cerrando...
+2026-04-23 19:51:18  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 19:51:18  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 19:51:28  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:53:30  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:53:52  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:54:21  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 19:59:34  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:01:00  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:04:06  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:04:20  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:05:32  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:06:24  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:07:43  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:09:08  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:10:04  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:11:23  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:13:08  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:13:09  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 20:13:24  [INFO    ]  main                          OLED OK
+2026-04-23 20:13:24  [INFO    ]  main                          Joystick OK
+2026-04-23 20:13:26  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 20:13:26  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 20:13:26  [INFO    ]  main                          RFID OK
+2026-04-23 20:13:28  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 20:13:28  [INFO    ]  main                          Bluetooth OK
+2026-04-23 20:13:28  [WARNING ]  main                          Wifi IDS no disponible: EvilTwin.__init__() missing 3 required positional arguments: 'pico', 'bus', and 'db'
+2026-04-23 20:13:28  [INFO    ]  main                          NRF OK
+2026-04-23 20:13:54  [INFO    ]  main                          Acción recibida: wifi_detector
+2026-04-23 20:13:54  [WARNING ]  main                          Acción desconocida: wifi_detector
+2026-04-23 20:18:17  [INFO    ]  main                          Cerrando...
+2026-04-23 20:18:17  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 20:18:17  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 20:18:20  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:18:20  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 20:18:35  [INFO    ]  main                          OLED OK
+2026-04-23 20:18:36  [INFO    ]  main                          Joystick OK
+2026-04-23 20:18:38  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 20:18:38  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 20:18:38  [INFO    ]  main                          RFID OK
+2026-04-23 20:18:39  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 20:18:40  [INFO    ]  main                          Bluetooth OK
+2026-04-23 20:18:40  [INFO    ]  main                          Wifi IDS OK
+2026-04-23 20:18:40  [INFO    ]  main                          NRF OK
+2026-04-23 20:18:55  [INFO    ]  main                          Acción recibida: wifi_detector
+2026-04-23 20:18:55  [WARNING ]  main                          Acción desconocida: wifi_detector
+2026-04-23 20:23:28  [INFO    ]  main                          Cerrando...
+2026-04-23 20:23:28  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 20:23:28  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 20:23:31  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:23:32  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 20:23:46  [INFO    ]  main                          OLED OK
+2026-04-23 20:23:47  [INFO    ]  main                          Joystick OK
+2026-04-23 20:23:49  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 20:23:49  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 20:23:49  [INFO    ]  main                          RFID OK
+2026-04-23 20:23:51  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 20:23:51  [INFO    ]  main                          Bluetooth OK
+2026-04-23 20:23:51  [INFO    ]  main                          Wifi IDS OK
+2026-04-23 20:23:51  [INFO    ]  main                          NRF OK
+2026-04-23 20:24:01  [INFO    ]  main                          Acción recibida: wifi_detector
+2026-04-23 20:24:01  [INFO    ]  wifi.detector                 Detector iniciado en wlan1
+2026-04-23 20:24:02  [INFO    ]  main                          Wifi detector iniciado
+2026-04-23 20:26:09  [INFO    ]  main                          Cerrando...
+2026-04-23 20:26:09  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 20:26:09  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 20:26:12  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 20:26:12  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 20:26:27  [INFO    ]  main                          OLED OK
+2026-04-23 20:26:28  [INFO    ]  main                          Joystick OK
+2026-04-23 20:26:30  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 20:26:30  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 20:26:30  [INFO    ]  main                          RFID OK
+2026-04-23 20:26:32  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 20:26:32  [INFO    ]  main                          Bluetooth OK
+2026-04-23 20:26:32  [INFO    ]  main                          Wifi IDS OK
+2026-04-23 20:26:32  [INFO    ]  main                          NRF OK
+2026-04-23 20:26:47  [INFO    ]  main                          Acción recibida: wifi_detector
+2026-04-23 20:26:47  [INFO    ]  wifi.detector                 Detector iniciado en wlan1
+2026-04-23 20:26:47  [INFO    ]  wifi.detector                 Detectado: HACKME_WIFI (-38 dBm)
+2026-04-23 20:26:47  [INFO    ]  main                          Wifi detector iniciado
+2026-04-23 20:26:49  [INFO    ]  wifi.detector                 Detectado: HACKME_WIFI (-61 dBm)
+2026-04-23 20:26:51  [INFO    ]  wifi.detector                 Detectado: STARLINK (-40 dBm)
+2026-04-23 20:26:53  [INFO    ]  wifi.detector                 Detectado: TP-LINK_ABCD (-50 dBm)
+2026-04-23 20:26:56  [INFO    ]  wifi.detector                 Detectado: NETGEAR_XYZ (-86 dBm)
+2026-04-23 20:26:58  [INFO    ]  wifi.detector                 Detectado: TP-LINK_ABCD (-86 dBm)
+2026-04-23 20:27:00  [INFO    ]  wifi.detector                 Detectado: MOVISTAR_1234 (-68 dBm)
+2026-04-23 20:27:02  [INFO    ]  wifi.detector                 Detectado: STARLINK (-68 dBm)
+2026-04-23 20:27:03  [INFO    ]  main                          Cerrando...
+2026-04-23 20:27:03  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 20:27:03  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 23:34:15  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 23:34:16  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 23:34:16  [WARNING ]  main                          OLED no disponible: No I2C device at address: 0x3c
+2026-04-23 23:34:16  [WARNING ]  main                          Joystick no disponible: No I2C device at address: 0x48
+2026-04-23 23:34:18  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 23:34:18  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 23:34:18  [INFO    ]  main                          RFID OK
+2026-04-23 23:34:19  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 23:34:19  [INFO    ]  main                          Bluetooth OK
+2026-04-23 23:34:19  [INFO    ]  main                          Wifi IDS OK
+2026-04-23 23:34:19  [INFO    ]  main                          NRF OK
+2026-04-23 23:34:46  [INFO    ]  main                          Cerrando...
+2026-04-23 23:34:46  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 23:34:46  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 23:34:49  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 23:34:49  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 23:35:04  [INFO    ]  main                          OLED OK
+2026-04-23 23:35:05  [INFO    ]  main                          Joystick OK
+2026-04-23 23:35:07  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 23:35:07  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 23:35:07  [INFO    ]  main                          RFID OK
+2026-04-23 23:35:08  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 23:35:09  [INFO    ]  main                          Bluetooth OK
+2026-04-23 23:35:09  [INFO    ]  main                          Wifi IDS OK
+2026-04-23 23:35:09  [INFO    ]  main                          NRF OK
+2026-04-23 23:35:21  [INFO    ]  main                          Acción recibida: wifi_ids_start
+2026-04-23 23:35:21  [INFO    ]  wifi.engine                   === WIFI IDS ENGINE START ===
+2026-04-23 23:35:21  [INFO    ]  wifi.detector                 Detector iniciado en wlan1
+2026-04-23 23:35:21  [INFO    ]  wifi.detector                 Detectado: HACKME_WIFI (-64 dBm)
+2026-04-23 23:35:23  [INFO    ]  wifi.detector                 Detectado: HACKME_WIFI (-78 dBm)
+2026-04-23 23:35:25  [INFO    ]  wifi.detector                 Detectado: MOVISTAR_1234 (-67 dBm)
+2026-04-23 23:35:27  [INFO    ]  wifi.detector                 Detectado: STARLINK (-86 dBm)
+2026-04-23 23:35:29  [INFO    ]  wifi.detector                 Detectado: HACKME_WIFI (-88 dBm)
+2026-04-23 23:35:31  [INFO    ]  wifi.detector                 Detectado: NETGEAR_XYZ (-58 dBm)
+2026-04-23 23:35:34  [INFO    ]  wifi.detector                 Detectado: STARLINK (-90 dBm)
+2026-04-23 23:35:36  [INFO    ]  wifi.detector                 Detectado: HACKME_WIFI (-79 dBm)
+2026-04-23 23:35:38  [INFO    ]  wifi.detector                 Detectado: TP-LINK_ABCD (-39 dBm)
+2026-04-23 23:35:40  [INFO    ]  wifi.detector                 Detectado: STARLINK (-31 dBm)
+2026-04-23 23:35:42  [INFO    ]  wifi.detector                 Detectado: STARLINK (-51 dBm)
+2026-04-23 23:35:44  [INFO    ]  wifi.detector                 Detectado: HACKME_WIFI (-49 dBm)
+2026-04-23 23:35:46  [INFO    ]  wifi.detector                 Detectado: NETGEAR_XYZ (-85 dBm)
+2026-04-23 23:35:48  [INFO    ]  wifi.detector                 Detectado: STARLINK (-55 dBm)
+2026-04-23 23:35:51  [INFO    ]  wifi.detector                 Detectado: MOVISTAR_1234 (-62 dBm)
+2026-04-23 23:35:53  [INFO    ]  wifi.detector                 Detectado: TP-LINK_ABCD (-37 dBm)
+2026-04-23 23:35:55  [INFO    ]  wifi.detector                 Detectado: NETGEAR_XYZ (-79 dBm)
+2026-04-23 23:35:57  [INFO    ]  wifi.detector                 Detectado: HACKME_WIFI (-30 dBm)
+2026-04-23 23:35:59  [INFO    ]  wifi.detector                 Detectado: TP-LINK_ABCD (-47 dBm)
+2026-04-23 23:36:01  [INFO    ]  main                          Cerrando...
+2026-04-23 23:36:01  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 23:36:01  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 23:36:01  [INFO    ]  wifi.detector                 Detectado: MOVISTAR_1234 (-77 dBm)
+2026-04-23 23:36:02  [INFO    ]  wifi.engine                   WifiIDS engine detenido
+2026-04-23 23:36:07  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 23:36:08  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 23:36:22  [INFO    ]  main                          OLED OK
+2026-04-23 23:36:23  [INFO    ]  main                          Joystick OK
+2026-04-23 23:36:25  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 23:36:25  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 23:36:25  [INFO    ]  main                          RFID OK
+2026-04-23 23:36:27  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 23:36:27  [INFO    ]  main                          Bluetooth OK
+2026-04-23 23:36:27  [INFO    ]  main                          Wifi IDS OK
+2026-04-23 23:36:27  [INFO    ]  main                          NRF OK
+2026-04-23 23:36:52  [INFO    ]  main                          Acción recibida: wifi_detector
+2026-04-23 23:36:52  [INFO    ]  wifi.detector                 Detector iniciado en wlan1
+2026-04-23 23:36:52  [INFO    ]  wifi.detector                 Detectado: STARLINK (-82 dBm)
+2026-04-23 23:36:52  [INFO    ]  main                          Wifi detector iniciado
+2026-04-23 23:36:55  [INFO    ]  wifi.detector                 Detectado: NETGEAR_XYZ (-59 dBm)
+2026-04-23 23:36:57  [INFO    ]  wifi.detector                 Detectado: MOVISTAR_1234 (-39 dBm)
+2026-04-23 23:36:59  [INFO    ]  wifi.detector                 Detectado: TP-LINK_ABCD (-51 dBm)
+2026-04-23 23:37:01  [INFO    ]  wifi.detector                 Detectado: TP-LINK_ABCD (-76 dBm)
+2026-04-23 23:37:03  [INFO    ]  wifi.detector                 Detectado: NETGEAR_XYZ (-32 dBm)
+2026-04-23 23:37:05  [INFO    ]  wifi.detector                 Detectado: TP-LINK_ABCD (-42 dBm)
+2026-04-23 23:37:07  [INFO    ]  wifi.detector                 Detectado: NETGEAR_XYZ (-53 dBm)
+2026-04-23 23:37:08  [INFO    ]  main                          Cerrando...
+2026-04-23 23:37:08  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 23:37:08  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 23:37:33  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 23:37:34  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 23:37:49  [INFO    ]  main                          OLED OK
+2026-04-23 23:37:49  [INFO    ]  main                          Joystick OK
+2026-04-23 23:37:51  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 23:37:51  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 23:37:51  [INFO    ]  main                          RFID OK
+2026-04-23 23:37:53  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 23:37:53  [INFO    ]  main                          Bluetooth OK
+2026-04-23 23:37:53  [INFO    ]  main                          Wifi IDS OK
+2026-04-23 23:37:53  [INFO    ]  main                          NRF OK
+2026-04-23 23:38:14  [INFO    ]  main                          Acción recibida: bt_scan
+2026-04-23 23:38:14  [INFO    ]  module.bluetooth              Iniciando escaneo BLE
+2026-04-23 23:38:25  [INFO    ]  module.bluetooth              7 dispositivo(s) encontrado(s)
+2026-04-23 23:38:26  [INFO    ]  module.bluetooth              Mostrando 1/7: Desconocido
+2026-04-23 23:38:29  [INFO    ]  module.bluetooth              Mostrando 2/7: Desconocido
+2026-04-23 23:38:31  [INFO    ]  module.bluetooth              Mostrando 3/7: Desconocido
+2026-04-23 23:38:33  [INFO    ]  module.bluetooth              Mostrando 4/7: Desconocido
+2026-04-23 23:38:35  [INFO    ]  module.bluetooth              Mostrando 5/7: Desconocido
+2026-04-23 23:38:37  [INFO    ]  module.bluetooth              Mostrando 6/7: Desconocido
+2026-04-23 23:38:39  [INFO    ]  module.bluetooth              Mostrando 7/7: Desconocido
+2026-04-23 23:38:41  [INFO    ]  main                          bt_scan() terminó OK: None
+2026-04-23 23:39:34  [INFO    ]  main                          Acción recibida: wifi_beacon_flood
+2026-04-23 23:39:34  [WARNING ]  main                          Acción desconocida: wifi_beacon_flood
+2026-04-23 23:40:21  [INFO    ]  main                          Cerrando...
+2026-04-23 23:40:21  [INFO    ]  module.rfid                   RFID detenido
+2026-04-23 23:40:21  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-23 23:40:25  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 23:40:26  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 23:40:41  [INFO    ]  main                          OLED OK
+2026-04-23 23:40:41  [INFO    ]  main                          Joystick OK
+2026-04-23 23:40:43  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-23 23:40:43  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 23:40:43  [INFO    ]  main                          RFID OK
+2026-04-23 23:40:45  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 23:40:45  [INFO    ]  main                          Bluetooth OK
+2026-04-23 23:40:45  [INFO    ]  main                          Wifi IDS OK
+2026-04-23 23:40:45  [INFO    ]  main                          NRF OK
+2026-04-23 23:54:27  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 23:59:11  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-23 23:59:11  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-23 23:59:26  [INFO    ]  main                          OLED OK
+2026-04-23 23:59:27  [INFO    ]  main                          Joystick OK
+2026-04-23 23:59:29  [WARNING ]  module.rfid.reader            ESP32 no respondió PING (resp: '{vn""OG,dvc""HNOE2}')
+2026-04-23 23:59:29  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-23 23:59:29  [INFO    ]  main                          RFID OK
+2026-04-23 23:59:31  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-23 23:59:31  [INFO    ]  main                          Bluetooth OK
+2026-04-23 23:59:31  [WARNING ]  main                          WifiModule no disponible: EvilTwin.__init__() got an unexpected keyword argument 'interface'
+2026-04-23 23:59:31  [INFO    ]  main                          NRF OK
+2026-04-24 00:04:17  [INFO    ]  main                          Cerrando...
+2026-04-24 00:04:17  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 00:04:17  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 00:04:20  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 00:04:20  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 00:04:35  [INFO    ]  main                          OLED OK
+2026-04-24 00:04:36  [INFO    ]  main                          Joystick OK
+2026-04-24 00:04:38  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 00:04:38  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 00:04:38  [INFO    ]  main                          RFID OK
+2026-04-24 00:04:39  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 00:04:39  [INFO    ]  main                          Bluetooth OK
+2026-04-24 00:04:39  [WARNING ]  main                          WifiModule no disponible: EvilTwin.__init__() got an unexpected keyword argument 'interface'
+2026-04-24 00:04:39  [INFO    ]  main                          NRF OK
+2026-04-24 00:06:46  [INFO    ]  main                          Acción recibida: status
+2026-04-24 00:06:53  [INFO    ]  main                          Acción recibida: wifi_deauth
+2026-04-24 00:06:53  [ERROR   ]  main                          Wifi no inicializado
+2026-04-24 00:09:16  [INFO    ]  main                          Cerrando...
+2026-04-24 00:09:16  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 00:09:16  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 00:09:50  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 00:09:50  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 00:10:05  [INFO    ]  main                          OLED OK
+2026-04-24 00:10:05  [INFO    ]  main                          Joystick OK
+2026-04-24 00:10:07  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 00:10:07  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 00:10:07  [INFO    ]  main                          RFID OK
+2026-04-24 00:10:09  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 00:10:09  [INFO    ]  main                          Bluetooth OK
+2026-04-24 00:10:09  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 00:10:09  [INFO    ]  main                          WifiModule OK
+2026-04-24 00:10:09  [INFO    ]  main                          NRF OK
+2026-04-24 00:10:21  [INFO    ]  wifi.module                   [WiFi] Acción: wifi_deauth
+2026-04-24 00:10:21  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 00:10:21  [INFO    ]  main                          Acción recibida: wifi_deauth
+2026-04-24 00:10:23  [INFO    ]  wifi.attacker                 Scan OK: 18 redes
+2026-04-24 00:10:33  [INFO    ]  wifi.module                   [WiFi] Acción: wifi_do_deauth
+2026-04-24 00:10:33  [WARNING ]  wifi.module                   Deauth → JOSEANDRES (18:35:D1:F2:3F:E1)
+2026-04-24 00:10:33  [INFO    ]  main                          Acción recibida: wifi_do_deauth
+2026-04-24 00:10:33  [WARNING ]  main                          Acción desconocida: wifi_do_deauth
+2026-04-24 00:10:33  [WARNING ]  wifi.attacker                 Deauth → AP:18:35:D1:F2:3F:E1 Cliente:FF:FF:FF:FF:FF:FF
+2026-04-24 00:11:45  [INFO    ]  main                          Cerrando...
+2026-04-24 00:11:45  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 00:11:45  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 00:11:49  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 00:11:49  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 00:12:04  [INFO    ]  main                          OLED OK
+2026-04-24 00:12:04  [INFO    ]  main                          Joystick OK
+2026-04-24 00:12:06  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 00:12:06  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 00:12:07  [INFO    ]  main                          RFID OK
+2026-04-24 00:12:08  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 00:12:08  [INFO    ]  main                          Bluetooth OK
+2026-04-24 00:12:08  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 00:12:08  [INFO    ]  main                          WifiModule OK
+2026-04-24 00:12:08  [INFO    ]  main                          NRF OK
+2026-04-24 00:12:15  [INFO    ]  wifi.module                   [WiFi] Acción: wifi_deauth
+2026-04-24 00:12:15  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 00:12:15  [INFO    ]  main                          Acción recibida: wifi_deauth
+2026-04-24 00:12:15  [INFO    ]  wifi.attacker                 Scan OK: 0 redes
+2026-04-24 00:12:22  [INFO    ]  wifi.module                   [WiFi] Acción: wifi_deauth
+2026-04-24 00:12:22  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 00:12:22  [INFO    ]  main                          Acción recibida: wifi_deauth
+2026-04-24 00:12:22  [INFO    ]  wifi.attacker                 Scan OK: 0 redes
+2026-04-24 00:12:33  [INFO    ]  wifi.module                   [WiFi] Acción: wifi_beacon_flood
+2026-04-24 00:12:33  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 00:12:33  [INFO    ]  main                          Acción recibida: wifi_beacon_flood
+2026-04-24 00:12:33  [INFO    ]  wifi.attacker                 Scan OK: 0 redes
+2026-04-24 00:13:06  [INFO    ]  wifi.module                   [WiFi] Acción: wifi_deauth
+2026-04-24 00:13:06  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 00:13:06  [INFO    ]  main                          Acción recibida: wifi_deauth
+2026-04-24 00:13:06  [INFO    ]  wifi.attacker                 Scan OK: 0 redes
+2026-04-24 00:15:00  [INFO    ]  main                          Cerrando...
+2026-04-24 00:15:00  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 00:15:00  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 00:15:04  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 00:15:05  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 00:15:19  [INFO    ]  main                          OLED OK
+2026-04-24 00:15:20  [INFO    ]  main                          Joystick OK
+2026-04-24 00:15:22  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 00:15:22  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 00:15:22  [INFO    ]  main                          RFID OK
+2026-04-24 00:15:24  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 00:15:24  [INFO    ]  main                          Bluetooth OK
+2026-04-24 00:15:24  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 00:15:24  [INFO    ]  main                          WifiModule OK
+2026-04-24 00:15:24  [INFO    ]  main                          NRF OK
+2026-04-24 00:15:40  [INFO    ]  wifi.module                   [WiFi] Acción: wifi_deauth
+2026-04-24 00:15:40  [INFO    ]  main                          Acción recibida: wifi_deauth
+2026-04-24 00:15:40  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 00:15:40  [INFO    ]  wifi.attacker                 wlan1 en monitor → managed
+2026-04-24 00:15:43  [INFO    ]  wifi.attacker                 Scan OK: 18 redes
+2026-04-24 00:15:43  [INFO    ]  wifi.attacker                 Restaurando wlan1 a monitor
+2026-04-24 00:15:48  [INFO    ]  wifi.module                   [WiFi] Acción: wifi_do_deauth
+2026-04-24 00:15:48  [WARNING ]  wifi.module                   Deauth → JOSEANDRES (18:35:D1:F2:3F:E1)
+2026-04-24 00:15:48  [INFO    ]  main                          Acción recibida: wifi_do_deauth
+2026-04-24 00:15:48  [WARNING ]  wifi.attacker                 Deauth → AP:18:35:D1:F2:3F:E1 Cliente:FF:FF:FF:FF:FF:FF
+2026-04-24 00:35:37  [INFO    ]  main                          Cerrando...
+2026-04-24 00:35:37  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 00:35:37  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 00:35:39  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 00:38:20  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 00:40:12  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 00:42:23  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 00:42:23  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 00:42:38  [INFO    ]  main                          OLED OK
+2026-04-24 00:42:39  [INFO    ]  main                          Joystick OK
+2026-04-24 00:42:41  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 00:42:41  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 00:42:41  [INFO    ]  main                          RFID OK
+2026-04-24 00:42:43  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 00:42:43  [INFO    ]  main                          Bluetooth OK
+2026-04-24 00:42:43  [WARNING ]  main                          WifiModule no disponible: EvilTwin.__init__() got an unexpected keyword argument 'interface'
+2026-04-24 00:42:43  [INFO    ]  main                          NRF OK
+2026-04-24 00:42:59  [INFO    ]  main                          Acción recibida: wifi_deauth
+2026-04-24 00:42:59  [ERROR   ]  main                          Wifi no inicializado
+2026-04-24 00:43:56  [INFO    ]  main                          Cerrando...
+2026-04-24 00:43:56  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 00:43:56  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 00:43:59  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 00:43:59  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 00:44:14  [INFO    ]  main                          OLED OK
+2026-04-24 00:44:14  [INFO    ]  main                          Joystick OK
+2026-04-24 00:44:16  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 00:44:16  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 00:44:17  [INFO    ]  main                          RFID OK
+2026-04-24 00:44:18  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 00:44:18  [INFO    ]  main                          Bluetooth OK
+2026-04-24 00:44:18  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 00:44:18  [INFO    ]  main                          WifiModule OK
+2026-04-24 00:44:18  [INFO    ]  main                          NRF OK
+2026-04-24 00:44:50  [INFO    ]  wifi.module                   [OLED] Acción: wifi_deauth
+2026-04-24 00:44:50  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 00:44:50  [INFO    ]  main                          Acción recibida: wifi_deauth
+2026-04-24 00:44:50  [INFO    ]  wifi.attacker                 wlan1 monitor → managed para scan
+2026-04-24 00:45:16  [INFO    ]  wifi.attacker                 Restaurando wlan1 a monitor
+2026-04-24 00:45:17  [INFO    ]  wifi.attacker                 Scan completo: 30 redes únicas
+2026-04-24 00:45:23  [INFO    ]  wifi.module                   [OLED] Acción: wifi_do_deauth
+2026-04-24 00:45:23  [WARNING ]  wifi.module                   Deauth → JOSEANDRES (18:35:D1:F2:3F:E1)
+2026-04-24 00:45:23  [INFO    ]  main                          Acción recibida: wifi_do_deauth
+2026-04-24 00:45:23  [WARNING ]  wifi.attacker                 Deauth → AP:18:35:D1:F2:3F:E1 Cliente:FF:FF:FF:FF:FF:FF
+2026-04-24 00:46:13  [INFO    ]  wifi.module                   [OLED] Acción: wifi_beacon_flood
+2026-04-24 00:46:13  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 00:46:13  [INFO    ]  main                          Acción recibida: wifi_beacon_flood
+2026-04-24 00:46:14  [INFO    ]  wifi.attacker                 wlan1 monitor → managed para scan
+2026-04-24 00:46:40  [INFO    ]  wifi.attacker                 Restaurando wlan1 a monitor
+2026-04-24 00:46:41  [INFO    ]  wifi.attacker                 Scan completo: 30 redes únicas
+2026-04-24 00:47:03  [INFO    ]  wifi.module                   [OLED] Acción: wifi_do_beacon
+2026-04-24 00:47:03  [WARNING ]  wifi.module                   Beacon flood → SSID:JOSEANDRES ch:11
+2026-04-24 00:47:03  [INFO    ]  main                          Acción recibida: wifi_do_beacon
+2026-04-24 00:47:03  [WARNING ]  wifi.attacker                 Beacon flood → SSID:JOSEANDRES ch:11
+2026-04-24 00:49:26  [INFO    ]  main                          Cerrando...
+2026-04-24 00:49:26  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 00:49:26  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 00:49:29  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 00:49:29  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 00:49:44  [INFO    ]  main                          OLED OK
+2026-04-24 00:49:45  [INFO    ]  main                          Joystick OK
+2026-04-24 00:49:47  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 00:49:47  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 00:49:47  [INFO    ]  main                          RFID OK
+2026-04-24 00:49:49  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 00:49:49  [INFO    ]  main                          Bluetooth OK
+2026-04-24 00:49:49  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 00:49:49  [INFO    ]  main                          WifiModule OK
+2026-04-24 00:49:49  [INFO    ]  main                          NRF OK
+2026-04-24 00:50:06  [INFO    ]  wifi.module                   [OLED] Acción: wifi_deauth
+2026-04-24 00:50:06  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 00:50:06  [INFO    ]  main                          Acción recibida: wifi_deauth
+2026-04-24 00:50:06  [INFO    ]  wifi.attacker                 wlan1 monitor → managed para scan
+2026-04-24 00:50:33  [INFO    ]  wifi.attacker                 Restaurando wlan1 a monitor
+2026-04-24 00:50:34  [INFO    ]  wifi.attacker                 Scan completo: 32 redes únicas
+2026-04-24 00:50:45  [INFO    ]  wifi.module                   [OLED] Acción: wifi_do_deauth
+2026-04-24 00:50:45  [WARNING ]  wifi.module                   Deauth → JOSEANDRES (18:35:D1:F2:3F:E1)
+2026-04-24 00:50:45  [INFO    ]  main                          Acción recibida: wifi_do_deauth
+2026-04-24 00:50:45  [WARNING ]  wifi.attacker                 Deauth → AP:18:35:D1:F2:3F:E1 Cliente:FF:FF:FF:FF:FF:FF
+2026-04-24 00:50:56  [ERROR   ]  wifi.attacker                 aireplay-ng stderr: 
+2026-04-24 00:55:22  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 00:55:23  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 00:55:37  [INFO    ]  main                          OLED OK
+2026-04-24 00:55:38  [INFO    ]  main                          Joystick OK
+2026-04-24 00:55:40  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 00:55:40  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 00:55:40  [INFO    ]  main                          RFID OK
+2026-04-24 00:55:42  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 00:55:42  [INFO    ]  main                          Bluetooth OK
+2026-04-24 00:55:42  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 00:55:42  [INFO    ]  main                          WifiModule OK
+2026-04-24 00:55:42  [INFO    ]  main                          NRF OK
+2026-04-24 00:55:54  [INFO    ]  wifi.module                   [OLED] Acción: wifi_deauth
+2026-04-24 00:55:54  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 00:55:54  [INFO    ]  main                          Acción recibida: wifi_deauth
+2026-04-24 00:55:54  [INFO    ]  wifi.attacker                 wlan1 monitor → managed para scan
+2026-04-24 00:56:19  [INFO    ]  wifi.attacker                 Restaurando wlan1 a monitor
+2026-04-24 00:56:20  [INFO    ]  wifi.attacker                 Scan completo: 30 redes únicas
+2026-04-24 00:56:44  [INFO    ]  wifi.module                   [OLED] Acción: wifi_do_deauth
+2026-04-24 00:56:44  [WARNING ]  wifi.module                   Deauth → JOSEANDRES (18:35:D1:F2:3F:E1) canal:11
+2026-04-24 00:56:44  [INFO    ]  main                          Acción recibida: wifi_do_deauth
+2026-04-24 00:56:44  [WARNING ]  wifi.attacker                 Deauth → AP:18:35:D1:F2:3F:E1 Cliente:FF:FF:FF:FF:FF:FF Canal:11
+2026-04-24 00:56:44  [INFO    ]  wifi.attacker                 Fijando canal 11
+2026-04-24 00:57:19  [INFO    ]  wifi.module                   [OLED] Acción: wifi_beacon_flood
+2026-04-24 00:57:19  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 00:57:19  [INFO    ]  main                          Acción recibida: wifi_beacon_flood
+2026-04-24 00:57:20  [INFO    ]  wifi.attacker                 wlan1 monitor → managed para scan
+2026-04-24 00:57:45  [INFO    ]  wifi.attacker                 Restaurando wlan1 a monitor
+2026-04-24 00:57:46  [INFO    ]  wifi.attacker                 Scan completo: 42 redes únicas
+2026-04-24 00:57:53  [INFO    ]  wifi.module                   [OLED] Acción: wifi_do_beacon
+2026-04-24 00:57:54  [WARNING ]  wifi.module                   Beacon flood → SSID:JOSEANDRES ch:11
+2026-04-24 00:57:54  [INFO    ]  main                          Acción recibida: wifi_do_beacon
+2026-04-24 00:57:54  [WARNING ]  wifi.attacker                 Beacon flood → SSID:JOSEANDRES ch:11
+2026-04-24 00:57:54  [ERROR   ]  wifi.attacker                 mdk4 stderr: sudo: mdk4: command not found
+2026-04-24 01:00:02  [INFO    ]  main                          Cerrando...
+2026-04-24 01:00:02  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:00:02  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:00:06  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:00:06  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:00:21  [INFO    ]  main                          OLED OK
+2026-04-24 01:00:22  [INFO    ]  main                          Joystick OK
+2026-04-24 01:00:24  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:00:24  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:00:24  [INFO    ]  main                          RFID OK
+2026-04-24 01:00:25  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:00:26  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:00:26  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:00:26  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:00:26  [INFO    ]  main                          NRF OK
+2026-04-24 01:00:38  [INFO    ]  wifi.module                   [OLED] Acción: wifi_beacon_flood
+2026-04-24 01:00:38  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 01:00:38  [INFO    ]  main                          Acción recibida: wifi_beacon_flood
+2026-04-24 01:00:38  [INFO    ]  wifi.attacker                 wlan1 monitor → managed para scan
+2026-04-24 01:00:44  [INFO    ]  wifi.attacker                 Restaurando wlan1 a monitor
+2026-04-24 01:00:45  [INFO    ]  wifi.attacker                 Scan completo: 0 redes únicas
+2026-04-24 01:00:58  [INFO    ]  main                          Cerrando...
+2026-04-24 01:00:58  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:00:58  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:01:00  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:01:00  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:01:15  [INFO    ]  main                          OLED OK
+2026-04-24 01:01:16  [INFO    ]  main                          Joystick OK
+2026-04-24 01:01:18  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:01:18  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:01:18  [INFO    ]  main                          RFID OK
+2026-04-24 01:01:20  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:01:20  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:01:20  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:01:20  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:01:20  [INFO    ]  main                          NRF OK
+2026-04-24 01:01:31  [INFO    ]  wifi.module                   [OLED] Acción: wifi_beacon_flood
+2026-04-24 01:01:31  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 01:01:31  [INFO    ]  main                          Acción recibida: wifi_beacon_flood
+2026-04-24 01:01:31  [INFO    ]  wifi.attacker                 wlan1 monitor → managed para scan
+2026-04-24 01:01:57  [INFO    ]  wifi.attacker                 Restaurando wlan1 a monitor
+2026-04-24 01:01:58  [INFO    ]  wifi.attacker                 Scan completo: 36 redes únicas
+2026-04-24 01:02:04  [INFO    ]  wifi.module                   [OLED] Acción: wifi_do_beacon
+2026-04-24 01:02:04  [WARNING ]  wifi.module                   Beacon flood → SSID:JOSEANDRES ch:11
+2026-04-24 01:02:04  [INFO    ]  main                          Acción recibida: wifi_do_beacon
+2026-04-24 01:02:04  [WARNING ]  wifi.attacker                 Beacon flood → SSID:JOSEANDRES ch:11
+2026-04-24 01:02:19  [ERROR   ]  wifi.attacker                 Beacon error: Command '['sudo', 'mdk4', 'wlan1', 'b', '-f', '/tmp/ssid_list.txt', '-c', '11']' timed out after 15 seconds
+2026-04-24 01:03:45  [INFO    ]  main                          Cerrando...
+2026-04-24 01:03:45  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:03:45  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:03:48  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:03:49  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:04:03  [INFO    ]  main                          OLED OK
+2026-04-24 01:04:04  [INFO    ]  main                          Joystick OK
+2026-04-24 01:04:06  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:04:06  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:04:06  [INFO    ]  main                          RFID OK
+2026-04-24 01:04:08  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:04:08  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:04:08  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:04:08  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:04:08  [INFO    ]  main                          NRF OK
+2026-04-24 01:04:16  [INFO    ]  wifi.module                   [OLED] Acción: wifi_beacon_flood
+2026-04-24 01:04:16  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 01:04:16  [INFO    ]  main                          Acción recibida: wifi_beacon_flood
+2026-04-24 01:04:16  [INFO    ]  wifi.attacker                 wlan1 monitor → managed para scan
+2026-04-24 01:04:43  [INFO    ]  wifi.attacker                 Restaurando wlan1 a monitor
+2026-04-24 01:04:44  [INFO    ]  wifi.attacker                 Scan completo: 38 redes únicas
+2026-04-24 01:04:49  [INFO    ]  wifi.module                   [OLED] Acción: wifi_do_beacon
+2026-04-24 01:04:49  [WARNING ]  wifi.module                   Beacon flood → SSID:JOSEANDRES ch:11
+2026-04-24 01:04:49  [INFO    ]  main                          Acción recibida: wifi_do_beacon
+2026-04-24 01:04:49  [WARNING ]  wifi.attacker                 Beacon flood → SSID:JOSEANDRES ch:11 dur:30s
+2026-04-24 01:04:50  [INFO    ]  wifi.attacker                 mdk4 PID:7324 corriendo 30s
+2026-04-24 01:05:20  [INFO    ]  wifi.attacker                 mdk4 detenido
+2026-04-24 01:06:57  [INFO    ]  wifi.module                   [OLED] Acción: wifi_beacon_flood
+2026-04-24 01:06:57  [INFO    ]  wifi.attacker                 Escaneando redes en wlan1
+2026-04-24 01:06:57  [INFO    ]  main                          Acción recibida: wifi_beacon_flood
+2026-04-24 01:06:57  [INFO    ]  wifi.attacker                 wlan1 monitor → managed para scan
+2026-04-24 01:07:22  [INFO    ]  wifi.attacker                 Restaurando wlan1 a monitor
+2026-04-24 01:07:23  [INFO    ]  wifi.attacker                 Scan completo: 40 redes únicas
+2026-04-24 01:07:29  [INFO    ]  wifi.module                   [OLED] Acción: wifi_do_beacon
+2026-04-24 01:07:30  [WARNING ]  wifi.module                   Beacon flood → SSID:JOSEANDRES ch:11
+2026-04-24 01:07:30  [INFO    ]  main                          Acción recibida: wifi_do_beacon
+2026-04-24 01:07:30  [WARNING ]  wifi.attacker                 Beacon flood → SSID:JOSEANDRES ch:11 dur:30s
+2026-04-24 01:07:30  [INFO    ]  wifi.attacker                 mdk4 PID:7658 corriendo 30s
+2026-04-24 01:08:00  [INFO    ]  wifi.attacker                 mdk4 detenido
+2026-04-24 01:10:31  [INFO    ]  main                          Cerrando...
+2026-04-24 01:10:31  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:10:31  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:18:33  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:18:38  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:18:53  [INFO    ]  main                          OLED OK
+2026-04-24 01:18:53  [INFO    ]  main                          Joystick OK
+2026-04-24 01:18:55  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:18:55  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:18:56  [INFO    ]  main                          RFID OK
+2026-04-24 01:18:57  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:18:57  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:18:57  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:18:57  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:18:57  [INFO    ]  main                          NRF OK
+2026-04-24 01:19:24  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:19:24  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:19:24  [INFO    ]  wifi.sniffer                  Sniffer iniciado en wlan1
+2026-04-24 01:21:21  [INFO    ]  main                          Cerrando...
+2026-04-24 01:21:21  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:21:21  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:21:24  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:21:28  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:21:43  [INFO    ]  main                          OLED OK
+2026-04-24 01:21:43  [INFO    ]  main                          Joystick OK
+2026-04-24 01:21:45  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:21:45  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:21:45  [INFO    ]  main                          RFID OK
+2026-04-24 01:21:47  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:21:47  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:21:47  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:21:47  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:21:47  [INFO    ]  main                          NRF OK
+2026-04-24 01:22:03  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:22:03  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:22:03  [INFO    ]  wifi.sniffer                  Sniffer iniciado en wlan1
+2026-04-24 01:22:12  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:22:13  [WARNING ]  wifi.sniffer                  Sniffer ya está corriendo
+2026-04-24 01:22:13  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:22:46  [INFO    ]  main                          Cerrando...
+2026-04-24 01:22:46  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:22:46  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:22:50  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:22:54  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:23:09  [INFO    ]  main                          OLED OK
+2026-04-24 01:23:09  [INFO    ]  main                          Joystick OK
+2026-04-24 01:23:11  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:23:11  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:23:11  [INFO    ]  main                          RFID OK
+2026-04-24 01:23:13  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:23:13  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:23:13  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:23:13  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:23:13  [INFO    ]  main                          NRF OK
+2026-04-24 01:23:34  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:23:34  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:23:34  [INFO    ]  wifi.sniffer                  Sniffer iniciado en wlan1
+2026-04-24 01:23:45  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_stop
+2026-04-24 01:23:45  [INFO    ]  wifi.sniffer                  Sniffer detenido
+2026-04-24 01:23:45  [INFO    ]  main                          Acción recibida: wifi_sniffer_stop
+2026-04-24 01:27:48  [INFO    ]  main                          Cerrando...
+2026-04-24 01:27:48  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:27:48  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:27:52  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:27:56  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:28:11  [INFO    ]  main                          OLED OK
+2026-04-24 01:28:11  [INFO    ]  main                          Joystick OK
+2026-04-24 01:28:13  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:28:13  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:28:13  [INFO    ]  main                          RFID OK
+2026-04-24 01:28:15  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:28:15  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:28:15  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:28:15  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:28:15  [INFO    ]  main                          NRF OK
+2026-04-24 01:28:27  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:28:27  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:28:27  [INFO    ]  wifi.sniffer                  Sniffer iniciado en wlan1
+2026-04-24 01:28:35  [INFO    ]  wifi.module                   [OLED] Acción: wifi_ids_stop
+2026-04-24 01:28:35  [INFO    ]  main                          Acción recibida: wifi_ids_stop
+2026-04-24 01:28:49  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_devices
+2026-04-24 01:28:49  [INFO    ]  main                          Acción recibida: wifi_sniffer_devices
+2026-04-24 01:32:39  [INFO    ]  main                          Cerrando...
+2026-04-24 01:32:39  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:32:39  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:32:43  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:32:47  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:33:02  [INFO    ]  main                          OLED OK
+2026-04-24 01:33:02  [INFO    ]  main                          Joystick OK
+2026-04-24 01:33:04  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:33:04  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:33:04  [INFO    ]  main                          RFID OK
+2026-04-24 01:33:06  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:33:06  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:33:06  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:33:06  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:33:06  [INFO    ]  main                          NRF OK
+2026-04-24 01:33:38  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:33:38  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:33:38  [INFO    ]  wifi.sniffer                  Sniffer iniciado en wlan1 por 20s
+2026-04-24 01:33:58  [INFO    ]  wifi.sniffer                  Scan completo: 0 dispositivos
+2026-04-24 01:36:41  [INFO    ]  main                          Cerrando...
+2026-04-24 01:36:41  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:36:41  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:36:45  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:36:49  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:37:04  [INFO    ]  main                          OLED OK
+2026-04-24 01:37:04  [INFO    ]  main                          Joystick OK
+2026-04-24 01:37:06  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:37:06  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:37:06  [INFO    ]  main                          RFID OK
+2026-04-24 01:37:08  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:37:08  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:37:08  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:37:08  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:37:08  [INFO    ]  main                          NRF OK
+2026-04-24 01:37:32  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:37:32  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:37:32  [INFO    ]  wifi.sniffer                  Sniffer iniciado en wlan1 por 20s
+2026-04-24 01:37:32  [INFO    ]  wifi.sniffer                  wlan1 modo promiscuo ON
+2026-04-24 01:37:53  [INFO    ]  wifi.sniffer                  Scan completo: 0 dispositivos
+2026-04-24 01:37:55  [INFO    ]  wifi.sniffer                  wlan1 modo promiscuo OFF
+2026-04-24 01:38:25  [INFO    ]  main                          Cerrando...
+2026-04-24 01:38:25  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:38:25  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:38:28  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:38:32  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:38:47  [INFO    ]  main                          OLED OK
+2026-04-24 01:38:47  [INFO    ]  main                          Joystick OK
+2026-04-24 01:38:50  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:38:50  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:38:50  [INFO    ]  main                          RFID OK
+2026-04-24 01:38:51  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:38:52  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:38:52  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:38:52  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:38:52  [INFO    ]  main                          NRF OK
+2026-04-24 01:39:04  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:39:04  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:39:04  [INFO    ]  wifi.sniffer                  Sniffer iniciado en wlan1 por 20s
+2026-04-24 01:39:04  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:39:04  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:39:04  [WARNING ]  wifi.sniffer                  Sniffer ya está corriendo
+2026-04-24 01:39:04  [INFO    ]  wifi.sniffer                  wlan1 modo promiscuo ON
+2026-04-24 01:39:25  [INFO    ]  wifi.sniffer                  Scan completo: 0 dispositivos
+2026-04-24 01:39:27  [INFO    ]  wifi.sniffer                  wlan1 modo promiscuo OFF
+2026-04-24 01:43:10  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:43:14  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:43:29  [INFO    ]  main                          OLED OK
+2026-04-24 01:43:29  [INFO    ]  main                          Joystick OK
+2026-04-24 01:43:31  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:43:31  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:43:31  [INFO    ]  main                          RFID OK
+2026-04-24 01:43:33  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:43:33  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:43:33  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:43:33  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:43:33  [INFO    ]  main                          NRF OK
+2026-04-24 01:44:01  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:44:01  [INFO    ]  wifi.sniffer                  Activando modo monitor
+2026-04-24 01:44:01  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:44:02  [INFO    ]  wifi.sniffer                  Sniffer iniciado en wlan1
+2026-04-24 01:44:16  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_devices
+2026-04-24 01:44:16  [INFO    ]  main                          Acción recibida: wifi_sniffer_devices
+2026-04-24 01:44:23  [INFO    ]  main                          Cerrando...
+2026-04-24 01:44:23  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:44:23  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:46:12  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:46:15  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:46:30  [INFO    ]  main                          OLED OK
+2026-04-24 01:46:31  [INFO    ]  main                          Joystick OK
+2026-04-24 01:46:33  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:46:33  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:46:33  [INFO    ]  main                          RFID OK
+2026-04-24 01:46:35  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:46:35  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:46:35  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:46:35  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:46:35  [INFO    ]  main                          NRF OK
+2026-04-24 01:46:57  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:46:57  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:46:57  [INFO    ]  wifi.sniffer                  Modo monitor ON
+2026-04-24 01:46:57  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:46:57  [WARNING ]  wifi.sniffer                  Sniffer ya activo
+2026-04-24 01:46:57  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:47:00  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.show_sniffer_progress' para 'oled:sniffer_progress': object of type 'int' has no len()
+2026-04-24 01:47:03  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.show_sniffer_progress' para 'oled:sniffer_progress': object of type 'int' has no len()
+2026-04-24 01:47:05  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.show_sniffer_progress' para 'oled:sniffer_progress': object of type 'int' has no len()
+2026-04-24 01:47:07  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.show_sniffer_progress' para 'oled:sniffer_progress': object of type 'int' has no len()
+2026-04-24 01:47:09  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.show_sniffer_progress' para 'oled:sniffer_progress': object of type 'int' has no len()
+2026-04-24 01:47:11  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.show_sniffer_progress' para 'oled:sniffer_progress': object of type 'int' has no len()
+2026-04-24 01:47:13  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.show_sniffer_progress' para 'oled:sniffer_progress': object of type 'int' has no len()
+2026-04-24 01:47:15  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.show_sniffer_progress' para 'oled:sniffer_progress': object of type 'int' has no len()
+2026-04-24 01:47:18  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.show_sniffer_progress' para 'oled:sniffer_progress': object of type 'int' has no len()
+2026-04-24 01:47:20  [ERROR   ]  core.event_bus                Error en handler 'OledDisplay.show_sniffer_progress' para 'oled:sniffer_progress': object of type 'int' has no len()
+2026-04-24 01:47:20  [INFO    ]  wifi.sniffer                  Dispositivos: 0
+2026-04-24 01:47:20  [INFO    ]  main                          Cerrando...
+2026-04-24 01:47:20  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:47:20  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 01:50:55  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 01:50:59  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 01:51:13  [INFO    ]  main                          OLED OK
+2026-04-24 01:51:14  [INFO    ]  main                          Joystick OK
+2026-04-24 01:51:16  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 01:51:16  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 01:51:16  [INFO    ]  main                          RFID OK
+2026-04-24 01:51:18  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 01:51:18  [INFO    ]  main                          Bluetooth OK
+2026-04-24 01:51:18  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 01:51:18  [INFO    ]  main                          WifiModule OK
+2026-04-24 01:51:18  [INFO    ]  main                          NRF OK
+2026-04-24 01:51:40  [INFO    ]  wifi.module                   [OLED] Acción: wifi_sniffer_start
+2026-04-24 01:51:40  [INFO    ]  main                          Acción recibida: wifi_sniffer_start
+2026-04-24 01:51:40  [INFO    ]  wifi.sniffer                  Modo monitor ON
+2026-04-24 01:51:41  [INFO    ]  wifi.sniffer                  Sniffer iniciado en wlan1
+2026-04-24 01:52:05  [INFO    ]  wifi.sniffer                  Dispositivos: 0
+2026-04-24 01:52:07  [INFO    ]  wifi.sniffer                  Modo managed ON
+2026-04-24 01:58:49  [INFO    ]  main                          Cerrando...
+2026-04-24 01:58:49  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 01:58:49  [INFO    ]  module.bluetooth              Bluetooth detenido
+2026-04-24 03:00:50  [INFO    ]  core.event_bus                EventBus inicializado
+2026-04-24 03:00:54  [INFO    ]  main                          API + Socket.IO corriendo
+2026-04-24 03:00:55  [INFO    ]  main                          ═══ SENTINEL PHANTOM ═══
+2026-04-24 03:00:56  [INFO    ]  api                           🚀 API corriendo en http://0.0.0.0:5000
+2026-04-24 03:01:09  [INFO    ]  main                          OLED OK
+2026-04-24 03:01:10  [INFO    ]  main                          Joystick OK
+2026-04-24 03:01:12  [INFO    ]  module.rfid.reader            ESP32 conectado en /dev/ttyUSB0
+2026-04-24 03:01:12  [INFO    ]  module.rfid                   RFID listo ✓
+2026-04-24 03:01:12  [INFO    ]  main                          RFID OK
+2026-04-24 03:01:14  [INFO    ]  module.bluetooth              Bluetooth listo ✓
+2026-04-24 03:01:14  [INFO    ]  main                          Bluetooth OK
+2026-04-24 03:01:14  [INFO    ]  wifi.module                   WifiModule inicializado
+2026-04-24 03:01:14  [INFO    ]  main                          WifiModule OK
+2026-04-24 03:01:14  [INFO    ]  main                          NRF OK
+2026-04-24 03:34:39  [INFO    ]  main                          Cerrando...
+2026-04-24 03:34:39  [INFO    ]  module.rfid                   RFID detenido
+2026-04-24 03:34:39  [INFO    ]  module.bluetooth              Bluetooth detenido

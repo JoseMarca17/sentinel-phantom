@@ -1,105 +1,315 @@
-from core.event_bus import EventBus
+from core.event_bus import bus
 from core.logger import get_logger
-from modules.wifi.detector import WiFiDetector
+
+from modules.wifi.detector import WifiDetector
 from modules.wifi.attacker import WifiAttacker
-from modules.wifi.pmkid import PMKIDCapture
+from modules.wifi.pmkid import PmkidAttack
 from modules.wifi.evil_twin import EvilTwin
+from modules.wifi.sniffer import NetworkSniffer
+from modules.wifi.sniffer import NetworkSniffer
+
 import threading
 
 log = get_logger("wifi.module")
-bus = EventBus()
+
 
 class WifiModule:
-    def __init__(self, interface='wlan1'):
+
+    def __init__(self, interface="wlan1"):
         self.interface = interface
-        self.running = False
+        self.running   = False
 
-        # Submodulos
-        self.detector   = WiFiDetector(interface=interface)
-        self.attacker   = WifiAttacker(interface=interface)
-        self.pmkid      = PMKIDCapture(interface=interface)
-        self.evil_twin  = EvilTwin(interface='wlan0')
+        self.detector  = WifiDetector(interface=interface)
+        self.attacker  = WifiAttacker(interface=interface)
+        self.pmkid = PmkidAttack(interface=interface)
+        self.evil_twin = EvilTwin()
+        self.sniffer = NetworkSniffer(interface=interface)
+        
 
-        # Hilo del detector
         self._detector_thread = None
+        self._attack_lock     = threading.Lock()
 
-        # Suscribirse a alertas para loggearlas
-        bus.subscribe('wifi.alert', self._on_alert)
+        # Estado para el flujo scan → selección → ataque
+        self._scanned_nets:   list = []
+        self._pending_attack: str  = ""  # "deauth" | "beacon" | "pmkid"
 
-    def start(self) -> bool:
-        """Arranca el modulo WiFi completo"""
-        log.info("Iniciando modulo WiFi...")
+        bus.subscribe("oled:action", self._handle_oled_action)
+        bus.subscribe("wifi.alert",  self._on_alert)
+
+        log.info("WifiModule inicializado")
+
+    # ─────────────────────────────────────
+    # CICLO DE VIDA
+    # ─────────────────────────────────────
+
+    def start(self):
+        if self.running:
+            log.warning("Wifi IDS ya está activo")
+            return
+
+        log.info("Iniciando WiFi IDS")
         self.running = True
 
-        # Arrancar detector en hilo separado
         self._detector_thread = threading.Thread(
             target=self.detector.start,
             daemon=True
         )
         self._detector_thread.start()
-
-        bus.publish_sync('wifi.module_started', {
-            'interface': self.interface,
-            'status':    'running',
-        })
-        log.info("Modulo WiFi activo.")
-        return True
+        bus.publish_sync("oled:wifi_status", {"msg": "IDS activo"})
 
     def stop(self):
-        """Detiene todo el modulo WiFi"""
-        log.info("Deteniendo modulo WiFi...")
-        self.detector.stop()
+        if not self.running:
+            return
 
-        if self.evil_twin.running:
-            self.evil_twin.stop()
+        log.info("Deteniendo WiFi IDS")
+        try:
+            self.detector.stop()
+        except Exception as e:
+            log.error(f"Error deteniendo detector: {e}")
 
         self.running = False
-        bus.publish_sync('wifi.module_stopped', {'status': 'stopped'})
-        log.info("Modulo WiFi detenido.")
+        bus.publish_sync("oled:wifi_status", {"msg": "IDS detenido"})
+        bus.publish_sync("oled:return_menu", {})
 
-    def get_status(self) -> dict:
+    def status(self):
         return {
-            'running':          self.running,
-            'interface':        self.interface,
-            'detector_running': self.detector.running,
-            'evil_twin_active': self.evil_twin.running,
-            'redes_vistas':     len(self.detector.seen_networks),
+            "running":       self.running,
+            "channel":       getattr(self.detector, "current_channel", None),
+            "networks_seen": len(getattr(self.detector, "seen_networks", [])),
+            "evil_twin_on":  getattr(self.evil_twin, "running", False),
         }
 
-    # ── Acciones del atacante ─────────────────────────────────────────────
+    # ─────────────────────────────────────
+    # HANDLER OLED
+    # ─────────────────────────────────────
 
-    def scan_wps(self) -> list:
-        """Escanea redes con WPS habilitado"""
-        return self.attacker.wps_scan()
+    def _handle_oled_action(self, event):
+        action = event.get("payload", {}).get("action")
+        if not action:
+            return
 
-    def do_deauth(self, bssid: str, client: str = 'FF:FF:FF:FF:FF:FF', count: int = 10) -> bool:
-        """Envia deauth contra un AP"""
-        return self.attacker.deauth(bssid, client, count)
+        log.info(f"[OLED] Acción: {action}")
 
-    def do_beacon_flood(self, ssid: str) -> bool:
-        """Lanza beacon flood con un SSID falso"""
-        return self.attacker.beacon_flood(ssid)
+        try:
+            # ── IDS ──────────────────────────────────────────────────────────
+            if action == "wifi_ids_start":
+                bus.publish_sync("oled:wifi_status", {"msg": "Iniciando IDS..."})
+                self.start()
 
-    def do_pmkid(self, bssid: str, timeout: int = 30):
-        """Captura PMKID de un AP"""
-        return self.pmkid.capture(bssid, timeout)
+            elif action == "wifi_ids_stop":
+                self.stop()
 
-    def do_evil_twin(self, ssid: str, channel: int = 6) -> bool:
-        """Levanta un Evil Twin con el SSID dado"""
-        return self.evil_twin.start(ssid, channel)
+            # ── ATAQUES paso 1: escanear y mostrar redes ──────────────────────
+            elif action in ("wifi_deauth", "wifi_beacon_flood", "wifi_pmkid"):
+                self._pending_attack = {
+                    "wifi_deauth":       "deauth",
+                    "wifi_beacon_flood": "beacon",
+                    "wifi_pmkid":        "pmkid",
+                }[action]
 
-    def stop_evil_twin(self):
-        """Detiene el Evil Twin"""
-        self.evil_twin.stop()
+                threading.Thread(
+                    target=self._scan_and_show_nets,
+                    daemon=True
+                ).start()
 
-    def add_known_ap(self, bssid: str, ssid: str):
-        """Agrega un AP legitimo para deteccion de Evil Twin"""
-        self.detector.add_known_ap(bssid, ssid)
+            # ── ATAQUES paso 2: ejecutar tras selección de red ────────────────
+            elif action == "wifi_do_deauth":
+                net_idx = event["payload"].get("net_idx", 0)
+                threading.Thread(
+                    target=self._run_deauth,
+                    args=(net_idx,),
+                    daemon=True
+                ).start()
 
-    # ── Handlers de eventos ───────────────────────────────────────────────
+            elif action == "wifi_do_beacon":
+                net_idx = event["payload"].get("net_idx", 0)
+                threading.Thread(
+                    target=self._run_beacon,
+                    args=(net_idx,),
+                    daemon=True
+                ).start()
 
-    def _on_alert(self, event: dict):
-        payload = event.get('payload', {})
-        severity = payload.get('severity', 'info')
-        tipo     = payload.get('type', 'unknown')
-        log.warning(f"[ALERTA] {severity.upper()} | {tipo} | {payload}")
+            elif action == "wifi_do_pmkid":
+                net_idx = event["payload"].get("net_idx", 0)
+                threading.Thread(
+                    target=self._run_pmkid,
+                    args=(net_idx,),
+                    daemon=True
+                ).start()
+
+            # ── EVIL TWIN ─────────────────────────────────────────────────────
+            elif action == "wifi_evil_twin":
+                threading.Thread(
+                    target=self._run_evil_twin,
+                    daemon=True
+                ).start()
+            
+            elif action == "wifi_sniffer_start":
+                threading.Thread(
+                    target=self.sniffer.start,
+                    args=(20,),   # 20 segundos
+                    daemon=True
+                ).start()
+
+            elif action == "wifi_sniffer_stop":
+                self.sniffer.stop()
+                bus.publish_sync("oled:wifi_status", {"msg": "Sniffer OFF"})
+                time.sleep(0.8)
+                bus.publish_sync("oled:return_menu", {})
+
+        except Exception as e:
+            log.error(f"Error ejecutando acción WiFi: {e}")
+            bus.publish_sync("oled:wifi_status", {"msg": "Error WiFi"})
+            bus.publish_sync("oled:return_menu", {})
+
+    # ─────────────────────────────────────
+    # SCAN → OLED SELECT
+    # ─────────────────────────────────────
+
+    def _scan_and_show_nets(self):
+        """
+        Escanea redes y publica oled:wifi_nets para que el OLED
+        muestre el menú de selección. Cada red lleva attack_action
+        para que el OLED sepa qué disparar al confirmar.
+        """
+        nets = self.attacker.scan_networks(include_5ghz=False)
+
+        if not nets:
+            bus.publish_sync("oled:wifi_status", {"msg": "Sin redes"})
+            import time; time.sleep(1.5)
+            bus.publish_sync("oled:return_menu", {})
+            return
+
+        self._scanned_nets = nets
+
+        action_map = {
+            "deauth": "wifi_do_deauth",
+            "beacon": "wifi_do_beacon",
+            "pmkid":  "wifi_do_pmkid",
+        }
+
+        formatted = [
+            {
+                "ssid":          n.get("ssid",    "??"),
+                "ch":            n.get("channel", 0),
+                "rssi":          n.get("rssi",    -99),
+                "bssid":         n.get("bssid",   ""),
+                "attack_action": action_map.get(self._pending_attack, "wifi_do_deauth"),
+            }
+            for n in nets
+        ]
+
+        bus.publish_sync("oled:wifi_nets", {"networks": formatted})
+
+    # ─────────────────────────────────────
+    # ATAQUES REALES
+    # ─────────────────────────────────────
+
+    def _run_deauth(self, net_idx: int = 0):
+        with self._attack_lock:
+            try:
+                if not self._scanned_nets:
+                    log.error("No hay redes escaneadas")
+                    bus.publish_sync("oled:wifi_status", {"msg": "Sin red"})
+                    return
+
+                net     = self._scanned_nets[net_idx]
+                bssid   = net.get("bssid",   "")
+                ssid    = net.get("ssid",    "??")
+                channel = net.get("channel", None)
+
+                if not bssid:
+                    bus.publish_sync("oled:wifi_status", {"msg": "BSSID inválido"})
+                    return
+
+                log.warning(f"Deauth → {ssid} ({bssid}) canal:{channel}")
+                bus.publish_sync("oled:wifi_status", {"msg": f"Deauth {ssid[:12]}"})
+                self.attacker.deauth(bssid=bssid, channel=channel)
+                event_data = {
+                    "type": "deauth_attack",
+                    "module": "wifi",
+                    "data": {"target": ssid, "bssid": bssid},
+                    "severity": "high"
+                }
+                bus.publish("wifi:event", event_data)
+            except IndexError:
+                log.error(f"net_idx {net_idx} fuera de rango")
+                bus.publish_sync("oled:wifi_status", {"msg": "Índice inválido"})
+            except Exception as e:
+                log.error(f"Deauth error: {e}")
+                bus.publish_sync("oled:wifi_status", {"msg": "Error Deauth"})
+            finally:
+                bus.publish_sync("oled:return_menu", {})
+
+    def _run_beacon(self, net_idx: int = 0):
+        with self._attack_lock:
+            try:
+                if not self._scanned_nets:
+                    log.error("No hay redes escaneadas")
+                    bus.publish_sync("oled:wifi_status", {"msg": "Sin red"})
+                    return
+
+                net     = self._scanned_nets[net_idx]
+                ssid    = net.get("ssid",    "FreeWifi")
+                channel = net.get("channel", 6) or 6  # 0/None → 6
+
+                log.warning(f"Beacon flood → SSID:{ssid} ch:{channel}")
+                self.attacker.beacon_flood(ssid=ssid, channel=channel)
+
+            except IndexError:
+                log.error(f"net_idx {net_idx} fuera de rango")
+                bus.publish_sync("oled:wifi_status", {"msg": "Índice inválido"})
+            except Exception as e:
+                log.error(f"Beacon error: {e}")
+                bus.publish_sync("oled:wifi_status", {"msg": "Error Beacon"})
+            finally:
+                bus.publish_sync("oled:return_menu", {})
+
+    def _run_pmkid(self, net_idx: int = 0):
+        with self._attack_lock:
+            try:
+                if not self._scanned_nets:
+                    log.error("No hay redes escaneadas")
+                    bus.publish_sync("oled:wifi_status", {"msg": "Sin red"})
+                    return
+
+                net   = self._scanned_nets[net_idx]
+                bssid = net.get("bssid", "")
+                ssid  = net.get("ssid",  "??")
+
+                if not bssid:
+                    bus.publish_sync("oled:wifi_status", {"msg": "BSSID inválido"})
+                    return
+
+                log.warning(f"PMKID → {ssid} ({bssid})")
+                bus.publish_sync("oled:wifi_status", {"msg": f"PMKID {ssid[:12]}"})
+                self.pmkid.capture(bssid=bssid)
+
+            except IndexError:
+                log.error(f"net_idx {net_idx} fuera de rango")
+                bus.publish_sync("oled:wifi_status", {"msg": "Índice inválido"})
+            except Exception as e:
+                log.error(f"PMKID error: {e}")
+                bus.publish_sync("oled:wifi_status", {"msg": "Error PMKID"})
+            finally:
+                bus.publish_sync("oled:return_menu", {})
+
+    def _run_evil_twin(self):
+        with self._attack_lock:
+            try:
+                bus.publish_sync("oled:wifi_status", {"msg": "Evil Twin..."})
+                self.evil_twin.start("FakeAP", 6)
+                bus.publish_sync("oled:wifi_status", {"msg": "Evil Twin activo"})
+            except Exception as e:
+                log.error(f"Evil Twin error: {e}")
+                bus.publish_sync("oled:wifi_status", {"msg": "Error Evil Twin"})
+            finally:
+                bus.publish_sync("oled:return_menu", {})
+
+    # ─────────────────────────────────────
+    # ALERTAS IDS
+    # ─────────────────────────────────────
+
+    def _on_alert(self, event):
+        msg = event.get("payload", {}).get("type", "Alerta WiFi")
+        bus.publish_sync("oled:wifi_status", {"msg": msg})

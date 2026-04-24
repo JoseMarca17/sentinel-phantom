@@ -1,4 +1,4 @@
-from core.event_bus import EventBus
+from core.event_bus import bus
 from core.logger import get_logger
 import subprocess
 import os
@@ -6,11 +6,10 @@ import threading
 import time
 
 log = get_logger("wifi.pmkid")
-bus = EventBus()
 
 CAPTURE_DIR = '/tmp/pmkid'
 
-class PMKIDCapture:
+class PmkidAttack:
     def __init__(self, interface='wlan1'):
         self.interface = interface
         self.running = False

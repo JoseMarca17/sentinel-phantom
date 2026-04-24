@@ -213,7 +213,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class JoystickADS1115:
+class Joystick:
     def __init__(self, event_bus, i2c_lock, i2c_bus,
                  btn_pin=17,
                  deadzone=1500,
